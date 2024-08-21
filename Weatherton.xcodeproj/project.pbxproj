@@ -1,0 +1,597 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BBFA267C2C76626000211EC2 /* WeathertonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA267B2C76626000211EC2 /* WeathertonApp.swift */; };
+		BBFA267E2C76626000211EC2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA267D2C76626000211EC2 /* ContentView.swift */; };
+		BBFA26802C76626000211EC2 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA267F2C76626000211EC2 /* Item.swift */; };
+		BBFA26822C76626200211EC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBFA26812C76626200211EC2 /* Assets.xcassets */; };
+		BBFA26852C76626200211EC2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBFA26842C76626200211EC2 /* Preview Assets.xcassets */; };
+		BBFA268F2C76626300211EC2 /* WeathertonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA268E2C76626300211EC2 /* WeathertonTests.swift */; };
+		BBFA26992C76626300211EC2 /* WeathertonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA26982C76626300211EC2 /* WeathertonUITests.swift */; };
+		BBFA269B2C76626300211EC2 /* WeathertonUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA269A2C76626300211EC2 /* WeathertonUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BBFA268B2C76626300211EC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BBFA26702C76626000211EC2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BBFA26772C76626000211EC2;
+			remoteInfo = Weatherton;
+		};
+		BBFA26952C76626300211EC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BBFA26702C76626000211EC2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BBFA26772C76626000211EC2;
+			remoteInfo = Weatherton;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BBFA26782C76626000211EC2 /* Weatherton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weatherton.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBFA267B2C76626000211EC2 /* WeathertonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathertonApp.swift; sourceTree = "<group>"; };
+		BBFA267D2C76626000211EC2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BBFA267F2C76626000211EC2 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		BBFA26812C76626200211EC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BBFA26842C76626200211EC2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BBFA268A2C76626300211EC2 /* WeathertonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeathertonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBFA268E2C76626300211EC2 /* WeathertonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathertonTests.swift; sourceTree = "<group>"; };
+		BBFA26942C76626300211EC2 /* WeathertonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeathertonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBFA26982C76626300211EC2 /* WeathertonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathertonUITests.swift; sourceTree = "<group>"; };
+		BBFA269A2C76626300211EC2 /* WeathertonUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathertonUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BBFA26752C76626000211EC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBFA26872C76626300211EC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBFA26912C76626300211EC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BBFA266F2C76626000211EC2 = {
+			isa = PBXGroup;
+			children = (
+				BBFA267A2C76626000211EC2 /* Weatherton */,
+				BBFA268D2C76626300211EC2 /* WeathertonTests */,
+				BBFA26972C76626300211EC2 /* WeathertonUITests */,
+				BBFA26792C76626000211EC2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BBFA26792C76626000211EC2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BBFA26782C76626000211EC2 /* Weatherton.app */,
+				BBFA268A2C76626300211EC2 /* WeathertonTests.xctest */,
+				BBFA26942C76626300211EC2 /* WeathertonUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BBFA267A2C76626000211EC2 /* Weatherton */ = {
+			isa = PBXGroup;
+			children = (
+				BBFA267B2C76626000211EC2 /* WeathertonApp.swift */,
+				BBFA267D2C76626000211EC2 /* ContentView.swift */,
+				BBFA267F2C76626000211EC2 /* Item.swift */,
+				BBFA26812C76626200211EC2 /* Assets.xcassets */,
+				BBFA26832C76626200211EC2 /* Preview Content */,
+			);
+			path = Weatherton;
+			sourceTree = "<group>";
+		};
+		BBFA26832C76626200211EC2 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				BBFA26842C76626200211EC2 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BBFA268D2C76626300211EC2 /* WeathertonTests */ = {
+			isa = PBXGroup;
+			children = (
+				BBFA268E2C76626300211EC2 /* WeathertonTests.swift */,
+			);
+			path = WeathertonTests;
+			sourceTree = "<group>";
+		};
+		BBFA26972C76626300211EC2 /* WeathertonUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BBFA26982C76626300211EC2 /* WeathertonUITests.swift */,
+				BBFA269A2C76626300211EC2 /* WeathertonUITestsLaunchTests.swift */,
+			);
+			path = WeathertonUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BBFA26772C76626000211EC2 /* Weatherton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBFA269E2C76626300211EC2 /* Build configuration list for PBXNativeTarget "Weatherton" */;
+			buildPhases = (
+				BBFA26742C76626000211EC2 /* Sources */,
+				BBFA26752C76626000211EC2 /* Frameworks */,
+				BBFA26762C76626000211EC2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Weatherton;
+			productName = Weatherton;
+			productReference = BBFA26782C76626000211EC2 /* Weatherton.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BBFA26892C76626300211EC2 /* WeathertonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBFA26A12C76626300211EC2 /* Build configuration list for PBXNativeTarget "WeathertonTests" */;
+			buildPhases = (
+				BBFA26862C76626300211EC2 /* Sources */,
+				BBFA26872C76626300211EC2 /* Frameworks */,
+				BBFA26882C76626300211EC2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BBFA268C2C76626300211EC2 /* PBXTargetDependency */,
+			);
+			name = WeathertonTests;
+			productName = WeathertonTests;
+			productReference = BBFA268A2C76626300211EC2 /* WeathertonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BBFA26932C76626300211EC2 /* WeathertonUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBFA26A42C76626300211EC2 /* Build configuration list for PBXNativeTarget "WeathertonUITests" */;
+			buildPhases = (
+				BBFA26902C76626300211EC2 /* Sources */,
+				BBFA26912C76626300211EC2 /* Frameworks */,
+				BBFA26922C76626300211EC2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BBFA26962C76626300211EC2 /* PBXTargetDependency */,
+			);
+			name = WeathertonUITests;
+			productName = WeathertonUITests;
+			productReference = BBFA26942C76626300211EC2 /* WeathertonUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BBFA26702C76626000211EC2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					BBFA26772C76626000211EC2 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					BBFA26892C76626300211EC2 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = BBFA26772C76626000211EC2;
+					};
+					BBFA26932C76626300211EC2 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = BBFA26772C76626000211EC2;
+					};
+				};
+			};
+			buildConfigurationList = BBFA26732C76626000211EC2 /* Build configuration list for PBXProject "Weatherton" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BBFA266F2C76626000211EC2;
+			productRefGroup = BBFA26792C76626000211EC2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BBFA26772C76626000211EC2 /* Weatherton */,
+				BBFA26892C76626300211EC2 /* WeathertonTests */,
+				BBFA26932C76626300211EC2 /* WeathertonUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BBFA26762C76626000211EC2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBFA26852C76626200211EC2 /* Preview Assets.xcassets in Resources */,
+				BBFA26822C76626200211EC2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBFA26882C76626300211EC2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBFA26922C76626300211EC2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BBFA26742C76626000211EC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBFA267E2C76626000211EC2 /* ContentView.swift in Sources */,
+				BBFA26802C76626000211EC2 /* Item.swift in Sources */,
+				BBFA267C2C76626000211EC2 /* WeathertonApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBFA26862C76626300211EC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBFA268F2C76626300211EC2 /* WeathertonTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBFA26902C76626300211EC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBFA26992C76626300211EC2 /* WeathertonUITests.swift in Sources */,
+				BBFA269B2C76626300211EC2 /* WeathertonUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BBFA268C2C76626300211EC2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BBFA26772C76626000211EC2 /* Weatherton */;
+			targetProxy = BBFA268B2C76626300211EC2 /* PBXContainerItemProxy */;
+		};
+		BBFA26962C76626300211EC2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BBFA26772C76626000211EC2 /* Weatherton */;
+			targetProxy = BBFA26952C76626300211EC2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		BBFA269C2C76626300211EC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BBFA269D2C76626300211EC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BBFA269F2C76626300211EC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Weatherton/Preview Content\"";
+				DEVELOPMENT_TEAM = C7Y36F432B;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.patrickveilleux.Weatherton;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BBFA26A02C76626300211EC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Weatherton/Preview Content\"";
+				DEVELOPMENT_TEAM = C7Y36F432B;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.patrickveilleux.Weatherton;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BBFA26A22C76626300211EC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C7Y36F432B;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.patrickveilleux.WeathertonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Weatherton.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Weatherton";
+			};
+			name = Debug;
+		};
+		BBFA26A32C76626300211EC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C7Y36F432B;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.patrickveilleux.WeathertonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Weatherton.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Weatherton";
+			};
+			name = Release;
+		};
+		BBFA26A52C76626300211EC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C7Y36F432B;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.patrickveilleux.WeathertonUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Weatherton;
+			};
+			name = Debug;
+		};
+		BBFA26A62C76626300211EC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C7Y36F432B;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.patrickveilleux.WeathertonUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Weatherton;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BBFA26732C76626000211EC2 /* Build configuration list for PBXProject "Weatherton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBFA269C2C76626300211EC2 /* Debug */,
+				BBFA269D2C76626300211EC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BBFA269E2C76626300211EC2 /* Build configuration list for PBXNativeTarget "Weatherton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBFA269F2C76626300211EC2 /* Debug */,
+				BBFA26A02C76626300211EC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BBFA26A12C76626300211EC2 /* Build configuration list for PBXNativeTarget "WeathertonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBFA26A22C76626300211EC2 /* Debug */,
+				BBFA26A32C76626300211EC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BBFA26A42C76626300211EC2 /* Build configuration list for PBXNativeTarget "WeathertonUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBFA26A52C76626300211EC2 /* Debug */,
+				BBFA26A62C76626300211EC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BBFA26702C76626000211EC2 /* Project object */;
+}
