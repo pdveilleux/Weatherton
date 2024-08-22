@@ -22,6 +22,7 @@
 		BBFA26B52C7666D700211EC2 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA26B42C7666D700211EC2 /* PersistenceController.swift */; };
 		BBFA26B72C7678E900211EC2 /* CurrentWeatherResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA26B62C7678E900211EC2 /* CurrentWeatherResponseModel.swift */; };
 		BBFA26B92C7679DC00211EC2 /* RootWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA26B82C7679DC00211EC2 /* RootWeatherView.swift */; };
+		BBFA26BF2C77BAF100211EC2 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA26BE2C77BAF100211EC2 /* Secrets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		BBFA26B42C7666D700211EC2 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		BBFA26B62C7678E900211EC2 /* CurrentWeatherResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherResponseModel.swift; sourceTree = "<group>"; };
 		BBFA26B82C7679DC00211EC2 /* RootWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootWeatherView.swift; sourceTree = "<group>"; };
+		BBFA26BE2C77BAF100211EC2 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				BBFA267B2C76626000211EC2 /* WeathertonApp.swift */,
+				BBFA26BD2C77B89C00211EC2 /* Configuration */,
 				BBFA26B32C7666C800211EC2 /* Persistence */,
 				BBFA26B02C76655000211EC2 /* Repositories */,
 				BBFA26AB2C76648B00211EC2 /* Services */,
@@ -199,6 +202,14 @@
 			path = ResponseModels;
 			sourceTree = "<group>";
 		};
+		BBFA26BD2C77B89C00211EC2 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				BBFA26BE2C77BAF100211EC2 /* Secrets.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -206,6 +217,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BBFA269E2C76626300211EC2 /* Build configuration list for PBXNativeTarget "Weatherton" */;
 			buildPhases = (
+				BBFA26C02C77BB7F00211EC2 /* ShellScript */,
 				BBFA26742C76626000211EC2 /* Sources */,
 				BBFA26752C76626000211EC2 /* Frameworks */,
 				BBFA26762C76626000211EC2 /* Resources */,
@@ -287,6 +299,8 @@
 				Base,
 			);
 			mainGroup = BBFA266F2C76626000211EC2;
+			packageReferences = (
+			);
 			productRefGroup = BBFA26792C76626000211EC2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -324,6 +338,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BBFA26C02C77BB7F00211EC2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${SRCROOT}/Weatherton/Configuration/Secrets.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/zsh;
+			shellScript = "# Pull the secret from the keychain\nWeatherAPIKey=$(security find-generic-password -s Weatherton-WeatherAPIKey -w)\n\n# Define the path where the Swift file will be created\noutput_file=\"${SRCROOT}/Weatherton/Configuration/Secrets.swift\"\n\n# Ensure the directory exists\nmkdir -p \"$(dirname \"$output_file\")\"\n\n# Create the content of the Swift file\nfile_content=$(cat <<EOF\nstruct Secrets {\n    static let WeatherAPIKey = \"$WeatherAPIKey\"\n}\nEOF\n)\n\n# Write the content to the Swift file\necho \"$file_content\" > \"$output_file\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BBFA26742C76626000211EC2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -339,6 +374,7 @@
 				BBFA26B92C7679DC00211EC2 /* RootWeatherView.swift in Sources */,
 				BBFA26AD2C7664CC00211EC2 /* WeatherAPIClient.swift in Sources */,
 				BBFA26B52C7666D700211EC2 /* PersistenceController.swift in Sources */,
+				BBFA26BF2C77BAF100211EC2 /* Secrets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
