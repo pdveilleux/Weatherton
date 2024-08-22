@@ -88,7 +88,7 @@ extension CurrentWeatherResponseModel {
         /// Wind gust in kilometers per hour
         let gustKph: Double
         /// Air quality data
-        let airQuality: AirQuality
+//        let airQuality: AirQuality
     }
 }
 

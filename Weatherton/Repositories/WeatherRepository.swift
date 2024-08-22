@@ -46,11 +46,11 @@ final class FakeWeatherRepository: WeatherRepository {
                 systemImage: "cloud.sun"
             ),
             location: Weatherton.Location(
-                name: "Minneapolis",
-                region: "Minnesota",
-                country: "USA",
-                latitude: 44.91,
-                longitude: -93.32)
+                name: "London",
+                region: "City of London, Greater London",
+                country: "United Kingdom",
+                latitude: 51.52,
+                longitude: -0.11)
         )
     }
 }

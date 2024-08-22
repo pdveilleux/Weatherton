@@ -18,7 +18,7 @@ final class WeatherAPIClient: WeatherService {
     }
 
     private var authenticationQueryItem: URLQueryItem {
-        return URLQueryItem(name: "key", value: "")
+        return URLQueryItem(name: "key", value: Secrets.WeatherAPIKey)
     }
 
     private var airQualityIndexQueryItem: URLQueryItem {
@@ -39,7 +39,9 @@ final class WeatherAPIClient: WeatherService {
         url = url.appending(queryItems: queryItems)
         let request = URLRequest(url: url)
         let (data, _) = try await session.data(for: request)
-        let responseModel = try JSONDecoder().decode(CurrentWeatherResponseModel.self, from: data)
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        let responseModel = try decoder.decode(CurrentWeatherResponseModel.self, from: data)
         return responseModel.convertToCurrentWeather()
     }
 }

@@ -355,7 +355,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/zsh;
-			shellScript = "# Pull the secret from the keychain\nWeatherAPIKey=$(security find-generic-password -s Weatherton-WeatherAPIKey -w)\n\n# Define the path where the Swift file will be created\noutput_file=\"${SRCROOT}/Weatherton/Configuration/Secrets.swift\"\n\n# Ensure the directory exists\nmkdir -p \"$(dirname \"$output_file\")\"\n\n# Create the content of the Swift file\nfile_content=$(cat <<EOF\nstruct Secrets {\n    static let WeatherAPIKey = \"$WeatherAPIKey\"\n}\nEOF\n)\n\n# Write the content to the Swift file\necho \"$file_content\" > \"$output_file\"\n";
+			shellScript = "# Pull the secret from the keychain\nWeatherAPIKey=$(security find-generic-password -s Weatherton-WeatherAPIKey -w)\n\n# Define the path where the Swift file will be created\noutput_file=\"${SRCROOT}/Weatherton/Configuration/Secrets.swift\"\n\n# Ensure the directory exists\nmkdir -p \"$(dirname \"$output_file\")\"\n\n# Create the content of the Swift file\nfile_content=$(cat <<EOF\nenum Secrets {\n    static let WeatherAPIKey = \"$WeatherAPIKey\"\n}\nEOF\n)\n\n# Write the content to the Swift file\necho \"$file_content\" > \"$output_file\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
