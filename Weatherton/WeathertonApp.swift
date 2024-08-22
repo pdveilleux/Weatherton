@@ -25,7 +25,18 @@ struct WeathertonApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                RootWeatherView(
+                    viewModel: RootWeatherViewModel(
+                        weatherRepository: DefaultWeatherRepository(
+                            weatherService: WeatherAPIClient(),
+                            persistenceController: DefaultPersistenceController(
+                                modelContainer: sharedModelContainer
+                            )
+                        )
+                    )
+                )
+            }
         }
         .modelContainer(sharedModelContainer)
     }
