@@ -15,23 +15,3 @@ struct CurrentWeather: Hashable {
     let condition: WeatherCondition
     let location: Location
 }
-
-struct Location: Hashable {
-    /// The location name, typically a city.
-    let name: String
-    /// The greater region of the location.
-    let region: String
-    /// The location's country.
-    let country: String
-    /// The location's latitude.
-    let latitude: Double
-    /// The location's longitude.
-    let longitude: Double
-}
-
-struct WeatherCondition: Hashable {
-    /// Weather condition description.
-    let description: String
-    /// The name of the system symbol which represents the condition.
-    let systemImage: String?
-}

@@ -8,7 +8,8 @@
 import Foundation
 
 protocol WeatherRepository {
-    func getCurrentWeather() async throws -> CurrentWeather
+    func getCurrentWeather(query: String) async throws -> CurrentWeather
+    func searchLocations(query: String) async throws -> [Location]
 }
 
 struct WeatherRepositoryError: Error {
@@ -24,18 +25,22 @@ final class DefaultWeatherRepository: WeatherRepository {
         self.persistenceController = persistenceController
     }
     
-    func getCurrentWeather() async throws -> CurrentWeather {
+    func getCurrentWeather(query: String) async throws -> CurrentWeather {
         guard let currentWeather = try? await persistenceController.getCurrentWeather() else {
-            return try await weatherService.getCurrentWeather(query: "55410")
+            return try await weatherService.getCurrentWeather(query: query)
         }
         return currentWeather
+    }
+
+    func searchLocations(query: String) async throws -> [Location] {
+        try await weatherService.searchLocations(query: query)
     }
 }
 
 #if DEBUG
 @MainActor
 final class FakeWeatherRepository: WeatherRepository {
-    func getCurrentWeather() async throws -> CurrentWeather {
+    func getCurrentWeather(query: String) async throws -> CurrentWeather {
         CurrentWeather(
             apparentTemperature: Measurement(value: 24.1, unit: .celsius),
             dewPoint: Measurement(value: 10.7, unit: .celsius),
@@ -52,6 +57,10 @@ final class FakeWeatherRepository: WeatherRepository {
                 latitude: 51.52,
                 longitude: -0.11)
         )
+    }
+
+    func searchLocations(query: String) async throws -> [Location] {
+        []
     }
 }
 #endif

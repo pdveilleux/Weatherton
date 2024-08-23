@@ -9,6 +9,7 @@ import Foundation
 
 protocol WeatherService {
     func getCurrentWeather(query: String) async throws -> CurrentWeather
+    func searchLocations(query: String) async throws -> [Location]
 }
 
 struct WeatherServiceError: Error {

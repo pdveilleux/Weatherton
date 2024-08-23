@@ -27,7 +27,7 @@ struct WeathertonApp: App {
         WindowGroup {
             NavigationStack {
                 RootWeatherView(
-                    viewModel: RootWeatherViewModel(
+                    viewModel: RootWeatherView.ViewModel(
                         weatherRepository: DefaultWeatherRepository(
                             weatherService: WeatherAPIClient(),
                             persistenceController: DefaultPersistenceController(
