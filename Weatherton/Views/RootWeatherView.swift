@@ -91,12 +91,12 @@ extension RootWeatherView {
             didSet {
                 if !isSearching {
                     locationResults = []
+                    searchText.send("")
                 }
             }
         }
         
         private let weatherRepository: WeatherRepository
-        
         private var cancellables: Set<AnyCancellable> = []
 
         init(weatherRepository: WeatherRepository) {
@@ -104,11 +104,16 @@ extension RootWeatherView {
             
             searchText
                 .debounce(for: .seconds(0.5), scheduler: RunLoop.main)
+                .removeDuplicates()
                 .sink { [weak self] query in
-                Task {
-                    await self?.searchLocations(query: query)
-                }
-            }.store(in: &cancellables)
+                    guard !query.isEmpty else {
+                        self?.locationResults = []
+                        return
+                    }
+                    Task {
+                        await self?.searchLocations(query: query)
+                    }
+                }.store(in: &cancellables)
         }
 
         func getWeatherData() async {
