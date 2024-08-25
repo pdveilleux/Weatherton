@@ -97,10 +97,12 @@ extension RootWeatherView {
         }
         
         private let weatherRepository: WeatherRepository
+        private let preferenceManager: PreferenceManager
         private var cancellables: Set<AnyCancellable> = []
 
-        init(weatherRepository: WeatherRepository) {
+        init(weatherRepository: WeatherRepository, preferenceManager: PreferenceManager) {
             self.weatherRepository = weatherRepository
+            self.preferenceManager = preferenceManager
             
             searchText
                 .debounce(for: .seconds(0.5), scheduler: RunLoop.main)
@@ -123,8 +125,7 @@ extension RootWeatherView {
             }
 
             do {
-                let currentWeather = try await weatherRepository.getCurrentWeather(query: "55410")
-                weatherData = [currentWeather]
+                weatherData = try await weatherRepository.getCurrentWeatherForSavedLocations()
                 print("Received weather data: \(weatherData)")
             } catch {
                 print("Error fetching current weather data: \(error)")
@@ -133,8 +134,9 @@ extension RootWeatherView {
 
         func addLocation(_ location: Location) async {
             do {
-                let currentWeather = try await weatherRepository.getCurrentWeather(query: location.name)
+                let currentWeather = try await weatherRepository.getCurrentWeather(location: location)
                 weatherData.append(currentWeather)
+                await preferenceManager.saveLocation(location)
                 print("Received weather data: \(weatherData)")
             } catch {
                 print("Error fetching current weather data: \(error)")
@@ -156,6 +158,6 @@ extension RootWeatherView {
 
 #Preview {
     NavigationStack {
-        RootWeatherView(viewModel: RootWeatherView.ViewModel(weatherRepository: FakeWeatherRepository()))
+        RootWeatherView(viewModel: RootWeatherView.ViewModel(weatherRepository: FakeWeatherRepository(), preferenceManager: DefaultPreferenceManager()))
     }
 }

@@ -6,38 +6,22 @@
 //
 
 import SwiftUI
-import SwiftData
 
 @main
 struct WeathertonApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
+    @StateObject var dependencyJar: DependencyJar = DependencyBuilder().build()
 
     var body: some Scene {
         WindowGroup {
             NavigationStack {
                 RootWeatherView(
                     viewModel: RootWeatherView.ViewModel(
-                        weatherRepository: DefaultWeatherRepository(
-                            weatherService: WeatherAPIClient(),
-                            persistenceController: DefaultPersistenceController(
-                                modelContainer: sharedModelContainer
-                            )
-                        )
+                        weatherRepository: dependencyJar.weatherRepository,
+                        preferenceManager: dependencyJar.preferenceManager
                     )
                 )
             }
         }
-        .modelContainer(sharedModelContainer)
+        .modelContainer(dependencyJar.modelContainer)
     }
 }

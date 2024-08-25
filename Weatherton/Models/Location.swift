@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Location: Hashable {
+struct Location: Hashable, Codable {
     /// The location name, typically a city.
     let name: String
     /// The greater region of the location.
@@ -18,4 +18,10 @@ struct Location: Hashable {
     let latitude: Double
     /// The location's longitude.
     let longitude: Double
+}
+
+extension Location: Equatable {
+    static func == (lhs: Location, rhs: Location) -> Bool {
+        lhs.latitude == rhs.latitude && lhs.longitude == rhs.longitude
+    }
 }

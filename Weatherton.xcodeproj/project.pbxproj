@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB2A6CFB2C7ACD2C003698B6 /* PreferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A6CFA2C7ACD2C003698B6 /* PreferenceManager.swift */; };
+		BB2A6CFD2C7B9ABC003698B6 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A6CFC2C7B9ABC003698B6 /* Dependencies.swift */; };
 		BBFA267C2C76626000211EC2 /* WeathertonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA267B2C76626000211EC2 /* WeathertonApp.swift */; };
 		BBFA267E2C76626000211EC2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA267D2C76626000211EC2 /* ContentView.swift */; };
 		BBFA26802C76626000211EC2 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA267F2C76626000211EC2 /* Item.swift */; };
@@ -46,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BB2A6CFA2C7ACD2C003698B6 /* PreferenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceManager.swift; sourceTree = "<group>"; };
+		BB2A6CFC2C7B9ABC003698B6 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		BBFA26782C76626000211EC2 /* Weatherton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weatherton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBFA267B2C76626000211EC2 /* WeathertonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathertonApp.swift; sourceTree = "<group>"; };
 		BBFA267D2C76626000211EC2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -95,6 +99,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB2A6CF92C7ACD19003698B6 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				BB2A6CFA2C7ACD2C003698B6 /* PreferenceManager.swift */,
+			);
+			path = Preferences;
+			sourceTree = "<group>";
+		};
 		BBFA266F2C76626000211EC2 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +131,8 @@
 			isa = PBXGroup;
 			children = (
 				BBFA267B2C76626000211EC2 /* WeathertonApp.swift */,
+				BB2A6CFC2C7B9ABC003698B6 /* Dependencies.swift */,
+				BB2A6CF92C7ACD19003698B6 /* Preferences */,
 				BBFA26BD2C77B89C00211EC2 /* Configuration */,
 				BBFA26B32C7666C800211EC2 /* Persistence */,
 				BBFA26B02C76655000211EC2 /* Repositories */,
@@ -377,12 +391,14 @@
 				BBFA26B72C7678E900211EC2 /* CurrentWeatherResponseModel.swift in Sources */,
 				BBFA26AA2C76648200211EC2 /* WeatherService.swift in Sources */,
 				BBFA267E2C76626000211EC2 /* ContentView.swift in Sources */,
+				BB2A6CFD2C7B9ABC003698B6 /* Dependencies.swift in Sources */,
 				BBFA26802C76626000211EC2 /* Item.swift in Sources */,
 				BBFA267C2C76626000211EC2 /* WeathertonApp.swift in Sources */,
 				BBFA26AF2C76653D00211EC2 /* CurrentWeather.swift in Sources */,
 				BBFA26B92C7679DC00211EC2 /* RootWeatherView.swift in Sources */,
 				BBFA26C42C77C52D00211EC2 /* WeatherCondition.swift in Sources */,
 				BBFA26AD2C7664CC00211EC2 /* WeatherAPIClient.swift in Sources */,
+				BB2A6CFB2C7ACD2C003698B6 /* PreferenceManager.swift in Sources */,
 				BBFA26B52C7666D700211EC2 /* PersistenceController.swift in Sources */,
 				BBFA26C22C77C51B00211EC2 /* Location.swift in Sources */,
 				BBFA26BF2C77BAF100211EC2 /* Secrets.swift in Sources */,

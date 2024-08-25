@@ -12,7 +12,7 @@ final class WeatherAPIClient: WeatherService {
 
     private var baseURL: URL {
         guard let url = URL(string: "https://api.weatherapi.com/v1") else {
-            preconditionFailure("WeatherAPIClient.Endpoint must have a valid baseURL.")
+            preconditionFailure("WeatherAPIClient must have a valid baseURL.")
         }
         return url
     }
@@ -24,6 +24,12 @@ final class WeatherAPIClient: WeatherService {
     private var airQualityIndexQueryItem: URLQueryItem {
         return URLQueryItem(name: "aqi", value: "yes")
     }
+    
+    private let decoder: JSONDecoder = {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        return decoder
+    }()
 
     init(session: URLSession = .shared) {
         self.session = session
@@ -39,8 +45,6 @@ final class WeatherAPIClient: WeatherService {
         url = url.appending(queryItems: queryItems)
         let request = URLRequest(url: url)
         let (data, _) = try await session.data(for: request)
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
         let responseModel = try decoder.decode(CurrentWeatherResponseModel.self, from: data)
         return responseModel.convertToCurrentWeather()
     }
@@ -54,8 +58,6 @@ final class WeatherAPIClient: WeatherService {
         url = url.appending(queryItems: queryItems)
         let request = URLRequest(url: url)
         let (data, _) = try await session.data(for: request)
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
         let responseModel = try decoder.decode([LocationSearchResponseModel].self, from: data)
         return responseModel.map { $0.convertToLocation() }
     }
