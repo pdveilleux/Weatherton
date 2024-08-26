@@ -29,10 +29,12 @@ final class DefaultWeatherRepository: WeatherRepository {
     }
     
     func getCurrentWeather(location: Location) async throws -> CurrentWeather {
-        guard let currentWeather = try? await persistenceController.getCurrentWeather() else {
-            return try await weatherService.getCurrentWeather(query: location.name)
+        let weather = try await weatherService.getCurrentWeather(query: location.name)
+        // We do not need to wait for the weather data to get cached before we return it.
+        Task {
+            await persistenceController.storeCurrentWeather(weather)
         }
-        return currentWeather
+        return weather
     }
 
     func getCurrentWeatherForSavedLocations() async throws -> [CurrentWeather] {
@@ -48,6 +50,7 @@ final class DefaultWeatherRepository: WeatherRepository {
             for try await result in taskGroup {
                 weather.append(result)
             }
+
             weather.sort { (a, b) -> Bool in
                 guard let first = locations.firstIndex(of: a.location) else { return false }
                 guard let second = locations.firstIndex(of: b.location) else { return true }

@@ -11,6 +11,8 @@
 		BB2A6CFD2C7B9ABC003698B6 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A6CFC2C7B9ABC003698B6 /* Dependencies.swift */; };
 		BB2A6CFF2C7B9BD2003698B6 /* RootWeatherView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A6CFE2C7B9BD2003698B6 /* RootWeatherView+ViewModel.swift */; };
 		BB2A6D012C7B9D0D003698B6 /* FakeWeatherRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A6D002C7B9D0D003698B6 /* FakeWeatherRepository.swift */; };
+		BB2A6D032C7BC871003698B6 /* CurrentWeatherPersistenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A6D022C7BC871003698B6 /* CurrentWeatherPersistenceModel.swift */; };
+		BB2A6D052C7BC89C003698B6 /* LocationPersistenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A6D042C7BC89C003698B6 /* LocationPersistenceModel.swift */; };
 		BBFA267C2C76626000211EC2 /* WeathertonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA267B2C76626000211EC2 /* WeathertonApp.swift */; };
 		BBFA267E2C76626000211EC2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA267D2C76626000211EC2 /* ContentView.swift */; };
 		BBFA26802C76626000211EC2 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA267F2C76626000211EC2 /* Item.swift */; };
@@ -54,6 +56,8 @@
 		BB2A6CFC2C7B9ABC003698B6 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		BB2A6CFE2C7B9BD2003698B6 /* RootWeatherView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootWeatherView+ViewModel.swift"; sourceTree = "<group>"; };
 		BB2A6D002C7B9D0D003698B6 /* FakeWeatherRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeWeatherRepository.swift; sourceTree = "<group>"; };
+		BB2A6D022C7BC871003698B6 /* CurrentWeatherPersistenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherPersistenceModel.swift; sourceTree = "<group>"; };
+		BB2A6D042C7BC89C003698B6 /* LocationPersistenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPersistenceModel.swift; sourceTree = "<group>"; };
 		BBFA26782C76626000211EC2 /* Weatherton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weatherton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBFA267B2C76626000211EC2 /* WeathertonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathertonApp.swift; sourceTree = "<group>"; };
 		BBFA267D2C76626000211EC2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -109,6 +113,15 @@
 				BB2A6CFA2C7ACD2C003698B6 /* PreferenceManager.swift */,
 			);
 			path = Preferences;
+			sourceTree = "<group>";
+		};
+		BB2A6D062C7BC9DA003698B6 /* PersistenceModels */ = {
+			isa = PBXGroup;
+			children = (
+				BB2A6D022C7BC871003698B6 /* CurrentWeatherPersistenceModel.swift */,
+				BB2A6D042C7BC89C003698B6 /* LocationPersistenceModel.swift */,
+			);
+			path = PersistenceModels;
 			sourceTree = "<group>";
 		};
 		BBFA266F2C76626000211EC2 = {
@@ -218,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				BBFA26B42C7666D700211EC2 /* PersistenceController.swift */,
+				BB2A6D062C7BC9DA003698B6 /* PersistenceModels */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -405,8 +419,10 @@
 				BBFA26B92C7679DC00211EC2 /* RootWeatherView.swift in Sources */,
 				BBFA26C42C77C52D00211EC2 /* WeatherCondition.swift in Sources */,
 				BBFA26AD2C7664CC00211EC2 /* WeatherAPIClient.swift in Sources */,
+				BB2A6D052C7BC89C003698B6 /* LocationPersistenceModel.swift in Sources */,
 				BB2A6CFB2C7ACD2C003698B6 /* PreferenceManager.swift in Sources */,
 				BB2A6D012C7B9D0D003698B6 /* FakeWeatherRepository.swift in Sources */,
+				BB2A6D032C7BC871003698B6 /* CurrentWeatherPersistenceModel.swift in Sources */,
 				BBFA26B52C7666D700211EC2 /* PersistenceController.swift in Sources */,
 				BBFA26C22C77C51B00211EC2 /* Location.swift in Sources */,
 				BBFA26BF2C77BAF100211EC2 /* Secrets.swift in Sources */,

@@ -136,6 +136,7 @@ extension CurrentWeatherResponseModel {
             dewPoint: Measurement(value: current.dewpointC, unit: .celsius),
             humidity: current.humidity,
             temperature: Measurement(value: current.tempC, unit: .celsius),
+            updatedDate: Date(timeIntervalSince1970: Double(current.lastUpdatedEpoch)),
             condition: WeatherCondition(
                 description: current.condition.text,
                 systemImage: getSystemImageNameForConditionCode(current.condition.code, isDay: current.isDay == 1)

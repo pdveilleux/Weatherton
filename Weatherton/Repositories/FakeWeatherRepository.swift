@@ -16,6 +16,7 @@ final class FakeWeatherRepository: WeatherRepository {
             dewPoint: Measurement(value: 10.7, unit: .celsius),
             humidity: 36,
             temperature: Measurement(value: 28.5, unit: .celsius),
+            updatedDate: .now - (60 * 10),
             condition: WeatherCondition(
                 description: "Partly Cloudy",
                 systemImage: "cloud.sun"

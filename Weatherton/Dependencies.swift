@@ -35,7 +35,7 @@ class DependencyBuilder {
     func build() -> DependencyJar {
         let modelContainer = {
             let schema = Schema([
-                Item.self,
+                CurrentWeatherPersistenceModel.self,
             ])
             let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 

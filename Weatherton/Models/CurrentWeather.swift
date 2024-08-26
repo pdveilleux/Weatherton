@@ -12,6 +12,7 @@ struct CurrentWeather: Hashable {
     let dewPoint: Measurement<UnitTemperature>
     let humidity: Int
     let temperature: Measurement<UnitTemperature>
+    let updatedDate: Date
     let condition: WeatherCondition
     let location: Location
 }
