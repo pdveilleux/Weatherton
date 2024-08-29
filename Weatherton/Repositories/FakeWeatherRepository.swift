@@ -18,6 +18,10 @@ final class FakeWeatherRepository: WeatherRepository {
         [PreviewData.CurrentWeather.london, PreviewData.CurrentWeather.minneapolis]
     }
 
+    func getForecast(location: Location) async throws -> Forecast {
+        PreviewData.Forecast.minneapolis
+    }
+
     func searchLocations(query: String) async throws -> [Location] {
         []
     }

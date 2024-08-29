@@ -61,6 +61,22 @@ final class WeatherAPIClient: WeatherService {
         let responseModel = try decoder.decode([LocationSearchResponseModel].self, from: data)
         return responseModel.map { $0.convertToLocation() }
     }
+
+    func getForecast(query: String) async throws -> Forecast {
+        var url = baseURL.appending(path: Endpoint.forecast.path)
+        let daysQueryItem = URLQueryItem(name: "days", value: "7")
+        let queryItems: [URLQueryItem] = [
+            authenticationQueryItem,
+            URLQueryItem(name: "q", value: query),
+            daysQueryItem,
+            airQualityIndexQueryItem
+        ]
+        url = url.appending(queryItems: queryItems)
+        let request = URLRequest(url: url)
+        let (data, _) = try await session.data(for: request)
+        let responseModel = try decoder.decode(ForecastResponseModel.self, from: data)
+        return responseModel.convertToForecast()
+    }
 }
 
 extension WeatherAPIClient {

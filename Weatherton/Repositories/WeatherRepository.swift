@@ -10,6 +10,7 @@ import Foundation
 protocol WeatherRepository {
     func getCurrentWeather(location: Location) async throws -> CurrentWeather
     func getCurrentWeatherForSavedLocations() async throws -> [CurrentWeather]
+    func getForecast(location: Location) async throws -> Forecast
     func searchLocations(query: String) async throws -> [Location]
 }
 
@@ -58,6 +59,10 @@ final class DefaultWeatherRepository: WeatherRepository {
             }
             return weather
         }
+    }
+
+    func getForecast(location: Location) async throws -> Forecast {
+        try await weatherService.getForecast(query: location.name)
     }
 
     func searchLocations(query: String) async throws -> [Location] {

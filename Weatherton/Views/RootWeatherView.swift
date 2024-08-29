@@ -104,7 +104,7 @@ struct RootWeatherView: View {
             viewModel: RootWeatherView.ViewModel(
                 weatherRepository: FakeWeatherRepository(),
                 preferenceManager: DefaultPreferenceManager(),
-                temperatureFormatter: PreviewData.Formatters.temperature
+                temperatureFormatter: PreviewData.Formatter.temperature
             )
         )
     }

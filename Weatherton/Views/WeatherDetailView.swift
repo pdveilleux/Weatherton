@@ -19,27 +19,7 @@ struct WeatherDetailView: View {
             
             ScrollView {
                 LazyVStack {
-                    VStack {
-                        HStack(alignment: .center, spacing: 20) {
-                            if let image = viewModel.currentWeather.condition.systemImage {
-                                Image(systemName: image)
-                                    .font(.system(size: 48))
-                                    .symbolRenderingMode(.multicolor)
-                            }
-                            
-                            VStack(spacing: -4) {
-                                Text(viewModel.currentWeather.apparentTemperature)
-                                    .font(.system(size: 64))
-                                    .fontWeight(.medium)
-                            }
-                        }
-                        Text(viewModel.currentWeather.condition.description)
-                            .textCase(.uppercase)
-                            .font(.caption)
-                            .fontWeight(.medium)
-                            .padding(.bottom, 16)
-                    }
-                    .padding()
+                    currentConditionHeader
                 }
             }
         }
@@ -53,6 +33,34 @@ struct WeatherDetailView: View {
             }
             .tint(.primary)
         }
+        .task {
+            await viewModel.getForecast()
+        }
+    }
+
+    @ViewBuilder @MainActor
+    private var currentConditionHeader: some View {
+        VStack {
+            HStack(alignment: .center, spacing: 20) {
+                if let image = viewModel.currentWeather.condition.systemImage {
+                    Image(systemName: image)
+                        .font(.system(size: 48))
+                        .symbolRenderingMode(.multicolor)
+                }
+                
+                VStack(spacing: -4) {
+                    Text(viewModel.currentWeather.apparentTemperature)
+                        .font(.system(size: 64))
+                        .fontWeight(.medium)
+                }
+            }
+            Text(viewModel.currentWeather.condition.description)
+                .textCase(.uppercase)
+                .font(.caption)
+                .fontWeight(.medium)
+                .padding(.bottom, 16)
+        }
+        .padding()
     }
 }
 
@@ -61,32 +69,10 @@ struct WeatherDetailView: View {
         WeatherDetailView(
             viewModel: WeatherDetailView.ViewModel(
                 currentWeather: PreviewData.CurrentWeather.minneapolis,
+                forecast: PreviewData.Forecast.minneapolis,
                 weatherRepository: FakeWeatherRepository(),
-                temperatureFormatter: PreviewData.Formatters.temperature
+                temperatureFormatter: PreviewData.Formatter.temperature
             )
         )
-    }
-}
-
-extension WeatherDetailView {
-    @Observable @MainActor
-    final class ViewModel {
-        private(set) var currentWeather: FormattedCurrentWeather
-        var location: Location {
-            currentWeather.location
-        }
-
-        private let weatherRepository: WeatherRepository
-        private let temperatureFormatter: MeasurementFormatter
-
-        init(
-            currentWeather: CurrentWeather,
-            weatherRepository: WeatherRepository,
-            temperatureFormatter: MeasurementFormatter
-        ) {
-            self.currentWeather = FormattedCurrentWeather(currentWeather: currentWeather, formatter: temperatureFormatter)
-            self.weatherRepository = weatherRepository
-            self.temperatureFormatter = temperatureFormatter
-        }
     }
 }
