@@ -1,37 +1,12 @@
 //
-//  Dependencies.swift
+//  DependencyBuilder.swift
 //  Weatherton
 //
-//  Created by Patrick Veilleux on 8/25/24.
+//  Created by Patrick Veilleux on 8/28/24.
 //
 
 import Foundation
 import SwiftData
-
-class DependencyJar: ObservableObject {
-    let weatherRepository: WeatherRepository
-    let weatherService: WeatherService
-    let persistenceController: PersistenceController
-    let preferenceManager: PreferenceManager
-    let modelContainer: ModelContainer
-    let temperatureFormatter: MeasurementFormatter
-    
-    init(
-        weatherRepository: WeatherRepository,
-        weatherService: WeatherService,
-        persistenceController: PersistenceController,
-        preferenceManager: PreferenceManager,
-        modelContainer: ModelContainer,
-        temperatureFormatter: MeasurementFormatter
-    ) {
-        self.weatherRepository = weatherRepository
-        self.weatherService = weatherService
-        self.persistenceController = persistenceController
-        self.preferenceManager = preferenceManager
-        self.modelContainer = modelContainer
-        self.temperatureFormatter = temperatureFormatter
-    }
-}
 
 @MainActor
 class DependencyBuilder {
@@ -59,13 +34,20 @@ class DependencyBuilder {
         )
 
         let temperatureFormatter: MeasurementFormatter = {
-            var formatter = MeasurementFormatter()
+            let formatter = MeasurementFormatter()
             formatter.numberFormatter.maximumFractionDigits = 0
             formatter.unitStyle = .short
             return formatter
         }()
+
+        let viewModelFactory = ViewModelFactory(
+            weatherRepository: weatherRepository,
+            preferenceManager: preferenceManager,
+            temperatureFormatter: temperatureFormatter
+        )
         
         return DependencyJar(
+            viewModelFactory: viewModelFactory,
             weatherRepository: weatherRepository,
             weatherService: weatherService,
             persistenceController: persistenceController,

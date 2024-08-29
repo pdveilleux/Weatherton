@@ -59,11 +59,7 @@ struct RootWeatherView: View {
         .fullScreenCover(item: $viewModel.weatherDetailItem) { weather in
             NavigationStack {
                 WeatherDetailView(
-                    viewModel: WeatherDetailView.ViewModel(
-                        currentWeather: weather,
-                        weatherRepository: dependencyJar.weatherRepository,
-                        temperatureFormatter: dependencyJar.temperatureFormatter
-                    )
+                    viewModel: dependencyJar.viewModelFactory.buildWeatherDetailViewModel(currentWeather: weather)
                 )
             }
         }

@@ -14,14 +14,8 @@ struct WeathertonApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                RootWeatherView(
-                    viewModel: RootWeatherView.ViewModel(
-                        weatherRepository: dependencyJar.weatherRepository,
-                        preferenceManager: dependencyJar.preferenceManager,
-                        temperatureFormatter: dependencyJar.temperatureFormatter
-                    )
-                )
-                .environmentObject(dependencyJar)
+                RootWeatherView(viewModel: dependencyJar.viewModelFactory.buildRootWeatherViewModel())
+                    .environmentObject(dependencyJar)
             }
         }
         .modelContainer(dependencyJar.modelContainer)
