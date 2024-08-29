@@ -44,8 +44,7 @@ final class WeatherAPIClient: WeatherService {
         ]
         url = url.appending(queryItems: queryItems)
         let request = URLRequest(url: url)
-        let (data, _) = try await session.data(for: request)
-        let responseModel = try decoder.decode(CurrentWeatherResponseModel.self, from: data)
+        let responseModel = try await sendRequest(request, expecting: CurrentWeatherResponseModel.self)
         return responseModel.convertToCurrentWeather()
     }
 
@@ -57,8 +56,7 @@ final class WeatherAPIClient: WeatherService {
         ]
         url = url.appending(queryItems: queryItems)
         let request = URLRequest(url: url)
-        let (data, _) = try await session.data(for: request)
-        let responseModel = try decoder.decode([LocationSearchResponseModel].self, from: data)
+        let responseModel = try await sendRequest(request, expecting: [LocationSearchResponseModel].self)
         return responseModel.map { $0.convertToLocation() }
     }
 
@@ -73,9 +71,13 @@ final class WeatherAPIClient: WeatherService {
         ]
         url = url.appending(queryItems: queryItems)
         let request = URLRequest(url: url)
-        let (data, _) = try await session.data(for: request)
-        let responseModel = try decoder.decode(ForecastResponseModel.self, from: data)
+        let responseModel = try await sendRequest(request, expecting: ForecastResponseModel.self)
         return responseModel.convertToForecast()
+    }
+
+    private func sendRequest<Response>(_ request: URLRequest, expecting type: Response.Type) async throws -> Response where Response: Decodable {
+        let (data, _) = try await session.data(for: request)
+        return try decoder.decode(type, from: data)
     }
 }
 
