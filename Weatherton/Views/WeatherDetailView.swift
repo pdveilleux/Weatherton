@@ -14,7 +14,7 @@ struct WeatherDetailView: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .foregroundStyle(Gradient(colors: [.red, .orange]))
+                .foregroundStyle(viewModel.currentWeather.temperatureGradient)
                 .ignoresSafeArea()
             
             ScrollView {

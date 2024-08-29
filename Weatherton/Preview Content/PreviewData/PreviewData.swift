@@ -31,7 +31,7 @@ extension PreviewData {
         static var minneapolis: Weatherton.CurrentWeather {
             Weatherton.CurrentWeather(
                 id: UUID(),
-                apparentTemperature: Measurement(value: 32.4, unit: .celsius),
+                apparentTemperature: Measurement(value: 0, unit: .celsius),
                 dewPoint: Measurement(value: 19.2, unit: .celsius),
                 humidity: 70,
                 temperature: Measurement(value: 31.0, unit: .celsius),

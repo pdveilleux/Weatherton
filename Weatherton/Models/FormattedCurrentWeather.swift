@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct FormattedCurrentWeather: Hashable {
     var apparentTemperature: String {
@@ -33,5 +34,25 @@ struct FormattedCurrentWeather: Hashable {
     init(currentWeather: CurrentWeather, formatter: MeasurementFormatter) {
         self.backingData = currentWeather
         self.formatter = formatter
+    }
+}
+
+extension FormattedCurrentWeather {
+    var temperatureGradient: Gradient {
+        let temp = backingData.apparentTemperature.converted(to: .celsius).value
+        return switch temp {
+        case 30...:
+            Gradient(colors: [.red, .orange])
+        case 20...:
+            Gradient(colors: [.orange, .green])
+        case 10...:
+            Gradient(colors: [.green, .blue])
+        case 0...:
+            Gradient(colors: [.blue, .indigo])
+        case ...0:
+            Gradient(colors: [.blue, .init(white: 0.7)])
+        default:
+            Gradient(colors: [.blue, .teal])
+        }
     }
 }

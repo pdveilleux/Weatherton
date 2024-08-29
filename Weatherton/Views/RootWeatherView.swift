@@ -85,7 +85,7 @@ struct RootWeatherView: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(12)
-        .background(.thinMaterial)
+        .background(LinearGradient(gradient: weather.temperatureGradient, startPoint: .leading, endPoint: .trailing))
         .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
     }
 
