@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct CurrentWeather: Hashable {
+struct CurrentWeather: Hashable, Identifiable {
+    let id: UUID
     let apparentTemperature: Measurement<UnitTemperature>
     let dewPoint: Measurement<UnitTemperature>
     let humidity: Int

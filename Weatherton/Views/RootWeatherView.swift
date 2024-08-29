@@ -9,12 +9,7 @@ import SwiftUI
 
 struct RootWeatherView: View {
     @State var viewModel: ViewModel
-    let temperatureFormatter: MeasurementFormatter = {
-        var formatter = MeasurementFormatter()
-        formatter.numberFormatter.maximumFractionDigits = 0
-        formatter.unitStyle = .short
-        return formatter
-    }()
+    @EnvironmentObject var dependencyJar: DependencyJar
 
     var body: some View {
         ZStack {
@@ -30,12 +25,17 @@ struct RootWeatherView: View {
                     }
                 }
             } else {
-                List(viewModel.weatherData, id: \.self) { weather in
-                    NavigationLink {
-                        Text(weather.location.name)
-                    } label: {
-                        weatherRow(weather)
+                List {
+                    ForEach(viewModel.weatherData, id: \.self) { weather in
+                        Button {
+                            viewModel.weatherDetailItem = weather.backingData
+                        } label: {
+                            weatherRow(weather)
+                        }
+                        .tint(.primary)
+                        .listRowSeparator(.hidden)
                     }
+                    .onDelete(perform: delete)
                 }
                 .listStyle(.plain)
             }
@@ -56,19 +56,30 @@ struct RootWeatherView: View {
                 await viewModel.getWeatherData()
             }
         }
+        .fullScreenCover(item: $viewModel.weatherDetailItem) { weather in
+            NavigationStack {
+                WeatherDetailView(
+                    viewModel: WeatherDetailView.ViewModel(
+                        currentWeather: weather,
+                        weatherRepository: dependencyJar.weatherRepository,
+                        temperatureFormatter: dependencyJar.temperatureFormatter
+                    )
+                )
+            }
+        }
         .task {
             await viewModel.getWeatherData()
         }
     }
 
     @ViewBuilder
-    private func weatherRow(_ weather: CurrentWeather) -> some View {
+    private func weatherRow(_ weather: FormattedCurrentWeather) -> some View {
         VStack(alignment: .leading) {
             if let icon = weather.condition.systemImage {
                 Image(systemName: icon)
                     .font(.title)
             }
-            Text(temperatureFormatter.string(from: weather.apparentTemperature))
+            Text(weather.apparentTemperature)
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .fontDesign(.rounded)
@@ -81,10 +92,20 @@ struct RootWeatherView: View {
         .background(.thinMaterial)
         .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
     }
+
+    @MainActor func delete(at offsets: IndexSet) {
+        viewModel.removeLocations(at: offsets)
+    }
 }
 
 #Preview {
     NavigationStack {
-        RootWeatherView(viewModel: RootWeatherView.ViewModel(weatherRepository: FakeWeatherRepository(), preferenceManager: DefaultPreferenceManager()))
+        RootWeatherView(
+            viewModel: RootWeatherView.ViewModel(
+                weatherRepository: FakeWeatherRepository(),
+                preferenceManager: DefaultPreferenceManager(),
+                temperatureFormatter: PreviewData.Formatters.temperature
+            )
+        )
     }
 }

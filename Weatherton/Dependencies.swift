@@ -14,19 +14,22 @@ class DependencyJar: ObservableObject {
     let persistenceController: PersistenceController
     let preferenceManager: PreferenceManager
     let modelContainer: ModelContainer
+    let temperatureFormatter: MeasurementFormatter
     
     init(
         weatherRepository: WeatherRepository,
         weatherService: WeatherService,
         persistenceController: PersistenceController,
         preferenceManager: PreferenceManager,
-        modelContainer: ModelContainer
+        modelContainer: ModelContainer,
+        temperatureFormatter: MeasurementFormatter
     ) {
         self.weatherRepository = weatherRepository
         self.weatherService = weatherService
         self.persistenceController = persistenceController
         self.preferenceManager = preferenceManager
         self.modelContainer = modelContainer
+        self.temperatureFormatter = temperatureFormatter
     }
 }
 
@@ -54,13 +57,21 @@ class DependencyBuilder {
             persistenceController: persistenceController,
             preferenceManager: preferenceManager
         )
+
+        let temperatureFormatter: MeasurementFormatter = {
+            var formatter = MeasurementFormatter()
+            formatter.numberFormatter.maximumFractionDigits = 0
+            formatter.unitStyle = .short
+            return formatter
+        }()
         
         return DependencyJar(
             weatherRepository: weatherRepository,
             weatherService: weatherService,
             persistenceController: persistenceController,
             preferenceManager: preferenceManager,
-            modelContainer: modelContainer
+            modelContainer: modelContainer,
+            temperatureFormatter: temperatureFormatter
         )
     }
 }

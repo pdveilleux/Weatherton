@@ -10,6 +10,7 @@ import Foundation
 protocol PreferenceManager {
     func saveLocation(_ location: Location) async
     func getSavedLocations() async -> [Location]
+    func removeSavedLocations(_ locations: [Location]) async
 }
 
 @MainActor
@@ -29,10 +30,7 @@ final class DefaultPreferenceManager: PreferenceManager {
     }
 
     func saveLocation(_ location: Location) {
-        guard var locations = getType([Location].self, forKey: .savedLocations) else {
-            setValue([location], forKey: .savedLocations)
-            return
-        }
+        var locations = getSavedLocations()
         locations.append(location)
         setValue(locations, forKey: .savedLocations)
     }
@@ -42,6 +40,14 @@ final class DefaultPreferenceManager: PreferenceManager {
             return []
         }
         return locations
+    }
+
+    func removeSavedLocations(_ locations: [Location]) async {
+        var savedLocations = getSavedLocations()
+        locations.forEach { location in
+            savedLocations.removeAll(where: { $0 == location })
+        }
+        setValue(savedLocations, forKey: .savedLocations)
     }
 }
 

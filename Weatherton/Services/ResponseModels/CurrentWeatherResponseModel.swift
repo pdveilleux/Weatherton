@@ -132,6 +132,7 @@ extension CurrentWeatherResponseModel.Current {
 extension CurrentWeatherResponseModel {
     func convertToCurrentWeather() -> CurrentWeather {
         CurrentWeather(
+            id: UUID(),
             apparentTemperature: Measurement(value: current.feelslikeC, unit: .celsius),
             dewPoint: Measurement(value: current.dewpointC, unit: .celsius),
             humidity: current.humidity,

@@ -10,6 +10,7 @@ import SwiftData
 
 @Model
 final class CurrentWeatherPersistenceModel {
+    let id: UUID
     let apparentTemperatureC: Double
     let dewPointC: Double
     let humidity: Int
@@ -20,6 +21,7 @@ final class CurrentWeatherPersistenceModel {
     @Relationship(inverse: \LocationPersistenceModel.weather) var location: LocationPersistenceModel?
     
     init(currentWeather: CurrentWeather) {
+        id = currentWeather.id
         apparentTemperatureC = currentWeather.apparentTemperature.converted(to: .celsius).value
         dewPointC = currentWeather.dewPoint.converted(to: .celsius).value
         humidity = currentWeather.humidity
@@ -33,6 +35,7 @@ final class CurrentWeatherPersistenceModel {
 extension CurrentWeatherPersistenceModel {
     func convertToCurrentWeather() -> CurrentWeather {
         CurrentWeather(
+            id: id,
             apparentTemperature: Measurement(value: apparentTemperatureC, unit: .celsius),
             dewPoint: Measurement(value: dewPointC, unit: .celsius),
             humidity: humidity,

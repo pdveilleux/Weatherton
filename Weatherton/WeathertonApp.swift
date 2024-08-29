@@ -17,9 +17,11 @@ struct WeathertonApp: App {
                 RootWeatherView(
                     viewModel: RootWeatherView.ViewModel(
                         weatherRepository: dependencyJar.weatherRepository,
-                        preferenceManager: dependencyJar.preferenceManager
+                        preferenceManager: dependencyJar.preferenceManager,
+                        temperatureFormatter: dependencyJar.temperatureFormatter
                     )
                 )
+                .environmentObject(dependencyJar)
             }
         }
         .modelContainer(dependencyJar.modelContainer)
