@@ -27,10 +27,10 @@ final class WeatherAPIClient: WeatherService {
         self.session = session
     }
 
-    func getCurrentWeather(query: String) async throws -> CurrentWeather {
+    func getCurrentWeather(location: Location) async throws -> CurrentWeather {
         let queryItems: [QueryParameter] = [
             .authentication,
-            .location(query),
+            .location(location),
             .airQualityIndex(true)
         ]
         let url = createURL(endpoint: .currentWeather, queryParameters: queryItems)
@@ -38,26 +38,26 @@ final class WeatherAPIClient: WeatherService {
         return responseModel.convertToCurrentWeather()
     }
 
-    func searchLocations(query: String) async throws -> [Location] {
+    func getForecast(location: Location) async throws -> Forecast {
         let queryItems: [QueryParameter] = [
             .authentication,
-            .location(query)
-        ]
-        let url = createURL(endpoint: .search, queryParameters: queryItems)
-        let responseModel = try await sendRequest(url: url, expecting: [LocationSearchResponseModel].self)
-        return responseModel.map { $0.convertToLocation() }
-    }
-
-    func getForecast(query: String) async throws -> Forecast {
-        let queryItems: [QueryParameter] = [
-            .authentication,
-            .location(query),
+            .location(location),
             .forecastLength(7),
             .airQualityIndex(true)
         ]
         let url = createURL(endpoint: .forecast, queryParameters: queryItems)
         let responseModel = try await sendRequest(url: url, expecting: ForecastResponseModel.self)
         return responseModel.convertToForecast()
+    }
+
+    func searchLocations(query: String) async throws -> [Location] {
+        let queryItems: [QueryParameter] = [
+            .authentication,
+            .search(query)
+        ]
+        let url = createURL(endpoint: .search, queryParameters: queryItems)
+        let responseModel = try await sendRequest(url: url, expecting: [LocationSearchResponseModel].self)
+        return responseModel.map { $0.convertToLocation() }
     }
 }
 
@@ -77,10 +77,11 @@ extension WeatherAPIClient {
     }
 
     enum QueryParameter {
-        case authentication
         case airQualityIndex(Bool)
-        case location(String)
+        case authentication
         case forecastLength(Int)
+        case location(Location)
+        case search(String)
 
         var queryItem: URLQueryItem {
             return switch self {
@@ -89,9 +90,11 @@ extension WeatherAPIClient {
             case .airQualityIndex(let include):
                 URLQueryItem(name: "aqi", value: include ? "yes" : "no")
             case .location(let location):
-                URLQueryItem(name: "q", value: location)
+                URLQueryItem(name: "q", value: "\(location.latitude),\(location.longitude)")
             case .forecastLength(let length):
                 URLQueryItem(name: "days", value: String(length))
+            case .search(let query):
+                URLQueryItem(name: "q", value: query)
             }
         }
     }
@@ -99,7 +102,7 @@ extension WeatherAPIClient {
 
 extension WeatherAPIClient {
     private func createURL(endpoint: Endpoint, queryParameters: [QueryParameter]) -> URL {
-        var url = baseURL.appending(path: endpoint.path)
+        let url = baseURL.appending(path: endpoint.path)
         return url.appending(queryItems: queryParameters.map(\.queryItem))
     }
 

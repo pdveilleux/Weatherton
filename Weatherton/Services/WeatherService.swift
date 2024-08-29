@@ -8,9 +8,9 @@
 import Foundation
 
 protocol WeatherService {
-    func getCurrentWeather(query: String) async throws -> CurrentWeather
+    func getCurrentWeather(location: Location) async throws -> CurrentWeather
+    func getForecast(location: Location) async throws -> Forecast
     func searchLocations(query: String) async throws -> [Location]
-    func getForecast(query: String) async throws -> Forecast
 }
 
 struct WeatherServiceError: Error {

@@ -190,15 +190,14 @@
 			isa = PBXGroup;
 			children = (
 				BBFA267B2C76626000211EC2 /* WeathertonApp.swift */,
-				BB2A6D1C2C802BF9003698B6 /* Dependencies */,
-				BB2A6D1B2C801715003698B6 /* PreviewData */,
-				BB2A6CF92C7ACD19003698B6 /* Preferences */,
 				BBFA26BD2C77B89C00211EC2 /* Configuration */,
+				BB2A6D1C2C802BF9003698B6 /* Dependencies */,
+				BBFA26A82C76630400211EC2 /* Models */,
 				BBFA26B32C7666C800211EC2 /* Persistence */,
+				BB2A6CF92C7ACD19003698B6 /* Preferences */,
 				BBFA26B02C76655000211EC2 /* Repositories */,
 				BBFA26AB2C76648B00211EC2 /* Services */,
 				BBFA26A72C7662FA00211EC2 /* Views */,
-				BBFA26A82C76630400211EC2 /* Models */,
 				BBFA26812C76626200211EC2 /* Assets.xcassets */,
 				BBFA26832C76626200211EC2 /* Preview Content */,
 			);
@@ -208,6 +207,7 @@
 		BBFA26832C76626200211EC2 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				BB2A6D1B2C801715003698B6 /* PreviewData */,
 				BBFA26842C76626200211EC2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";

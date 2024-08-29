@@ -30,7 +30,7 @@ final class DefaultWeatherRepository: WeatherRepository {
     }
     
     func getCurrentWeather(location: Location) async throws -> CurrentWeather {
-        let weather = try await weatherService.getCurrentWeather(query: location.name)
+        let weather = try await weatherService.getCurrentWeather(location: location)
         // We do not need to wait for the weather data to get cached before we return it.
         Task {
             await persistenceController.storeCurrentWeather(weather)
@@ -62,7 +62,7 @@ final class DefaultWeatherRepository: WeatherRepository {
     }
 
     func getForecast(location: Location) async throws -> Forecast {
-        try await weatherService.getForecast(query: location.name)
+        try await weatherService.getForecast(location: location)
     }
 
     func searchLocations(query: String) async throws -> [Location] {
