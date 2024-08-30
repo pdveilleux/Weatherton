@@ -9,7 +9,6 @@ import SwiftUI
 
 struct HourlyForecastCard: View {
     let forecast: FormattedForecast
-    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -40,7 +39,6 @@ struct HourlyForecastCard: View {
             }
             .scrollIndicators(.hidden)
         }
-        
         .background(.ultraThinMaterial)
         .frame(maxWidth: .infinity)
         .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))

@@ -11,26 +11,33 @@ struct FormattedForecast: Hashable {
     var location: Location {
         backingData.location
     }
+    /// Daily forecast data.
     let days: [FormattedForecastDay]
 
+    /// The lowest minimum daily temperature in the forecast.
     var minimimMinTemp: Double? {
         backingData.days.map(\.minTemperature).min()?.value
     }
+    /// The highest maximum daily temperature in the forecast.
     var maximumMaxTemp: Double? {
         backingData.days.map(\.maxTemperature).max()?.value
     }
-    var range: Double? {
+    /// The difference between the highest temp and lowest temp in the forecast.
+    var temperatureRange: Double? {
         guard let minimimMinTemp, let maximumMaxTemp else {
             return nil
         }
         return maximumMaxTemp - minimimMinTemp
     }
+    /// The next 24 hours of hourly forecast data.
     var hourlyForecast: [FormattedForecastDay.Hour] {
         let now = Date.now
+        // Prefix 2 days because we know the next 24 hours will be contained within those days.
         let firstTwoDays: [ForecastDay] = Array(backingData.days.prefix(2))
         return firstTwoDays
             .flatMap(\.hours)
             .filter { hour in
+                // The time must be between now and 24 hours from now.
                 hour.time > now && hour.time < now + 60 * 60 * 24
             }
             .map { FormattedForecastDay.Hour(hour: $0, formatter: formatter) }

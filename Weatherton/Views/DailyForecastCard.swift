@@ -50,14 +50,17 @@ struct DailyForecastCard: View {
                 .fontWeight(.semibold)
                 .frame(minWidth: 32, alignment: .leading)
             GeometryReader { geometry in
-                if let offset = getOffset(forecast: forecast, day: day, geometry: geometry),
-                    let width = getWidth(forecast: forecast, day: day, geometry: geometry) {
+                if let offset = getOffset(forecast: forecast, day: day, width: geometry.size.width),
+                   let width = getWidth(forecast: forecast, day: day, width: geometry.size.width) {
                     ZStack {
                         Capsule()
                             .frame(maxWidth: .infinity, maxHeight: 6)
                             .foregroundStyle(Color.gray.opacity(0.2))
                         Capsule()
-                            .foregroundStyle(LinearGradient(colors: [.blue, .green, .yellow, .orange, .red], startPoint: .leading, endPoint: .trailing))
+                            .foregroundStyle(LinearGradient(
+                                colors: [.blue, .green, .yellow, .orange, .red],
+                                startPoint: .leading, endPoint: .trailing
+                            ))
                             .mask {
                                 Capsule()
                                     .frame(width: width, height: 6)
@@ -76,23 +79,30 @@ struct DailyForecastCard: View {
         .frame(maxWidth: .infinity)
     }
 
-    private func getOffset(forecast: FormattedForecast, day: FormattedForecastDay, geometry: GeometryProxy) -> CGFloat? {
-        guard let forecastRange = forecast.range, let minimimMinTemp = forecast.minimimMinTemp else {
+    /// Determines the horizontal offset for the masking layer of the temperature bar.
+    private func getOffset(forecast: FormattedForecast, day: FormattedForecastDay, width: Double) -> CGFloat? {
+        guard let forecastRange = forecast.temperatureRange, let minimimMinTemp = forecast.minimimMinTemp else {
             return nil
         }
-        let coefficient = geometry.size.width / forecastRange
+        // Get the portion of the width which represents each degree. This will be used as a unit.
+        let coefficient = width / forecastRange
+        // The difference between the day's minimum temperature and the week's.
         let minTempDelta = day.backingData.minTemperature.value - minimimMinTemp
+        // The difference between the week's temperature range and the day's.
         let rangeDelta = forecastRange - day.temperatureRange
+        // Because the mask layer starts horizontally centered which leaves a gap on each side and we want to compensate for that by aligning it to the left we divide the rangeDelta by 2 and get the resulting negative value.
         let rangeOffset = -(rangeDelta / 2)
-        let offset = (rangeOffset + minTempDelta) * coefficient
-        return offset
+        // Add the minTempDelta to compensate for the day's minimum temp being greater than the week's and multiply by the coefficient.
+        return (rangeOffset + minTempDelta) * coefficient
     }
 
-    private func getWidth(forecast: FormattedForecast, day: FormattedForecastDay, geometry: GeometryProxy) -> CGFloat? {
-        guard let forecastRange = forecast.range else {
+    /// Determines the width for the masking layer of the temperature bar.
+    private func getWidth(forecast: FormattedForecast, day: FormattedForecastDay, width: Double) -> CGFloat? {
+        guard let forecastRange = forecast.temperatureRange else {
             return nil
         }
-        return (day.temperatureRange / forecastRange) * geometry.size.width
+        // Get a proportion of the day's temperature range to the week's and multiple that by the width of the available space.
+        return (day.temperatureRange / forecastRange) * width
     }
 }
 
