@@ -17,7 +17,7 @@ protocol PreferenceManager {
 final class DefaultPreferenceManager: PreferenceManager {
     private let decoder = JSONDecoder()
     private let encoder = JSONEncoder()
-    private let store = UserDefaults.standard
+    private let store: UserDefaults
 
     private enum Key {
         case savedLocations
@@ -27,6 +27,10 @@ final class DefaultPreferenceManager: PreferenceManager {
             case .savedLocations: "SavedLocations"
             }
         }
+    }
+
+    init(store: UserDefaults = .standard) {
+        self.store = store
     }
 
     func saveLocation(_ location: Location) {
