@@ -20,7 +20,12 @@ struct WeatherDetailView: View {
             ScrollView {
                 LazyVStack {
                     currentConditionHeader
+                    
+                    if let forecast = viewModel.forecast {
+                        DailyForecastCard(forecast: forecast)
+                    }
                 }
+                .padding(.horizontal)
             }
         }
         .navigationTitle(viewModel.location.name)
@@ -45,19 +50,16 @@ struct WeatherDetailView: View {
                 if let image = viewModel.currentWeather.condition.systemImage {
                     Image(systemName: image)
                         .font(.system(size: 48))
-                        .symbolRenderingMode(.multicolor)
                 }
                 
-                VStack(spacing: -4) {
-                    Text(viewModel.currentWeather.apparentTemperature)
-                        .font(.system(size: 64))
-                        .fontWeight(.medium)
-                }
+                Text(viewModel.currentWeather.apparentTemperature)
+                    .font(.system(size: 64))
+                    .fontWeight(.medium)
             }
             Text(viewModel.currentWeather.condition.description)
                 .textCase(.uppercase)
                 .font(.caption)
-                .fontWeight(.medium)
+                .fontWeight(.semibold)
                 .padding(.bottom, 16)
         }
         .padding()

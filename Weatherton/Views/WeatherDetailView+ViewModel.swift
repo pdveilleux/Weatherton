@@ -11,7 +11,7 @@ extension WeatherDetailView {
     @Observable @MainActor
     final class ViewModel {
         private(set) var currentWeather: FormattedCurrentWeather
-        private(set) var forecast: Forecast?
+        private(set) var forecast: FormattedForecast?
         var location: Location {
             currentWeather.location
         }
@@ -26,14 +26,17 @@ extension WeatherDetailView {
             temperatureFormatter: MeasurementFormatter
         ) {
             self.currentWeather = FormattedCurrentWeather(currentWeather: currentWeather, formatter: temperatureFormatter)
-            self.forecast = forecast
             self.weatherRepository = weatherRepository
             self.temperatureFormatter = temperatureFormatter
+            if let forecast {
+                self.forecast = FormattedForecast(forecast: forecast, formatter: temperatureFormatter)
+            }
         }
 
         func getForecast() async {
             do {
-                forecast = try await weatherRepository.getForecast(location: location)
+                let forecast = try await weatherRepository.getForecast(location: location)
+                self.forecast = FormattedForecast(forecast: forecast, formatter: temperatureFormatter)
             } catch {
                 print("Error fetching forecast: \(error)")
             }

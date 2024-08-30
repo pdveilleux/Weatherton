@@ -7,15 +7,15 @@
 
 import Foundation
 
-struct Forecast {
+struct Forecast: Hashable {
     let location: Location
     let days: [ForecastDay]
 }
 
-struct ForecastDay {
+struct ForecastDay: Hashable {
     let date: Date
-    let maxTemp: Measurement<UnitTemperature>
-    let minTemp: Measurement<UnitTemperature>
+    let maxTemperature: Measurement<UnitTemperature>
+    let minTemperature: Measurement<UnitTemperature>
     let averageTemperature: Measurement<UnitTemperature>
     let maxWind: Measurement<UnitSpeed>
     let totalPrecipitation: Measurement<UnitLength>
@@ -32,7 +32,7 @@ struct ForecastDay {
 }
 
 extension ForecastDay {
-    struct Hour {
+    struct Hour: Hashable {
         let time: Date
         let apparentTemperature: Measurement<UnitTemperature>
         let dewPoint: Measurement<UnitTemperature>

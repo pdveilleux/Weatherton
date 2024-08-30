@@ -82,8 +82,8 @@ extension ForecastDayResponseModel {
     func convertToForecastDay() -> ForecastDay {
         ForecastDay(
             date: Date(timeIntervalSince1970: Double(dateEpoch)),
-            maxTemp: Measurement(value: day.maxtempC, unit: .celsius),
-            minTemp: Measurement(value: day.mintempC, unit: .celsius),
+            maxTemperature: Measurement(value: day.maxtempC, unit: .celsius),
+            minTemperature: Measurement(value: day.mintempC, unit: .celsius),
             averageTemperature: Measurement(value: day.avgtempC, unit: .celsius),
             maxWind: Measurement(value: day.maxwindKph, unit: .kilometersPerHour),
             totalPrecipitation: Measurement(value: day.totalprecipMm, unit: .millimeters),

@@ -25,6 +25,8 @@
 		BB2A6D1A2C80168B003698B6 /* WeatherDetailView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A6D192C80168B003698B6 /* WeatherDetailView+ViewModel.swift */; };
 		BB2A6D1E2C802C15003698B6 /* DependencyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A6D1D2C802C15003698B6 /* DependencyBuilder.swift */; };
 		BB2A6D202C802C33003698B6 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A6D1F2C802C33003698B6 /* ViewModelFactory.swift */; };
+		BB2A6D222C811D00003698B6 /* FormattedForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A6D212C811CFF003698B6 /* FormattedForecast.swift */; };
+		BB2A6D242C81693E003698B6 /* DailyForecastCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A6D232C81693E003698B6 /* DailyForecastCard.swift */; };
 		BBFA267C2C76626000211EC2 /* WeathertonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA267B2C76626000211EC2 /* WeathertonApp.swift */; };
 		BBFA267E2C76626000211EC2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA267D2C76626000211EC2 /* ContentView.swift */; };
 		BBFA26802C76626000211EC2 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA267F2C76626000211EC2 /* Item.swift */; };
@@ -82,6 +84,8 @@
 		BB2A6D192C80168B003698B6 /* WeatherDetailView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherDetailView+ViewModel.swift"; sourceTree = "<group>"; };
 		BB2A6D1D2C802C15003698B6 /* DependencyBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyBuilder.swift; sourceTree = "<group>"; };
 		BB2A6D1F2C802C33003698B6 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
+		BB2A6D212C811CFF003698B6 /* FormattedForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattedForecast.swift; sourceTree = "<group>"; };
+		BB2A6D232C81693E003698B6 /* DailyForecastCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyForecastCard.swift; sourceTree = "<group>"; };
 		BBFA26782C76626000211EC2 /* Weatherton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weatherton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBFA267B2C76626000211EC2 /* WeathertonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathertonApp.swift; sourceTree = "<group>"; };
 		BBFA267D2C76626000211EC2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -234,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				BBFA267D2C76626000211EC2 /* ContentView.swift */,
+				BB2A6D232C81693E003698B6 /* DailyForecastCard.swift */,
 				BBFA26B82C7679DC00211EC2 /* RootWeatherView.swift */,
 				BB2A6CFE2C7B9BD2003698B6 /* RootWeatherView+ViewModel.swift */,
 				BB2A6D072C7D03F7003698B6 /* WeatherDetailView.swift */,
@@ -247,6 +252,7 @@
 			children = (
 				BBFA26AE2C76653D00211EC2 /* CurrentWeather.swift */,
 				BB2A6D152C8000E0003698B6 /* Forecast.swift */,
+				BB2A6D212C811CFF003698B6 /* FormattedForecast.swift */,
 				BB2A6D0B2C7D1EFE003698B6 /* FormattedCurrentWeather.swift */,
 				BBFA26C12C77C51B00211EC2 /* Location.swift */,
 				BBFA26C32C77C52D00211EC2 /* WeatherCondition.swift */,
@@ -475,8 +481,10 @@
 				BB2A6D142C7FFD80003698B6 /* ForecastDayResponseModel.swift in Sources */,
 				BBFA26AD2C7664CC00211EC2 /* WeatherAPIClient.swift in Sources */,
 				BB2A6D052C7BC89C003698B6 /* LocationPersistenceModel.swift in Sources */,
+				BB2A6D242C81693E003698B6 /* DailyForecastCard.swift in Sources */,
 				BB2A6D122C7FFD2E003698B6 /* CurrentResponseModel.swift in Sources */,
 				BB2A6D162C8000E0003698B6 /* Forecast.swift in Sources */,
+				BB2A6D222C811D00003698B6 /* FormattedForecast.swift in Sources */,
 				BB2A6D102C7FFD1D003698B6 /* LocationResponseModel.swift in Sources */,
 				BB2A6CFB2C7ACD2C003698B6 /* PreferenceManager.swift in Sources */,
 				BB2A6D0A2C7D1ECC003698B6 /* PreviewData.swift in Sources */,
