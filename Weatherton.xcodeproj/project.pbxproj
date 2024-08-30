@@ -27,6 +27,7 @@
 		BB2A6D202C802C33003698B6 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A6D1F2C802C33003698B6 /* ViewModelFactory.swift */; };
 		BB2A6D222C811D00003698B6 /* FormattedForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A6D212C811CFF003698B6 /* FormattedForecast.swift */; };
 		BB2A6D242C81693E003698B6 /* DailyForecastCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A6D232C81693E003698B6 /* DailyForecastCard.swift */; };
+		BB3DD0982C822A0A0086A1E6 /* ErrorResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3DD0972C822A0A0086A1E6 /* ErrorResponseModel.swift */; };
 		BBFA267C2C76626000211EC2 /* WeathertonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA267B2C76626000211EC2 /* WeathertonApp.swift */; };
 		BBFA267E2C76626000211EC2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA267D2C76626000211EC2 /* ContentView.swift */; };
 		BBFA26802C76626000211EC2 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA267F2C76626000211EC2 /* Item.swift */; };
@@ -86,6 +87,7 @@
 		BB2A6D1F2C802C33003698B6 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
 		BB2A6D212C811CFF003698B6 /* FormattedForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattedForecast.swift; sourceTree = "<group>"; };
 		BB2A6D232C81693E003698B6 /* DailyForecastCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyForecastCard.swift; sourceTree = "<group>"; };
+		BB3DD0972C822A0A0086A1E6 /* ErrorResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponseModel.swift; sourceTree = "<group>"; };
 		BBFA26782C76626000211EC2 /* Weatherton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weatherton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBFA267B2C76626000211EC2 /* WeathertonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathertonApp.swift; sourceTree = "<group>"; };
 		BBFA267D2C76626000211EC2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 				BB2A6D0D2C7FFBEE003698B6 /* ForecastResponseModel.swift */,
 				BB2A6D0F2C7FFD1D003698B6 /* LocationResponseModel.swift */,
 				BBFA26C52C77C68900211EC2 /* LocationSearchResponseModel.swift */,
+				BB3DD0972C822A0A0086A1E6 /* ErrorResponseModel.swift */,
 			);
 			path = ResponseModels;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				BBFA26B22C76657700211EC2 /* WeatherRepository.swift in Sources */,
 				BBFA26B72C7678E900211EC2 /* CurrentWeatherResponseModel.swift in Sources */,
 				BBFA26AA2C76648200211EC2 /* WeatherService.swift in Sources */,
+				BB3DD0982C822A0A0086A1E6 /* ErrorResponseModel.swift in Sources */,
 				BBFA267E2C76626000211EC2 /* ContentView.swift in Sources */,
 				BB2A6CFF2C7B9BD2003698B6 /* RootWeatherView+ViewModel.swift in Sources */,
 				BB2A6D1E2C802C15003698B6 /* DependencyBuilder.swift in Sources */,

@@ -106,12 +106,30 @@ extension WeatherAPIClient {
         return url.appending(queryItems: queryParameters.map(\.queryItem))
     }
 
-    private func sendRequest<Response>(_ request: URLRequest, expecting type: Response.Type) async throws -> Response where Response: Decodable {
-        let (data, _) = try await session.data(for: request)
-        return try decoder.decode(type, from: data)
-    }
-
     private func sendRequest<Response>(url: URL, expecting type: Response.Type) async throws -> Response where Response: Decodable {
         try await sendRequest(URLRequest(url: url), expecting: type)
+    }
+
+    private func sendRequest<Response>(_ request: URLRequest, expecting type: Response.Type) async throws -> Response where Response: Decodable {
+        let (data, response): (Data, URLResponse)
+        do {
+            (data, response) = try await session.data(for: request)
+        } catch {
+            throw WeatherServiceError()
+        }
+        
+        guard let response = response as? HTTPURLResponse else {
+            throw WeatherServiceError()
+        }
+        
+        switch response.statusCode {
+        case 200...299:
+            return try decoder.decode(type, from: data)
+        case 400...499:
+            let errorResponse = try decoder.decode(ErrorResponseModel.self, from: data)
+            throw WeatherServiceError()
+        default:
+            throw WeatherServiceError()
+        }
     }
 }
