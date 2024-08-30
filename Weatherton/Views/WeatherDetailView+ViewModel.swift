@@ -10,6 +10,7 @@ import Foundation
 extension WeatherDetailView {
     @Observable @MainActor
     final class ViewModel {
+        private(set) var isLoading = false
         private(set) var currentWeather: FormattedCurrentWeather
         private(set) var forecast: FormattedForecast?
         var location: Location {
@@ -34,6 +35,11 @@ extension WeatherDetailView {
         }
 
         func getForecast() async {
+            isLoading = true
+            defer {
+                isLoading = false
+            }
+
             do {
                 let forecast = try await weatherRepository.getForecast(location: location)
                 self.forecast = FormattedForecast(forecast: forecast, formatter: temperatureFormatter)

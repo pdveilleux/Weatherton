@@ -27,6 +27,10 @@ struct WeatherDetailView: View {
                 }
                 .padding(.horizontal)
             }
+
+            if viewModel.isLoading {
+                ProgressView()
+            }
         }
         .navigationTitle(viewModel.location.name)
         .navigationBarTitleDisplayMode(.inline)
@@ -59,7 +63,7 @@ struct WeatherDetailView: View {
             Text(viewModel.currentWeather.condition.description)
                 .textCase(.uppercase)
                 .font(.caption)
-                .fontWeight(.semibold)
+                .fontWeight(.bold)
                 .padding(.bottom, 16)
         }
         .padding()
