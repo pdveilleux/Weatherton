@@ -17,6 +17,7 @@ struct CurrentWeather: Hashable, Identifiable {
     let windSpeed: Measurement<UnitSpeed>
     let windDirection: String
     let updatedDate: Date
-    let condition: WeatherCondition
+    let description: String
+    let systemImage: String?
     let location: Location
 }

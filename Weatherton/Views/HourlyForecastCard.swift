@@ -23,7 +23,7 @@ struct HourlyForecastCard: View {
                         VStack(spacing: 8) {
                             Text(hour.time)
                                 .font(.caption)
-                            if let icon = hour.condition.systemImage {
+                            if let icon = hour.systemImage {
                                 Image(systemName: icon)
                                     .frame(minHeight: 32)
                                     .font(.title3)

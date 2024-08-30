@@ -33,8 +33,11 @@ struct FormattedCurrentWeather: Hashable {
     var windSpeedAndDirection: String {
         windSpeed + " " + windDirection
     }
-    var condition: WeatherCondition {
-        backingData.condition
+    var description: String {
+        backingData.description
+    }
+    var systemImage: String? {
+        backingData.systemImage
     }
     var location: Location {
         backingData.location

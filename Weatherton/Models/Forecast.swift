@@ -26,7 +26,8 @@ struct ForecastDay: Hashable {
     let dailyChanceOfRain: Int
     let dailyWillItSnow: Bool
     let dailyChanceOfSnow: Int
-    let condition: WeatherCondition
+    let description: String
+    let systemImage: String?
     let uv: Double
     let hours: [Hour]
 }
@@ -38,6 +39,7 @@ extension ForecastDay {
         let dewPoint: Measurement<UnitTemperature>
         let humidity: Int
         let temperature: Measurement<UnitTemperature>
-        let condition: WeatherCondition
+        let description: String
+        let systemImage: String?
     }
 }

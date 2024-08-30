@@ -24,7 +24,8 @@ extension CurrentWeatherResponseModel {
             windSpeed: Measurement(value: current.windKph, unit: .kilometersPerHour),
             windDirection: current.windDir,
             updatedDate: Date(timeIntervalSince1970: Double(current.lastUpdatedEpoch)),
-            condition: current.condition.convertToWeatherCondition(isDay: current.isDay == 1),
+            description: current.condition.text,
+            systemImage: current.condition.getSystemImageNameForConditionCode(isDay: current.isDay == 1),
             location: location.convertToLocation()
         )
     }

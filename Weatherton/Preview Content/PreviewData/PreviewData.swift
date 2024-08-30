@@ -23,14 +23,12 @@ extension PreviewData {
                 windSpeed: Measurement(value: 8, unit: .kilometersPerHour),
                 windDirection: "ESE",
                 updatedDate: .now - (60 * 10),
-                condition: WeatherCondition(
-                    description: "Partly Cloudy",
-                    systemImage: "cloud.sun.fill"
-                ),
+                description: "Partly Cloudy",
+                systemImage: "cloud.sun.fill",
                 location: PreviewData.Location.london
             )
         }
-
+        
         static var minneapolis: Weatherton.CurrentWeather {
             Weatherton.CurrentWeather(
                 id: UUID(),
@@ -42,15 +40,13 @@ extension PreviewData {
                 windSpeed: Measurement(value: 8, unit: .kilometersPerHour),
                 windDirection: "ESE",
                 updatedDate: .now - (60 * 10),
-                condition: WeatherCondition(
-                    description: "Partly Cloudy",
-                    systemImage: "cloud.sun.fill"
-                ),
+                description: "Partly Cloudy",
+                systemImage: "cloud.sun.fill",
                 location: PreviewData.Location.minneapolis
             )
         }
     }
-
+    
     enum Forecast {
         static var minneapolis: Weatherton.Forecast {
             Weatherton.Forecast(
@@ -70,10 +66,8 @@ extension PreviewData {
                         dailyChanceOfRain: 54,
                         dailyWillItSnow: false,
                         dailyChanceOfSnow: 0,
-                        condition: WeatherCondition(
-                            description: "Partly Cloudy",
-                            systemImage: "cloud.sun.fill"
-                        ),
+                        description: "Partly Cloudy",
+                        systemImage: "cloud.sun.fill",
                         uv: 4,
                         hours: (0...23).map { PreviewData.Forecast.Hour.sunny(hour: $0) }
                     ),
@@ -91,10 +85,8 @@ extension PreviewData {
                         dailyChanceOfRain: 54,
                         dailyWillItSnow: false,
                         dailyChanceOfSnow: 0,
-                        condition: WeatherCondition(
-                            description: "Sunny",
-                            systemImage: "sun.fill"
-                        ),
+                        description: "Sunny",
+                        systemImage: "sun.fill",
                         uv: 4,
                         hours: (0...23).map { PreviewData.Forecast.Hour.sunny(hour: $0, addingDays: 1) }
                     ),
@@ -112,10 +104,8 @@ extension PreviewData {
                         dailyChanceOfRain: 54,
                         dailyWillItSnow: false,
                         dailyChanceOfSnow: 0,
-                        condition: WeatherCondition(
-                            description: "Partly Cloudy",
-                            systemImage: "cloud.sun.fill"
-                        ),
+                        description: "Partly Cloudy",
+                        systemImage: "cloud.sun.fill",
                         uv: 4,
                         hours: (0...23).map { PreviewData.Forecast.Hour.sunny(hour: $0, addingDays: 2) }
                     ),
@@ -133,10 +123,8 @@ extension PreviewData {
                         dailyChanceOfRain: 54,
                         dailyWillItSnow: false,
                         dailyChanceOfSnow: 0,
-                        condition: WeatherCondition(
-                            description: "Partly Cloudy",
-                            systemImage: "cloud.sun.fill"
-                        ),
+                        description: "Partly Cloudy",
+                        systemImage: "cloud.sun.fill",
                         uv: 4,
                         hours: (0...23).map { PreviewData.Forecast.Hour.sunny(hour: $0, addingDays: 3) }
                     ),
@@ -154,10 +142,8 @@ extension PreviewData {
                         dailyChanceOfRain: 54,
                         dailyWillItSnow: false,
                         dailyChanceOfSnow: 0,
-                        condition: WeatherCondition(
-                            description: "Partly Cloudy",
-                            systemImage: "cloud.sun.fill"
-                        ),
+                        description: "Partly Cloudy",
+                        systemImage: "cloud.sun.fill",
                         uv: 4,
                         hours: (0...23).map { PreviewData.Forecast.Hour.sunny(hour: $0, addingDays: 4) }
                     ),
@@ -175,10 +161,8 @@ extension PreviewData {
                         dailyChanceOfRain: 54,
                         dailyWillItSnow: false,
                         dailyChanceOfSnow: 0,
-                        condition: WeatherCondition(
-                            description: "Partly Cloudy",
-                            systemImage: "cloud.sun.fill"
-                        ),
+                        description: "Partly Cloudy",
+                        systemImage: "cloud.sun.fill",
                         uv: 4,
                         hours: (0...23).map { PreviewData.Forecast.Hour.sunny(hour: $0, addingDays: 5) }
                     ),
@@ -196,17 +180,15 @@ extension PreviewData {
                         dailyChanceOfRain: 54,
                         dailyWillItSnow: false,
                         dailyChanceOfSnow: 0,
-                        condition: WeatherCondition(
-                            description: "Partly Cloudy",
-                            systemImage: "cloud.sun.fill"
-                        ),
+                        description: "Partly Cloudy",
+                        systemImage: "cloud.sun.fill",
                         uv: 4,
                         hours: (0...23).map { PreviewData.Forecast.Hour.sunny(hour: $0, addingDays: 6) }
                     )
                 ]
             )
         }
-
+        
         enum Hour {
             static func sunny(hour: Int, addingDays days: Int = 0) -> Weatherton.ForecastDay.Hour {
                 let date = Calendar.current.date(bySettingHour: hour, minute: 0, second: 0, of: .now + (60 * 60 * Double(days)))!
@@ -217,15 +199,13 @@ extension PreviewData {
                     dewPoint: Measurement(value: 12, unit: .celsius),
                     humidity: 30,
                     temperature: Measurement(value: 23, unit: .celsius),
-                    condition: WeatherCondition(
-                        description: "Sunny",
-                        systemImage: "cloud.fill"
-                    )
+                    description: "Sunny",
+                    systemImage: "cloud.fill"
                 )
             }
         }
     }
-
+    
     enum Location {
         static var minneapolis: Weatherton.Location {
             Weatherton.Location(
@@ -236,7 +216,7 @@ extension PreviewData {
                 longitude: -0.11
             )
         }
-
+        
         static var london: Weatherton.Location {
             Weatherton.Location(
                 name: "London",
@@ -247,7 +227,7 @@ extension PreviewData {
             )
         }
     }
-
+    
     enum Formatter {
         static var temperature: MeasurementFormatter {
             let formatter = MeasurementFormatter()

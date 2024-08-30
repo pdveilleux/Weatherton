@@ -94,7 +94,8 @@ extension ForecastDayResponseModel {
             dailyChanceOfRain: day.dailyChanceOfRain,
             dailyWillItSnow: day.dailyWillItSnow == 1,
             dailyChanceOfSnow: day.dailyChanceOfSnow,
-            condition: day.condition.convertToWeatherCondition(isDay: true),
+            description: day.condition.text,
+            systemImage: day.condition.getSystemImageNameForConditionCode(isDay: true),
             uv: day.uv,
             hours: hour.map { $0.convertToHour() }
         )
@@ -109,7 +110,8 @@ extension ForecastDayResponseModel.HourResponseModel {
             dewPoint: Measurement(value: dewpointC, unit: .celsius),
             humidity: humidity,
             temperature: Measurement(value: tempC, unit: .celsius),
-            condition: condition.convertToWeatherCondition(isDay: isDay == 1)
+            description: condition.text,
+            systemImage: condition.getSystemImageNameForConditionCode(isDay: isDay == 1)
         )
     }
 }

@@ -32,8 +32,8 @@ final class CurrentWeatherPersistenceModel {
         visibilityKm = currentWeather.visibility.converted(to: .kilometers).value
         windSpeedKm = currentWeather.windSpeed.converted(to: .kilometersPerHour).value
         windDirection = currentWeather.windDirection
-        conditionDescription = currentWeather.condition.description
-        systemImage = currentWeather.condition.systemImage
+        conditionDescription = currentWeather.description
+        systemImage = currentWeather.systemImage
         updatedDate = currentWeather.updatedDate
     }
 }
@@ -50,10 +50,8 @@ extension CurrentWeatherPersistenceModel {
             windSpeed: Measurement(value: windSpeedKm, unit: .kilometersPerHour),
             windDirection: windDirection,
             updatedDate: updatedDate,
-            condition: WeatherCondition(
-                description: conditionDescription,
-                systemImage: systemImage
-            ),
+            description: conditionDescription,
+            systemImage: systemImage,
             location: Weatherton.Location(
                 name: "",
                 region: "",

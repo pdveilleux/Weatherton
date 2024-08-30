@@ -89,8 +89,11 @@ struct FormattedForecastDay: Hashable {
     var dailyChanceOfSnow: String {
         backingData.dailyChanceOfSnow.formatted(.percent)
     }
-    var condition: WeatherCondition {
-        backingData.condition
+    var description: String {
+        backingData.description
+    }
+    var systemImage: String? {
+        backingData.systemImage
     }
     var uv: String {
         String(backingData.uv)
@@ -125,8 +128,11 @@ extension FormattedForecastDay {
         var temperature: String {
             formatter.string(from: backingData.temperature)
         }
-        var condition: WeatherCondition {
-            backingData.condition
+        var description: String {
+            backingData.description
+        }
+        var systemImage: String? {
+            backingData.systemImage
         }
 
         let formatter: MeasurementFormatter

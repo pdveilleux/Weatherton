@@ -54,7 +54,7 @@ struct WeatherDetailView: View {
     private var currentConditionHeader: some View {
         VStack {
             HStack(alignment: .center, spacing: 20) {
-                if let image = viewModel.currentWeather.condition.systemImage {
+                if let image = viewModel.currentWeather.systemImage {
                     Image(systemName: image)
                         .font(.system(size: 48))
                 }
@@ -63,7 +63,7 @@ struct WeatherDetailView: View {
                     .font(.system(size: 64))
                     .fontWeight(.medium)
             }
-            Text(viewModel.currentWeather.condition.description)
+            Text(viewModel.currentWeather.description)
                 .textCase(.uppercase)
                 .font(.caption)
                 .fontWeight(.bold)

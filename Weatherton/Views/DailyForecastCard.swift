@@ -32,7 +32,7 @@ struct DailyForecastCard: View {
             Group {
                 Text(day.date)
                     .frame(minWidth: 44, alignment: .leading)
-                if let icon = day.condition.systemImage {
+                if let icon = day.systemImage {
                     Image(systemName: icon)
                         .frame(minWidth: 44, alignment: .leading)
                         .font(.title3)

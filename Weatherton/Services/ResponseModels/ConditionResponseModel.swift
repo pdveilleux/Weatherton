@@ -17,14 +17,7 @@ struct ConditionResponseModel: Codable {
 }
 
 extension ConditionResponseModel {
-    func convertToWeatherCondition(isDay: Bool) -> WeatherCondition {
-        WeatherCondition(
-            description: text,
-            systemImage: getSystemImageNameForConditionCode(code, isDay: isDay)
-        )
-    }
-
-    private func getSystemImageNameForConditionCode(_ code: Int, isDay: Bool) -> String {
+    func getSystemImageNameForConditionCode(isDay: Bool) -> String {
         switch (code, isDay) {
         case (1000, true): "sun.max.fill"
         case (1000, false): "moon.fill"

@@ -71,7 +71,7 @@ struct RootWeatherView: View {
     @ViewBuilder
     private func weatherRow(_ weather: FormattedCurrentWeather) -> some View {
         VStack(alignment: .leading) {
-            if let icon = weather.condition.systemImage {
+            if let icon = weather.systemImage {
                 Image(systemName: icon)
                     .font(.title)
             }
