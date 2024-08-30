@@ -31,8 +31,6 @@
 		BB3DD09A2C82330B0086A1E6 /* HourlyForecastCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3DD0992C82330B0086A1E6 /* HourlyForecastCard.swift */; };
 		BB3DD09C2C8234030086A1E6 /* CardHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3DD09B2C8234030086A1E6 /* CardHeader.swift */; };
 		BBFA267C2C76626000211EC2 /* WeathertonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA267B2C76626000211EC2 /* WeathertonApp.swift */; };
-		BBFA267E2C76626000211EC2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA267D2C76626000211EC2 /* ContentView.swift */; };
-		BBFA26802C76626000211EC2 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA267F2C76626000211EC2 /* Item.swift */; };
 		BBFA26822C76626200211EC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBFA26812C76626200211EC2 /* Assets.xcassets */; };
 		BBFA26852C76626200211EC2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBFA26842C76626200211EC2 /* Preview Assets.xcassets */; };
 		BBFA268F2C76626300211EC2 /* WeathertonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA268E2C76626300211EC2 /* WeathertonTests.swift */; };
@@ -93,8 +91,6 @@
 		BB3DD09B2C8234030086A1E6 /* CardHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHeader.swift; sourceTree = "<group>"; };
 		BBFA26782C76626000211EC2 /* Weatherton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weatherton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBFA267B2C76626000211EC2 /* WeathertonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathertonApp.swift; sourceTree = "<group>"; };
-		BBFA267D2C76626000211EC2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		BBFA267F2C76626000211EC2 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		BBFA26812C76626200211EC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBFA26842C76626200211EC2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BBFA268A2C76626300211EC2 /* WeathertonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeathertonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -242,7 +238,6 @@
 			isa = PBXGroup;
 			children = (
 				BB3DD09B2C8234030086A1E6 /* CardHeader.swift */,
-				BBFA267D2C76626000211EC2 /* ContentView.swift */,
 				BB2A6D232C81693E003698B6 /* DailyForecastCard.swift */,
 				BB3DD0992C82330B0086A1E6 /* HourlyForecastCard.swift */,
 				BBFA26B82C7679DC00211EC2 /* RootWeatherView.swift */,
@@ -278,7 +273,6 @@
 		BBFA26B02C76655000211EC2 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				BBFA267F2C76626000211EC2 /* Item.swift */,
 				BBFA26B12C76657700211EC2 /* WeatherRepository.swift */,
 				BB2A6D002C7B9D0D003698B6 /* FakeWeatherRepository.swift */,
 			);
@@ -475,12 +469,10 @@
 				BBFA26B72C7678E900211EC2 /* CurrentWeatherResponseModel.swift in Sources */,
 				BBFA26AA2C76648200211EC2 /* WeatherService.swift in Sources */,
 				BB3DD0982C822A0A0086A1E6 /* ErrorResponseModel.swift in Sources */,
-				BBFA267E2C76626000211EC2 /* ContentView.swift in Sources */,
 				BB2A6CFF2C7B9BD2003698B6 /* RootWeatherView+ViewModel.swift in Sources */,
 				BB2A6D1E2C802C15003698B6 /* DependencyBuilder.swift in Sources */,
 				BB2A6CFD2C7B9ABC003698B6 /* DependencyJar.swift in Sources */,
 				BB2A6D0C2C7D1EFE003698B6 /* FormattedCurrentWeather.swift in Sources */,
-				BBFA26802C76626000211EC2 /* Item.swift in Sources */,
 				BBFA267C2C76626000211EC2 /* WeathertonApp.swift in Sources */,
 				BBFA26AF2C76653D00211EC2 /* CurrentWeather.swift in Sources */,
 				BBFA26B92C7679DC00211EC2 /* RootWeatherView.swift in Sources */,
