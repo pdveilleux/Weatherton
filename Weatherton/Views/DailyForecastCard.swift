@@ -38,11 +38,13 @@ struct DailyForecastCard: View {
 
     @ViewBuilder
     private func dayRow(day: FormattedForecastDay) -> some View {
-        HStack(spacing: 40) {
+        HStack(spacing: 20) {
             Group {
-                Text("Mon")
+                Text(day.date)
+                    .frame(minWidth: 44, alignment: .leading)
                 if let icon = day.condition.systemImage {
                     Image(systemName: icon)
+                        .frame(minWidth: 44, alignment: .leading)
                 }
                 temperatureBar(day: day)
             }
@@ -54,6 +56,7 @@ struct DailyForecastCard: View {
         HStack(alignment: .center) {
             Text(day.minTemperature)
                 .fontWeight(.semibold)
+                .frame(minWidth: 32, alignment: .leading)
             GeometryReader { geometry in
                 if let offset = getOffset(forecast: forecast, day: day, geometry: geometry),
                     let width = getWidth(forecast: forecast, day: day, geometry: geometry) {
@@ -76,6 +79,7 @@ struct DailyForecastCard: View {
             
             Text(day.maxTemperature)
                 .fontWeight(.semibold)
+                .frame(minWidth: 32, alignment: .trailing)
         }
         .frame(maxWidth: .infinity)
     }
