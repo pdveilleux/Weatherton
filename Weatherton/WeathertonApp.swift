@@ -18,6 +18,5 @@ struct WeathertonApp: App {
                     .environmentObject(dependencyJar)
             }
         }
-        .modelContainer(dependencyJar.modelContainer)
     }
 }
