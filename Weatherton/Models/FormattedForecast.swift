@@ -25,6 +25,16 @@ struct FormattedForecast: Hashable {
         }
         return maximumMaxTemp - minimimMinTemp
     }
+    var hourlyForecast: [FormattedForecastDay.Hour] {
+        let now = Date.now
+        let firstTwoDays: [ForecastDay] = Array(backingData.days.prefix(2))
+        return firstTwoDays
+            .flatMap(\.hours)
+            .filter { hour in
+                hour.time > now && hour.time < now + 60 * 60 * 24
+            }
+            .map { FormattedForecastDay.Hour(hour: $0, formatter: formatter) }
+    }
 
     let formatter: MeasurementFormatter
     let backingData: Forecast
@@ -65,19 +75,19 @@ struct FormattedForecastDay: Hashable {
         formatter.string(from: backingData.averageVisibility)
     }
     var averageHumidity: String {
-        "\(backingData.averageHumidity)%"
+        backingData.averageHumidity.formatted(.percent)
     }
     var dailyWillItRain: Bool {
         backingData.dailyWillItRain
     }
     var dailyChanceOfRain: String {
-        "\(backingData.dailyChanceOfRain)%"
+        backingData.dailyChanceOfRain.formatted(.percent)
     }
     var dailyWillItSnow: Bool {
         backingData.dailyWillItSnow
     }
     var dailyChanceOfSnow: String {
-        "\(backingData.dailyChanceOfSnow)%"
+        backingData.dailyChanceOfSnow.formatted(.percent)
     }
     var condition: WeatherCondition {
         backingData.condition
@@ -85,7 +95,9 @@ struct FormattedForecastDay: Hashable {
     var uv: String {
         String(backingData.uv)
     }
-//    let hours: [Hour]
+    var hours: [Hour] {
+        backingData.hours.map { Hour(hour: $0, formatter: formatter) }
+    }
 
     let formatter: MeasurementFormatter
     let backingData: ForecastDay
@@ -93,5 +105,36 @@ struct FormattedForecastDay: Hashable {
     init(forecastDay: ForecastDay, formatter: MeasurementFormatter) {
         self.backingData = forecastDay
         self.formatter = formatter
+    }
+}
+
+extension FormattedForecastDay {
+    struct Hour: Hashable {
+        var time: String {
+            backingData.time.formatted(.dateTime.hour())
+        }
+        var apparentTemperature: String {
+            formatter.string(from: backingData.apparentTemperature)
+        }
+        var dewPoint: String {
+            formatter.string(from: backingData.dewPoint)
+        }
+        var humidity: String {
+            backingData.humidity.formatted(.percent)
+        }
+        var temperature: String {
+            formatter.string(from: backingData.temperature)
+        }
+        var condition: WeatherCondition {
+            backingData.condition
+        }
+
+        let formatter: MeasurementFormatter
+        let backingData: ForecastDay.Hour
+
+        init(hour: ForecastDay.Hour, formatter: MeasurementFormatter) {
+            self.backingData = hour
+            self.formatter = formatter
+        }
     }
 }

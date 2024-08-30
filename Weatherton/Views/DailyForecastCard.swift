@@ -12,7 +12,7 @@ struct DailyForecastCard: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            header
+            CardHeader("Daily Forecast", systemImage: "calendar")
             
             VStack {
                 ForEach(forecast.days, id: \.date) { day in
@@ -21,19 +21,9 @@ struct DailyForecastCard: View {
             }
         }
         .padding()
-        .background(.thickMaterial)
+        .background(.ultraThinMaterial)
         .frame(maxWidth: .infinity)
         .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-    }
-
-    @ViewBuilder
-    private var header: some View {
-        Label("Daily Forecast", systemImage: "calendar")
-            .textCase(.uppercase)
-            .font(.caption)
-            .fontWeight(.semibold)
-            .frame(maxWidth: .infinity, alignment: .leading)
-        Divider()
     }
 
     @ViewBuilder
@@ -45,6 +35,8 @@ struct DailyForecastCard: View {
                 if let icon = day.condition.systemImage {
                     Image(systemName: icon)
                         .frame(minWidth: 44, alignment: .leading)
+                        .font(.title3)
+                        .symbolRenderingMode(.multicolor)
                 }
                 temperatureBar(day: day)
             }

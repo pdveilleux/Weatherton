@@ -10,6 +10,7 @@ import SwiftUI
 struct WeatherDetailView: View {
     @State var viewModel: ViewModel
     @Environment(\.dismiss) var dismiss
+    @Environment(\.colorScheme) var colorScheme
 
     var body: some View {
         ZStack {
@@ -22,6 +23,8 @@ struct WeatherDetailView: View {
                     currentConditionHeader
                     
                     if let forecast = viewModel.forecast {
+                        HourlyForecastCard(forecast: forecast)
+                        
                         DailyForecastCard(forecast: forecast)
                     }
                 }
@@ -67,6 +70,7 @@ struct WeatherDetailView: View {
                 .padding(.bottom, 16)
         }
         .padding()
+        .shadow(color: colorScheme == .dark ? .black.opacity(0.2) : .clear, radius: 12)
     }
 }
 

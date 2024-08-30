@@ -69,10 +69,10 @@ extension PreviewData {
                             systemImage: "cloud.sun.fill"
                         ),
                         uv: 4,
-                        hours: []
+                        hours: (0...23).map { PreviewData.Forecast.Hour.sunny(hour: $0) }
                     ),
                     ForecastDay(
-                        date: .now,
+                        date: .now + (60 * 60 * Double(1)),
                         maxTemperature: Measurement(value: 30, unit: .celsius),
                         minTemperature: Measurement(value: 25.3, unit: .celsius),
                         averageTemperature: Measurement(value: 28.6, unit: .celsius),
@@ -90,10 +90,10 @@ extension PreviewData {
                             systemImage: "sun.fill"
                         ),
                         uv: 4,
-                        hours: []
+                        hours: (0...23).map { PreviewData.Forecast.Hour.sunny(hour: $0, addingDays: 1) }
                     ),
                     ForecastDay(
-                        date: .now,
+                        date: .now + (60 * 60 * Double(2)),
                         maxTemperature: Measurement(value: 28, unit: .celsius),
                         minTemperature: Measurement(value: 25.3, unit: .celsius),
                         averageTemperature: Measurement(value: 28.6, unit: .celsius),
@@ -111,10 +111,10 @@ extension PreviewData {
                             systemImage: "cloud.sun.fill"
                         ),
                         uv: 4,
-                        hours: []
+                        hours: (0...23).map { PreviewData.Forecast.Hour.sunny(hour: $0, addingDays: 2) }
                     ),
                     ForecastDay(
-                        date: .now,
+                        date: .now + (60 * 60 * Double(3)),
                         maxTemperature: Measurement(value: 29, unit: .celsius),
                         minTemperature: Measurement(value: 25.3, unit: .celsius),
                         averageTemperature: Measurement(value: 28.6, unit: .celsius),
@@ -132,10 +132,10 @@ extension PreviewData {
                             systemImage: "cloud.sun.fill"
                         ),
                         uv: 4,
-                        hours: []
+                        hours: (0...23).map { PreviewData.Forecast.Hour.sunny(hour: $0, addingDays: 3) }
                     ),
                     ForecastDay(
-                        date: .now,
+                        date: .now + (60 * 60 * Double(4)),
                         maxTemperature: Measurement(value: 29, unit: .celsius),
                         minTemperature: Measurement(value: 25.3, unit: .celsius),
                         averageTemperature: Measurement(value: 28.6, unit: .celsius),
@@ -153,10 +153,10 @@ extension PreviewData {
                             systemImage: "cloud.sun.fill"
                         ),
                         uv: 4,
-                        hours: []
+                        hours: (0...23).map { PreviewData.Forecast.Hour.sunny(hour: $0, addingDays: 4) }
                     ),
                     ForecastDay(
-                        date: .now,
+                        date: .now + (60 * 60 * Double(5)),
                         maxTemperature: Measurement(value: 25, unit: .celsius),
                         minTemperature: Measurement(value: 25.3, unit: .celsius),
                         averageTemperature: Measurement(value: 28.6, unit: .celsius),
@@ -174,10 +174,10 @@ extension PreviewData {
                             systemImage: "cloud.sun.fill"
                         ),
                         uv: 4,
-                        hours: []
+                        hours: (0...23).map { PreviewData.Forecast.Hour.sunny(hour: $0, addingDays: 5) }
                     ),
                     ForecastDay(
-                        date: .now,
+                        date: .now + (60 * 60 * Double(6)),
                         maxTemperature: Measurement(value: 26, unit: .celsius),
                         minTemperature: Measurement(value: 25.3, unit: .celsius),
                         averageTemperature: Measurement(value: 28.6, unit: .celsius),
@@ -195,10 +195,28 @@ extension PreviewData {
                             systemImage: "cloud.sun.fill"
                         ),
                         uv: 4,
-                        hours: []
+                        hours: (0...23).map { PreviewData.Forecast.Hour.sunny(hour: $0, addingDays: 6) }
                     )
                 ]
             )
+        }
+
+        enum Hour {
+            static func sunny(hour: Int, addingDays days: Int = 0) -> Weatherton.ForecastDay.Hour {
+                let date = Calendar.current.date(bySettingHour: hour, minute: 0, second: 0, of: .now + (60 * 60 * Double(days)))!
+                
+                return ForecastDay.Hour(
+                    time: date,
+                    apparentTemperature: Measurement(value: 20, unit: .celsius),
+                    dewPoint: Measurement(value: 12, unit: .celsius),
+                    humidity: 30,
+                    temperature: Measurement(value: 23, unit: .celsius),
+                    condition: WeatherCondition(
+                        description: "Sunny",
+                        systemImage: "cloud.fill"
+                    )
+                )
+            }
         }
     }
 
