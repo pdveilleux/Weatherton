@@ -20,22 +20,15 @@ struct WeatherRepositoryError: Error {
 
 final class DefaultWeatherRepository: WeatherRepository {
     private let weatherService: WeatherService
-    private let persistenceController: PersistenceController
     private let preferenceManager: PreferenceManager
 
-    init(weatherService: WeatherService, persistenceController: PersistenceController, preferenceManager: PreferenceManager) {
+    init(weatherService: WeatherService, preferenceManager: PreferenceManager) {
         self.weatherService = weatherService
-        self.persistenceController = persistenceController
         self.preferenceManager = preferenceManager
     }
     
     func getCurrentWeather(location: Location) async throws -> CurrentWeather {
-        let weather = try await weatherService.getCurrentWeather(location: location)
-        // We do not need to wait for the weather data to get cached before we return it.
-        Task {
-            await persistenceController.storeCurrentWeather(weather)
-        }
-        return weather
+        try await weatherService.getCurrentWeather(location: location)
     }
 
     func getCurrentWeatherForSavedLocations() async throws -> [CurrentWeather] {

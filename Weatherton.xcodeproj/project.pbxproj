@@ -11,8 +11,6 @@
 		BB2A6CFD2C7B9ABC003698B6 /* DependencyJar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A6CFC2C7B9ABC003698B6 /* DependencyJar.swift */; };
 		BB2A6CFF2C7B9BD2003698B6 /* RootWeatherView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A6CFE2C7B9BD2003698B6 /* RootWeatherView+ViewModel.swift */; };
 		BB2A6D012C7B9D0D003698B6 /* FakeWeatherRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A6D002C7B9D0D003698B6 /* FakeWeatherRepository.swift */; };
-		BB2A6D032C7BC871003698B6 /* CurrentWeatherPersistenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A6D022C7BC871003698B6 /* CurrentWeatherPersistenceModel.swift */; };
-		BB2A6D052C7BC89C003698B6 /* LocationPersistenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A6D042C7BC89C003698B6 /* LocationPersistenceModel.swift */; };
 		BB2A6D082C7D03F7003698B6 /* WeatherDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A6D072C7D03F7003698B6 /* WeatherDetailView.swift */; };
 		BB2A6D0A2C7D1ECC003698B6 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A6D092C7D1ECC003698B6 /* PreviewData.swift */; };
 		BB2A6D0C2C7D1EFE003698B6 /* FormattedCurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A6D0B2C7D1EFE003698B6 /* FormattedCurrentWeather.swift */; };
@@ -40,7 +38,6 @@
 		BBFA26AD2C7664CC00211EC2 /* WeatherAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA26AC2C7664CC00211EC2 /* WeatherAPIClient.swift */; };
 		BBFA26AF2C76653D00211EC2 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA26AE2C76653D00211EC2 /* CurrentWeather.swift */; };
 		BBFA26B22C76657700211EC2 /* WeatherRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA26B12C76657700211EC2 /* WeatherRepository.swift */; };
-		BBFA26B52C7666D700211EC2 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA26B42C7666D700211EC2 /* PersistenceController.swift */; };
 		BBFA26B72C7678E900211EC2 /* CurrentWeatherResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA26B62C7678E900211EC2 /* CurrentWeatherResponseModel.swift */; };
 		BBFA26B92C7679DC00211EC2 /* RootWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA26B82C7679DC00211EC2 /* RootWeatherView.swift */; };
 		BBFA26BF2C77BAF100211EC2 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA26BE2C77BAF100211EC2 /* Secrets.swift */; };
@@ -70,8 +67,6 @@
 		BB2A6CFC2C7B9ABC003698B6 /* DependencyJar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyJar.swift; sourceTree = "<group>"; };
 		BB2A6CFE2C7B9BD2003698B6 /* RootWeatherView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootWeatherView+ViewModel.swift"; sourceTree = "<group>"; };
 		BB2A6D002C7B9D0D003698B6 /* FakeWeatherRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeWeatherRepository.swift; sourceTree = "<group>"; };
-		BB2A6D022C7BC871003698B6 /* CurrentWeatherPersistenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherPersistenceModel.swift; sourceTree = "<group>"; };
-		BB2A6D042C7BC89C003698B6 /* LocationPersistenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPersistenceModel.swift; sourceTree = "<group>"; };
 		BB2A6D072C7D03F7003698B6 /* WeatherDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailView.swift; sourceTree = "<group>"; };
 		BB2A6D092C7D1ECC003698B6 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		BB2A6D0B2C7D1EFE003698B6 /* FormattedCurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattedCurrentWeather.swift; sourceTree = "<group>"; };
@@ -102,7 +97,6 @@
 		BBFA26AC2C7664CC00211EC2 /* WeatherAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPIClient.swift; sourceTree = "<group>"; };
 		BBFA26AE2C76653D00211EC2 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		BBFA26B12C76657700211EC2 /* WeatherRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRepository.swift; sourceTree = "<group>"; };
-		BBFA26B42C7666D700211EC2 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		BBFA26B62C7678E900211EC2 /* CurrentWeatherResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherResponseModel.swift; sourceTree = "<group>"; };
 		BBFA26B82C7679DC00211EC2 /* RootWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootWeatherView.swift; sourceTree = "<group>"; };
 		BBFA26BE2C77BAF100211EC2 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
@@ -141,15 +135,6 @@
 				BB2A6CFA2C7ACD2C003698B6 /* PreferenceManager.swift */,
 			);
 			path = Preferences;
-			sourceTree = "<group>";
-		};
-		BB2A6D062C7BC9DA003698B6 /* PersistenceModels */ = {
-			isa = PBXGroup;
-			children = (
-				BB2A6D022C7BC871003698B6 /* CurrentWeatherPersistenceModel.swift */,
-				BB2A6D042C7BC89C003698B6 /* LocationPersistenceModel.swift */,
-			);
-			path = PersistenceModels;
 			sourceTree = "<group>";
 		};
 		BB2A6D1B2C801715003698B6 /* PreviewData */ = {
@@ -197,7 +182,6 @@
 				BBFA26BD2C77B89C00211EC2 /* Configuration */,
 				BB2A6D1C2C802BF9003698B6 /* Dependencies */,
 				BBFA26A82C76630400211EC2 /* Models */,
-				BBFA26B32C7666C800211EC2 /* Persistence */,
 				BB2A6CF92C7ACD19003698B6 /* Preferences */,
 				BBFA26B02C76655000211EC2 /* Repositories */,
 				BBFA26AB2C76648B00211EC2 /* Services */,
@@ -277,15 +261,6 @@
 				BB2A6D002C7B9D0D003698B6 /* FakeWeatherRepository.swift */,
 			);
 			path = Repositories;
-			sourceTree = "<group>";
-		};
-		BBFA26B32C7666C800211EC2 /* Persistence */ = {
-			isa = PBXGroup;
-			children = (
-				BBFA26B42C7666D700211EC2 /* PersistenceController.swift */,
-				BB2A6D062C7BC9DA003698B6 /* PersistenceModels */,
-			);
-			path = Persistence;
 			sourceTree = "<group>";
 		};
 		BBFA26BA2C767D6800211EC2 /* ResponseModels */ = {
@@ -478,7 +453,6 @@
 				BBFA26B92C7679DC00211EC2 /* RootWeatherView.swift in Sources */,
 				BB2A6D142C7FFD80003698B6 /* ForecastDayResponseModel.swift in Sources */,
 				BBFA26AD2C7664CC00211EC2 /* WeatherAPIClient.swift in Sources */,
-				BB2A6D052C7BC89C003698B6 /* LocationPersistenceModel.swift in Sources */,
 				BB2A6D242C81693E003698B6 /* DailyForecastCard.swift in Sources */,
 				BB2A6D122C7FFD2E003698B6 /* CurrentResponseModel.swift in Sources */,
 				BB2A6D162C8000E0003698B6 /* Forecast.swift in Sources */,
@@ -489,8 +463,6 @@
 				BB2A6D202C802C33003698B6 /* ViewModelFactory.swift in Sources */,
 				BB2A6D012C7B9D0D003698B6 /* FakeWeatherRepository.swift in Sources */,
 				BB2A6D1A2C80168B003698B6 /* WeatherDetailView+ViewModel.swift in Sources */,
-				BB2A6D032C7BC871003698B6 /* CurrentWeatherPersistenceModel.swift in Sources */,
-				BBFA26B52C7666D700211EC2 /* PersistenceController.swift in Sources */,
 				BBFA26C22C77C51B00211EC2 /* Location.swift in Sources */,
 				BB2A6D082C7D03F7003698B6 /* WeatherDetailView.swift in Sources */,
 				BB2A6D0E2C7FFBEF003698B6 /* ForecastResponseModel.swift in Sources */,
