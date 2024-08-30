@@ -21,6 +21,18 @@ struct FormattedCurrentWeather: Hashable {
     var temperature: String {
         formatter.string(from: backingData.temperature)
     }
+    var visibility: String {
+        formatter.string(from: backingData.visibility)
+    }
+    var windSpeed: String {
+        formatter.string(from: backingData.windSpeed)
+    }
+    var windDirection: String {
+        backingData.windDirection
+    }
+    var windSpeedAndDirection: String {
+        windSpeed + " " + windDirection
+    }
     var condition: WeatherCondition {
         backingData.condition
     }

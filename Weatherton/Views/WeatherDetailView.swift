@@ -68,9 +68,24 @@ struct WeatherDetailView: View {
                 .font(.caption)
                 .fontWeight(.bold)
                 .padding(.bottom, 16)
+            HStack(spacing: 40) {
+                secondaryConditionLabel(value: viewModel.currentWeather.humidity, label: "Humidity")
+                secondaryConditionLabel(value: viewModel.currentWeather.visibility, label: "Visibility")
+                secondaryConditionLabel(value: viewModel.currentWeather.windSpeedAndDirection, label: "Wind")
+            }
         }
         .padding()
         .shadow(color: colorScheme == .dark ? .black.opacity(0.2) : .clear, radius: 12)
+    }
+
+    @ViewBuilder
+    private func secondaryConditionLabel(value: String, label: LocalizedStringKey) -> some View {
+        VStack(spacing: 4) {
+            Text(value)
+                .fontWeight(.semibold)
+            Text(label)
+                .font(.caption2)
+        }
     }
 }
 

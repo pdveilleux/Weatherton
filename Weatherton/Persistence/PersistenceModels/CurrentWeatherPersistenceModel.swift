@@ -15,6 +15,9 @@ final class CurrentWeatherPersistenceModel {
     let dewPointC: Double
     let humidity: Int
     let temperatureC: Double
+    let visibilityKm: Double
+    let windSpeedKm: Double
+    let windDirection: String
     let conditionDescription: String
     let systemImage: String?
     let updatedDate: Date
@@ -26,6 +29,9 @@ final class CurrentWeatherPersistenceModel {
         dewPointC = currentWeather.dewPoint.converted(to: .celsius).value
         humidity = currentWeather.humidity
         temperatureC = currentWeather.temperature.converted(to: .celsius).value
+        visibilityKm = currentWeather.visibility.converted(to: .kilometers).value
+        windSpeedKm = currentWeather.windSpeed.converted(to: .kilometersPerHour).value
+        windDirection = currentWeather.windDirection
         conditionDescription = currentWeather.condition.description
         systemImage = currentWeather.condition.systemImage
         updatedDate = currentWeather.updatedDate
@@ -39,7 +45,10 @@ extension CurrentWeatherPersistenceModel {
             apparentTemperature: Measurement(value: apparentTemperatureC, unit: .celsius),
             dewPoint: Measurement(value: dewPointC, unit: .celsius),
             humidity: humidity,
-            temperature: Measurement(value: temperatureC, unit: .celsius),
+            temperature: Measurement(value: temperatureC, unit: .celsius), 
+            visibility: Measurement(value: visibilityKm, unit: .kilometers),
+            windSpeed: Measurement(value: windSpeedKm, unit: .kilometersPerHour),
+            windDirection: windDirection,
             updatedDate: updatedDate,
             condition: WeatherCondition(
                 description: conditionDescription,

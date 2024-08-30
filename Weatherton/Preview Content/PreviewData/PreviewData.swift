@@ -19,6 +19,9 @@ extension PreviewData {
                 dewPoint: Measurement(value: 10.7, unit: .celsius),
                 humidity: 36,
                 temperature: Measurement(value: 28.5, unit: .celsius),
+                visibility: Measurement(value: 30, unit: .kilometers),
+                windSpeed: Measurement(value: 8, unit: .kilometersPerHour),
+                windDirection: "ESE",
                 updatedDate: .now - (60 * 10),
                 condition: WeatherCondition(
                     description: "Partly Cloudy",
@@ -35,6 +38,9 @@ extension PreviewData {
                 dewPoint: Measurement(value: 19.2, unit: .celsius),
                 humidity: 70,
                 temperature: Measurement(value: 31.0, unit: .celsius),
+                visibility: Measurement(value: 30, unit: .kilometers),
+                windSpeed: Measurement(value: 8, unit: .kilometersPerHour),
+                windDirection: "ESE",
                 updatedDate: .now - (60 * 10),
                 condition: WeatherCondition(
                     description: "Partly Cloudy",
