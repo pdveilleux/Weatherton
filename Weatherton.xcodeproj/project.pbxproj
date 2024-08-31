@@ -33,7 +33,6 @@
 		BBFA267C2C76626000211EC2 /* WeathertonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA267B2C76626000211EC2 /* WeathertonApp.swift */; };
 		BBFA26822C76626200211EC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBFA26812C76626200211EC2 /* Assets.xcassets */; };
 		BBFA26852C76626200211EC2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBFA26842C76626200211EC2 /* Preview Assets.xcassets */; };
-		BBFA268F2C76626300211EC2 /* WeathertonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA268E2C76626300211EC2 /* WeathertonTests.swift */; };
 		BBFA26992C76626300211EC2 /* WeathertonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA26982C76626300211EC2 /* WeathertonUITests.swift */; };
 		BBFA269B2C76626300211EC2 /* WeathertonUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA269A2C76626300211EC2 /* WeathertonUITestsLaunchTests.swift */; };
 		BBFA26AA2C76648200211EC2 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA26A92C76648200211EC2 /* WeatherService.swift */; };
@@ -93,7 +92,6 @@
 		BBFA26812C76626200211EC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBFA26842C76626200211EC2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BBFA268A2C76626300211EC2 /* WeathertonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeathertonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BBFA268E2C76626300211EC2 /* WeathertonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathertonTests.swift; sourceTree = "<group>"; };
 		BBFA26942C76626300211EC2 /* WeathertonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeathertonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBFA26982C76626300211EC2 /* WeathertonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathertonUITests.swift; sourceTree = "<group>"; };
 		BBFA269A2C76626300211EC2 /* WeathertonUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathertonUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -208,7 +206,6 @@
 		BBFA268D2C76626300211EC2 /* WeathertonTests */ = {
 			isa = PBXGroup;
 			children = (
-				BBFA268E2C76626300211EC2 /* WeathertonTests.swift */,
 				BB3DD09D2C826CBD0086A1E6 /* FakeUserDefaults.swift */,
 				BB3DD09F2C826E010086A1E6 /* DefaultPreferenceManagerTests.swift */,
 			);
@@ -485,7 +482,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB3DD0A02C826E010086A1E6 /* DefaultPreferenceManagerTests.swift in Sources */,
-				BBFA268F2C76626300211EC2 /* WeathertonTests.swift in Sources */,
 				BB3DD09E2C826CBD0086A1E6 /* FakeUserDefaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -46,7 +46,7 @@ final class DefaultPreferenceManager: PreferenceManager {
         return locations
     }
 
-    func removeSavedLocations(_ locations: [Location]) async {
+    func removeSavedLocations(_ locations: [Location]) {
         var savedLocations = getSavedLocations()
         locations.forEach { location in
             savedLocations.removeAll(where: { $0 == location })

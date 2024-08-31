@@ -212,8 +212,8 @@ extension PreviewData {
                 name: "Minneapolis",
                 region: "Minnesota",
                 country: "USA",
-                latitude: 51.52,
-                longitude: -0.11
+                latitude: 43.0,
+                longitude: -93.0
             )
         }
         
@@ -224,6 +224,16 @@ extension PreviewData {
                 country: "United Kingdom",
                 latitude: 51.52,
                 longitude: -0.11
+            )
+        }
+
+        static var cupertino: Weatherton.Location {
+            Weatherton.Location(
+                name: "Cupertino",
+                region: "California",
+                country: "United States",
+                latitude: 37.0,
+                longitude: -110.0
             )
         }
     }
