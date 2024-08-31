@@ -13,9 +13,9 @@ struct CurrentWeatherResponseModel: Codable {
 }
 
 extension CurrentWeatherResponseModel {
-    func convertToCurrentWeather() -> CurrentWeather {
+    func convertToCurrentWeather(id: UUID) -> CurrentWeather {
         CurrentWeather(
-            id: UUID(),
+            id: id,
             apparentTemperature: Measurement(value: current.feelslikeC, unit: .celsius),
             dewPoint: Measurement(value: current.dewpointC, unit: .celsius),
             humidity: current.humidity,

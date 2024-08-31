@@ -11,7 +11,8 @@ import SwiftData
 @MainActor
 class DependencyBuilder {
     func build() -> DependencyJar {
-        let weatherService = WeatherAPIClient()
+        let uuidFactory = UUIDFactory { UUID() }
+        let weatherService = WeatherAPIClient(uuidFactory: uuidFactory)
         let preferenceManager = DefaultPreferenceManager()
         let weatherRepository = DefaultWeatherRepository(
             weatherService: weatherService,
@@ -36,7 +37,8 @@ class DependencyBuilder {
             weatherRepository: weatherRepository,
             weatherService: weatherService,
             preferenceManager: preferenceManager,
-            temperatureFormatter: temperatureFormatter
+            temperatureFormatter: temperatureFormatter,
+            uuidFactory: uuidFactory
         )
     }
 }

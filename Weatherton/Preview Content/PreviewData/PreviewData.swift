@@ -211,9 +211,9 @@ extension PreviewData {
             Weatherton.Location(
                 name: "Minneapolis",
                 region: "Minnesota",
-                country: "USA",
-                latitude: 43.0,
-                longitude: -93.0
+                country: "United States of America",
+                latitude: 44.98,
+                longitude: -93.26
             )
         }
         

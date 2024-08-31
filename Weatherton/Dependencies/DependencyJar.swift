@@ -14,18 +14,21 @@ class DependencyJar: ObservableObject {
     let weatherService: WeatherService
     let preferenceManager: PreferenceManager
     let temperatureFormatter: MeasurementFormatter
+    let uuidFactory: UUIDFactory
     
     init(
         viewModelFactory: ViewModelFactory,
         weatherRepository: WeatherRepository,
         weatherService: WeatherService,
         preferenceManager: PreferenceManager,
-        temperatureFormatter: MeasurementFormatter
+        temperatureFormatter: MeasurementFormatter,
+        uuidFactory: UUIDFactory
     ) {
         self.viewModelFactory = viewModelFactory
         self.weatherRepository = weatherRepository
         self.weatherService = weatherService
         self.preferenceManager = preferenceManager
         self.temperatureFormatter = temperatureFormatter
+        self.uuidFactory = uuidFactory
     }
 }

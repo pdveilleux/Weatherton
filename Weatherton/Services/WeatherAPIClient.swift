@@ -9,6 +9,7 @@ import Foundation
 
 final class WeatherAPIClient: WeatherService {
     private let session: URLSession
+    private let uuidFactory: UUIDFactory
 
     private var baseURL: URL {
         guard let url = URL(string: "https://api.weatherapi.com/v1") else {
@@ -23,8 +24,9 @@ final class WeatherAPIClient: WeatherService {
         return decoder
     }()
 
-    init(session: URLSession = .shared) {
+    init(session: URLSession = .shared, uuidFactory: UUIDFactory) {
         self.session = session
+        self.uuidFactory = uuidFactory
     }
 
     func getCurrentWeather(location: Location) async throws -> CurrentWeather {
@@ -35,7 +37,7 @@ final class WeatherAPIClient: WeatherService {
         ]
         let url = createURL(endpoint: .currentWeather, queryParameters: queryItems)
         let responseModel = try await sendRequest(url: url, expecting: CurrentWeatherResponseModel.self)
-        return responseModel.convertToCurrentWeather()
+        return responseModel.convertToCurrentWeather(id: uuidFactory.uuid())
     }
 
     func getForecast(location: Location) async throws -> Forecast {
