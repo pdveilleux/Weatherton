@@ -17,6 +17,9 @@ struct WeathertonApp: App {
                 RootWeatherView(viewModel: dependencyJar.viewModelFactory.buildRootWeatherViewModel())
                     .environmentObject(dependencyJar)
             }
+            .task {
+                await dependencyJar.preferenceManager.setupFirstTimeLaunchIfNeeded()
+            }
         }
     }
 }
