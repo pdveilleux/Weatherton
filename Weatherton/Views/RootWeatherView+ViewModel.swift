@@ -67,6 +67,10 @@ extension RootWeatherView {
         }
 
         func addLocation(_ location: Location) async {
+            guard !weatherData.map(\.location).contains(location) else {
+                return
+            }
+
             await catchHandledErrors {
                 let currentWeather = try await weatherRepository.getCurrentWeather(location: location)
                 weatherData.append(FormattedCurrentWeather(currentWeather: currentWeather, formatter: temperatureFormatter))

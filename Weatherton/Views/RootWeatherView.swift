@@ -17,7 +17,6 @@ struct RootWeatherView: View {
                 if let message = viewModel.errorMessage {
                     MessageView(message: message)
                         .frame(maxWidth: .infinity)
-//                        .listRowSeparator(.hidden)
                 }
 
                 if viewModel.isSearching {
@@ -41,6 +40,7 @@ struct RootWeatherView: View {
                             }
                             .tint(.primary)
                             .listRowSeparator(.hidden)
+                            .accessibilityIdentifier("Location: \(weather.location.name)")
                         }
                         .onDelete(perform: delete)
                     }
@@ -52,6 +52,7 @@ struct RootWeatherView: View {
                 ProgressView()
             }
         }
+        .accessibilityIdentifier("RootWeatherView")
         .navigationTitle("Current Weather")
         .searchable(
             text: Binding(

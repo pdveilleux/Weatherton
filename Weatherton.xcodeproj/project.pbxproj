@@ -49,7 +49,6 @@
 		BBFA26822C76626200211EC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBFA26812C76626200211EC2 /* Assets.xcassets */; };
 		BBFA26852C76626200211EC2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBFA26842C76626200211EC2 /* Preview Assets.xcassets */; };
 		BBFA26992C76626300211EC2 /* WeathertonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA26982C76626300211EC2 /* WeathertonUITests.swift */; };
-		BBFA269B2C76626300211EC2 /* WeathertonUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA269A2C76626300211EC2 /* WeathertonUITestsLaunchTests.swift */; };
 		BBFA26AA2C76648200211EC2 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA26A92C76648200211EC2 /* WeatherService.swift */; };
 		BBFA26AD2C7664CC00211EC2 /* WeatherAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA26AC2C7664CC00211EC2 /* WeatherAPIClient.swift */; };
 		BBFA26AF2C76653D00211EC2 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA26AE2C76653D00211EC2 /* CurrentWeather.swift */; };
@@ -125,7 +124,6 @@
 		BBFA268A2C76626300211EC2 /* WeathertonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeathertonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBFA26942C76626300211EC2 /* WeathertonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeathertonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBFA26982C76626300211EC2 /* WeathertonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathertonUITests.swift; sourceTree = "<group>"; };
-		BBFA269A2C76626300211EC2 /* WeathertonUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathertonUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BBFA26A92C76648200211EC2 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		BBFA26AC2C7664CC00211EC2 /* WeatherAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPIClient.swift; sourceTree = "<group>"; };
 		BBFA26AE2C76653D00211EC2 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
@@ -292,7 +290,6 @@
 			isa = PBXGroup;
 			children = (
 				BBFA26982C76626300211EC2 /* WeathertonUITests.swift */,
-				BBFA269A2C76626300211EC2 /* WeathertonUITestsLaunchTests.swift */,
 			);
 			path = WeathertonUITests;
 			sourceTree = "<group>";
@@ -585,7 +582,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBFA26992C76626300211EC2 /* WeathertonUITests.swift in Sources */,
-				BBFA269B2C76626300211EC2 /* WeathertonUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

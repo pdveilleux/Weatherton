@@ -42,12 +42,15 @@ struct WeatherDetailView: View {
         .navigationTitle(viewModel.location.name)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            Button {
-                dismiss()
-            } label: {
-                Label("Locations", systemImage: "globe.americas.fill")
+            ToolbarItem {
+                Button {
+                    dismiss()
+                } label: {
+                    Label("Locations", systemImage: "globe.americas.fill")
+                }
+                .tint(.primary)
+                .accessibilityIdentifier("Dismiss")
             }
-            .tint(.primary)
         }
         .task {
             await viewModel.getForecast()
@@ -85,6 +88,7 @@ struct WeatherDetailView: View {
         }
         .padding()
         .shadow(color: colorScheme == .dark ? .black.opacity(0.2) : .clear, radius: 12)
+        .accessibilityIdentifier("ConditionHeader")
     }
 
     @ViewBuilder
