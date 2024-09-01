@@ -58,11 +58,11 @@ final class WeatherAPIClientTests: XCTestCase {
 
     func testSearchLocations() async throws {
         // Given
-        // - There is a forecast (in this case getting stubbed)
+        // - There are locations (in this case getting stubbed)
         try prepareStub("Search")
 
         // When
-        // - Fetch the forecast
+        // - Search locations
         let forecast = try await client?.searchLocations(query: "London")
 
         // Then

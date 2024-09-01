@@ -15,6 +15,10 @@
 		BB1680062C82B57D00DE796E /* StubExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1680052C82B57D00DE796E /* StubExpectation.swift */; };
 		BB1680082C82B8D600DE796E /* Forecast.json in Resources */ = {isa = PBXBuildFile; fileRef = BB1680072C82B8D600DE796E /* Forecast.json */; };
 		BB16800A2C82BFAC00DE796E /* Search.json in Resources */ = {isa = PBXBuildFile; fileRef = BB1680092C82BFAC00DE796E /* Search.json */; };
+		BB16800E2C83E3E300DE796E /* DefaultWeatherRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB16800D2C83E3E300DE796E /* DefaultWeatherRepositoryTests.swift */; };
+		BB1680102C83E41400DE796E /* DefaultWeatherRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB16800F2C83E41400DE796E /* DefaultWeatherRepository.swift */; };
+		BB1680122C83E47C00DE796E /* FakeWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1680112C83E47C00DE796E /* FakeWeatherService.swift */; };
+		BB1680142C83E8BD00DE796E /* FakePreferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1680132C83E8BD00DE796E /* FakePreferenceManager.swift */; };
 		BB2A6CFB2C7ACD2C003698B6 /* PreferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A6CFA2C7ACD2C003698B6 /* PreferenceManager.swift */; };
 		BB2A6CFD2C7B9ABC003698B6 /* DependencyJar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A6CFC2C7B9ABC003698B6 /* DependencyJar.swift */; };
 		BB2A6CFF2C7B9BD2003698B6 /* RootWeatherView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A6CFE2C7B9BD2003698B6 /* RootWeatherView+ViewModel.swift */; };
@@ -80,6 +84,10 @@
 		BB1680052C82B57D00DE796E /* StubExpectation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubExpectation.swift; sourceTree = "<group>"; };
 		BB1680072C82B8D600DE796E /* Forecast.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Forecast.json; sourceTree = "<group>"; };
 		BB1680092C82BFAC00DE796E /* Search.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Search.json; sourceTree = "<group>"; };
+		BB16800D2C83E3E300DE796E /* DefaultWeatherRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultWeatherRepositoryTests.swift; sourceTree = "<group>"; };
+		BB16800F2C83E41400DE796E /* DefaultWeatherRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultWeatherRepository.swift; sourceTree = "<group>"; };
+		BB1680112C83E47C00DE796E /* FakeWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeWeatherService.swift; sourceTree = "<group>"; };
+		BB1680132C83E8BD00DE796E /* FakePreferenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakePreferenceManager.swift; sourceTree = "<group>"; };
 		BB2A6CFA2C7ACD2C003698B6 /* PreferenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceManager.swift; sourceTree = "<group>"; };
 		BB2A6CFC2C7B9ABC003698B6 /* DependencyJar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyJar.swift; sourceTree = "<group>"; };
 		BB2A6CFE2C7B9BD2003698B6 /* RootWeatherView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootWeatherView+ViewModel.swift"; sourceTree = "<group>"; };
@@ -150,8 +158,10 @@
 		BB167FF92C829D2500DE796E /* Fakes */ = {
 			isa = PBXGroup;
 			children = (
+				BB1680132C83E8BD00DE796E /* FakePreferenceManager.swift */,
 				BB167FFB2C82A21100DE796E /* FakeURLProtocol.swift */,
 				BB3DD09D2C826CBD0086A1E6 /* FakeUserDefaults.swift */,
+				BB1680112C83E47C00DE796E /* FakeWeatherService.swift */,
 			);
 			path = Fakes;
 			sourceTree = "<group>";
@@ -160,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				BB3DD09F2C826E010086A1E6 /* DefaultPreferenceManagerTests.swift */,
+				BB16800D2C83E3E300DE796E /* DefaultWeatherRepositoryTests.swift */,
 				BB167FF72C829D2000DE796E /* WeatherAPIClientTests.swift */,
 			);
 			path = Tests;
@@ -317,6 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				BBFA26B12C76657700211EC2 /* WeatherRepository.swift */,
+				BB16800F2C83E41400DE796E /* DefaultWeatherRepository.swift */,
 				BB2A6D002C7B9D0D003698B6 /* FakeWeatherRepository.swift */,
 			);
 			path = Repositories;
@@ -508,6 +520,7 @@
 				BB3DD0982C822A0A0086A1E6 /* ErrorResponseModel.swift in Sources */,
 				BB2A6CFF2C7B9BD2003698B6 /* RootWeatherView+ViewModel.swift in Sources */,
 				BB2A6D1E2C802C15003698B6 /* DependencyBuilder.swift in Sources */,
+				BB1680102C83E41400DE796E /* DefaultWeatherRepository.swift in Sources */,
 				BB2A6CFD2C7B9ABC003698B6 /* DependencyJar.swift in Sources */,
 				BB2A6D0C2C7D1EFE003698B6 /* FormattedCurrentWeather.swift in Sources */,
 				BBFA267C2C76626000211EC2 /* WeathertonApp.swift in Sources */,
@@ -542,9 +555,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB1680062C82B57D00DE796E /* StubExpectation.swift in Sources */,
+				BB16800E2C83E3E300DE796E /* DefaultWeatherRepositoryTests.swift in Sources */,
 				BB3DD0A02C826E010086A1E6 /* DefaultPreferenceManagerTests.swift in Sources */,
+				BB1680122C83E47C00DE796E /* FakeWeatherService.swift in Sources */,
 				BB3DD09E2C826CBD0086A1E6 /* FakeUserDefaults.swift in Sources */,
 				BB1680032C82B52500DE796E /* StubLoader.swift in Sources */,
+				BB1680142C83E8BD00DE796E /* FakePreferenceManager.swift in Sources */,
 				BB167FFC2C82A21100DE796E /* FakeURLProtocol.swift in Sources */,
 				BB167FF82C829D2000DE796E /* WeatherAPIClientTests.swift in Sources */,
 			);
