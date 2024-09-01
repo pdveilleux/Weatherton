@@ -19,6 +19,8 @@
 		BB1680102C83E41400DE796E /* DefaultWeatherRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB16800F2C83E41400DE796E /* DefaultWeatherRepository.swift */; };
 		BB1680122C83E47C00DE796E /* FakeWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1680112C83E47C00DE796E /* FakeWeatherService.swift */; };
 		BB1680142C83E8BD00DE796E /* FakePreferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1680132C83E8BD00DE796E /* FakePreferenceManager.swift */; };
+		BB1680162C84006600DE796E /* TemperatureBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1680152C84006600DE796E /* TemperatureBar.swift */; };
+		BB1680182C84018700DE796E /* TemperatureBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1680172C84018700DE796E /* TemperatureBarTests.swift */; };
 		BB2A6CFB2C7ACD2C003698B6 /* PreferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A6CFA2C7ACD2C003698B6 /* PreferenceManager.swift */; };
 		BB2A6CFD2C7B9ABC003698B6 /* DependencyJar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A6CFC2C7B9ABC003698B6 /* DependencyJar.swift */; };
 		BB2A6CFF2C7B9BD2003698B6 /* RootWeatherView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A6CFE2C7B9BD2003698B6 /* RootWeatherView+ViewModel.swift */; };
@@ -88,6 +90,8 @@
 		BB16800F2C83E41400DE796E /* DefaultWeatherRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultWeatherRepository.swift; sourceTree = "<group>"; };
 		BB1680112C83E47C00DE796E /* FakeWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeWeatherService.swift; sourceTree = "<group>"; };
 		BB1680132C83E8BD00DE796E /* FakePreferenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakePreferenceManager.swift; sourceTree = "<group>"; };
+		BB1680152C84006600DE796E /* TemperatureBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureBar.swift; sourceTree = "<group>"; };
+		BB1680172C84018700DE796E /* TemperatureBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureBarTests.swift; sourceTree = "<group>"; };
 		BB2A6CFA2C7ACD2C003698B6 /* PreferenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceManager.swift; sourceTree = "<group>"; };
 		BB2A6CFC2C7B9ABC003698B6 /* DependencyJar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyJar.swift; sourceTree = "<group>"; };
 		BB2A6CFE2C7B9BD2003698B6 /* RootWeatherView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootWeatherView+ViewModel.swift"; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 				BB3DD09F2C826E010086A1E6 /* DefaultPreferenceManagerTests.swift */,
 				BB16800D2C83E3E300DE796E /* DefaultWeatherRepositoryTests.swift */,
 				BB167FF72C829D2000DE796E /* WeatherAPIClientTests.swift */,
+				BB1680172C84018700DE796E /* TemperatureBarTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -293,6 +298,7 @@
 			children = (
 				BB3DD09B2C8234030086A1E6 /* CardHeader.swift */,
 				BB2A6D232C81693E003698B6 /* DailyForecastCard.swift */,
+				BB1680152C84006600DE796E /* TemperatureBar.swift */,
 				BB3DD0992C82330B0086A1E6 /* HourlyForecastCard.swift */,
 				BBFA26B82C7679DC00211EC2 /* RootWeatherView.swift */,
 				BB2A6CFE2C7B9BD2003698B6 /* RootWeatherView+ViewModel.swift */,
@@ -544,6 +550,7 @@
 				BBFA26BF2C77BAF100211EC2 /* Secrets.swift in Sources */,
 				BB1680012C82AE7000DE796E /* UUIDFactory.swift in Sources */,
 				BB3DD09C2C8234030086A1E6 /* CardHeader.swift in Sources */,
+				BB1680162C84006600DE796E /* TemperatureBar.swift in Sources */,
 				BBFA26C62C77C68900211EC2 /* LocationSearchResponseModel.swift in Sources */,
 				BB2A6D182C8007C5003698B6 /* ConditionResponseModel.swift in Sources */,
 				BB3DD09A2C82330B0086A1E6 /* HourlyForecastCard.swift in Sources */,
@@ -554,6 +561,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB1680182C84018700DE796E /* TemperatureBarTests.swift in Sources */,
 				BB1680062C82B57D00DE796E /* StubExpectation.swift in Sources */,
 				BB16800E2C83E3E300DE796E /* DefaultWeatherRepositoryTests.swift in Sources */,
 				BB3DD0A02C826E010086A1E6 /* DefaultPreferenceManagerTests.swift in Sources */,

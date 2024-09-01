@@ -62,7 +62,7 @@ final class DefaultWeatherRepositoryTests: XCTestCase {
         // - Fetch the current weather for a location
         let location = PreviewData.Location.minneapolis
         do {
-            let result = try await weatherRepository?.getCurrentWeather(location: location)
+            _ = try await weatherRepository?.getCurrentWeather(location: location)
             XCTFail("getCurrentWeather should have thrown.")
         } catch {
             // Then
@@ -114,7 +114,7 @@ final class DefaultWeatherRepositoryTests: XCTestCase {
         // When
         // - Fetch the current weather for saved locations
         do {
-            let result = try await weatherRepository?.getCurrentWeatherForSavedLocations()
+            _ = try await weatherRepository?.getCurrentWeatherForSavedLocations()
             XCTFail("getCurrentWeatherForSavedLocations should have thrown")
         } catch {
             // Then
@@ -140,7 +140,7 @@ final class DefaultWeatherRepositoryTests: XCTestCase {
         // When
         // - Fetch the current weather for saved locations
         do {
-            let result = try await weatherRepository?.getCurrentWeatherForSavedLocations()
+            _ = try await weatherRepository?.getCurrentWeatherForSavedLocations()
             XCTFail("getCurrentWeatherForSavedLocations should have thrown")
         } catch {
             // Then
@@ -181,7 +181,7 @@ final class DefaultWeatherRepositoryTests: XCTestCase {
         // - Fetch the current weather for a location
         let location = PreviewData.Location.minneapolis
         do {
-            let result = try await weatherRepository?.getForecast(location: location)
+            _ = try await weatherRepository?.getForecast(location: location)
             XCTFail("getForecast should have thrown.")
         } catch {
             // Then
@@ -224,7 +224,7 @@ final class DefaultWeatherRepositoryTests: XCTestCase {
         // - Fetch the current weather for a location
         let query = "Minneapolis"
         do {
-            let result = try await weatherRepository?.searchLocations(query: query)
+            _ = try await weatherRepository?.searchLocations(query: query)
             XCTFail("searchLocations should have thrown.")
         } catch {
             // Then
