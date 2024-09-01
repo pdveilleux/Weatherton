@@ -21,6 +21,7 @@
 		BB1680142C83E8BD00DE796E /* FakePreferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1680132C83E8BD00DE796E /* FakePreferenceManager.swift */; };
 		BB1680162C84006600DE796E /* TemperatureBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1680152C84006600DE796E /* TemperatureBar.swift */; };
 		BB1680182C84018700DE796E /* TemperatureBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1680172C84018700DE796E /* TemperatureBarTests.swift */; };
+		BB16801B2C84EED100DE796E /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB16801A2C84EED100DE796E /* MessageView.swift */; };
 		BB2A6CFB2C7ACD2C003698B6 /* PreferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A6CFA2C7ACD2C003698B6 /* PreferenceManager.swift */; };
 		BB2A6CFD2C7B9ABC003698B6 /* DependencyJar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A6CFC2C7B9ABC003698B6 /* DependencyJar.swift */; };
 		BB2A6CFF2C7B9BD2003698B6 /* RootWeatherView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A6CFE2C7B9BD2003698B6 /* RootWeatherView+ViewModel.swift */; };
@@ -93,6 +94,7 @@
 		BB1680152C84006600DE796E /* TemperatureBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureBar.swift; sourceTree = "<group>"; };
 		BB1680172C84018700DE796E /* TemperatureBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureBarTests.swift; sourceTree = "<group>"; };
 		BB1680192C840C3C00DE796E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BB16801A2C84EED100DE796E /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		BB2A6CFA2C7ACD2C003698B6 /* PreferenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceManager.swift; sourceTree = "<group>"; };
 		BB2A6CFC2C7B9ABC003698B6 /* DependencyJar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyJar.swift; sourceTree = "<group>"; };
 		BB2A6CFE2C7B9BD2003698B6 /* RootWeatherView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootWeatherView+ViewModel.swift"; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 				BB2A6D232C81693E003698B6 /* DailyForecastCard.swift */,
 				BB1680152C84006600DE796E /* TemperatureBar.swift */,
 				BB3DD0992C82330B0086A1E6 /* HourlyForecastCard.swift */,
+				BB16801A2C84EED100DE796E /* MessageView.swift */,
 				BBFA26B82C7679DC00211EC2 /* RootWeatherView.swift */,
 				BB2A6CFE2C7B9BD2003698B6 /* RootWeatherView+ViewModel.swift */,
 				BB2A6D072C7D03F7003698B6 /* WeatherDetailView.swift */,
@@ -541,6 +544,7 @@
 				BB2A6D162C8000E0003698B6 /* Forecast.swift in Sources */,
 				BB2A6D222C811D00003698B6 /* FormattedForecast.swift in Sources */,
 				BB2A6D102C7FFD1D003698B6 /* LocationResponseModel.swift in Sources */,
+				BB16801B2C84EED100DE796E /* MessageView.swift in Sources */,
 				BB2A6CFB2C7ACD2C003698B6 /* PreferenceManager.swift in Sources */,
 				BB2A6D0A2C7D1ECC003698B6 /* PreviewData.swift in Sources */,
 				BB2A6D202C802C33003698B6 /* ViewModelFactory.swift in Sources */,

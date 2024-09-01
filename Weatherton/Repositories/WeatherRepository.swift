@@ -13,7 +13,3 @@ protocol WeatherRepository {
     func getForecast(location: Location) async throws -> Forecast
     func searchLocations(query: String) async throws -> [Location]
 }
-
-struct WeatherRepositoryError: Error {
-    
-}

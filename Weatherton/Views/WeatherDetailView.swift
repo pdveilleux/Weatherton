@@ -20,6 +20,10 @@ struct WeatherDetailView: View {
             
             ScrollView {
                 LazyVStack {
+                    if let message = viewModel.errorMessage {
+                        MessageView(message: message)
+                    }
+
                     currentConditionHeader
                     
                     if let forecast = viewModel.forecast {
@@ -47,6 +51,11 @@ struct WeatherDetailView: View {
         }
         .task {
             await viewModel.getForecast()
+        }
+        .refreshable {
+            Task {
+                await viewModel.getForecast()
+            }
         }
     }
 

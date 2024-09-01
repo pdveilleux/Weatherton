@@ -13,6 +13,7 @@ protocol WeatherService {
     func searchLocations(query: String) async throws -> [Location]
 }
 
-struct WeatherServiceError: Error {
-    
+enum WeatherServiceError: Error {
+    case generic
+    case notConnectedToInternet
 }

@@ -13,6 +13,7 @@ extension RootWeatherView {
     @Observable @MainActor
     final class ViewModel {
         private(set) var isLoading = false
+        private(set) var errorMessage: Message?
         private(set) var weatherData: [FormattedCurrentWeather] = []
         private(set) var locationResults: [Location] = []
         var searchText: CurrentValueSubject<String, Never> = .init("")
@@ -60,33 +61,23 @@ extension RootWeatherView {
                 isLoading = false
             }
 
-            do {
+            await catchHandledErrors {
                 weatherData = try await weatherRepository.getCurrentWeatherForSavedLocations().map { FormattedCurrentWeather(currentWeather: $0, formatter: temperatureFormatter) }
-                print("Received weather data: \(weatherData)")
-            } catch {
-                print("Error fetching current weather data: \(error)")
             }
         }
 
         func addLocation(_ location: Location) async {
-            do {
+            await catchHandledErrors {
                 let currentWeather = try await weatherRepository.getCurrentWeather(location: location)
                 weatherData.append(FormattedCurrentWeather(currentWeather: currentWeather, formatter: temperatureFormatter))
                 await preferenceManager.saveLocation(location)
-                print("Received weather data: \(weatherData)")
-            } catch {
-                print("Error fetching current weather data: \(error)")
             }
         }
 
         func searchLocations(query: String) async {
             guard !query.isEmpty else { return }
-            do {
+            await catchHandledErrors {
                 locationResults = try await weatherRepository.searchLocations(query: query)
-                print("Received locations: \(locationResults.map(\.name))")
-                print("Searching \(isSearching)")
-            } catch {
-                print("Error searching locations: \(error)")
             }
         }
 
@@ -98,6 +89,17 @@ extension RootWeatherView {
             weatherData.remove(atOffsets: offsets)
             Task {
                 await preferenceManager.removeSavedLocations(locations)
+            }
+        }
+
+        private func catchHandledErrors(_ block: () async throws -> Void) async {
+            do {
+                try await block()
+                errorMessage = nil
+            } catch WeatherServiceError.notConnectedToInternet {
+                errorMessage = .notConnectedToInternet
+            } catch {
+                print("Error fetching data: \(error)")
             }
         }
     }

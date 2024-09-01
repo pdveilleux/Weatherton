@@ -116,22 +116,26 @@ extension WeatherAPIClient {
         let (data, response): (Data, URLResponse)
         do {
             (data, response) = try await session.data(for: request)
+        } catch URLError.notConnectedToInternet {
+            throw WeatherServiceError.notConnectedToInternet
         } catch {
-            throw WeatherServiceError()
+            throw WeatherServiceError.generic
         }
         
         guard let response = response as? HTTPURLResponse else {
-            throw WeatherServiceError()
+            print("Error reading response")
+            throw WeatherServiceError.generic
         }
         
         switch response.statusCode {
         case 200...299:
             return try decoder.decode(type, from: data)
         case 400...499:
-            let errorResponse = try decoder.decode(ErrorResponseModel.self, from: data)
-            throw WeatherServiceError()
+            _ = try decoder.decode(ErrorResponseModel.self, from: data)
+            throw WeatherServiceError.generic
         default:
-            throw WeatherServiceError()
+            print("Non 2xx or 4xx error")
+            throw WeatherServiceError.generic
         }
     }
 }

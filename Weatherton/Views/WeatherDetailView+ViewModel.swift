@@ -11,6 +11,7 @@ extension WeatherDetailView {
     @Observable @MainActor
     final class ViewModel {
         private(set) var isLoading = false
+        private(set) var errorMessage: Message?
         private(set) var currentWeather: FormattedCurrentWeather
         private(set) var forecast: FormattedForecast?
         var location: Location {
@@ -43,6 +44,9 @@ extension WeatherDetailView {
             do {
                 let forecast = try await weatherRepository.getForecast(location: location)
                 self.forecast = FormattedForecast(forecast: forecast, formatter: temperatureFormatter)
+                errorMessage = nil
+            } catch WeatherServiceError.notConnectedToInternet {
+                errorMessage = .notConnectedToInternet
             } catch {
                 print("Error fetching forecast: \(error)")
             }

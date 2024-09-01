@@ -13,31 +13,39 @@ struct RootWeatherView: View {
 
     var body: some View {
         ZStack {
-            if viewModel.isSearching {
-                List(viewModel.locationResults, id: \.self) { location in
-                    Button {
-                        viewModel.isSearching = false
-                        Task {
-                            await viewModel.addLocation(location)
-                        }
-                    } label: {
-                        Text("\(location.name), \(location.region)")
-                    }
+            VStack {
+                if let message = viewModel.errorMessage {
+                    MessageView(message: message)
+                        .frame(maxWidth: .infinity)
+//                        .listRowSeparator(.hidden)
                 }
-            } else {
-                List {
-                    ForEach(viewModel.weatherData, id: \.self) { weather in
+
+                if viewModel.isSearching {
+                    List(viewModel.locationResults, id: \.self) { location in
                         Button {
-                            viewModel.weatherDetailItem = weather.backingData
+                            viewModel.isSearching = false
+                            Task {
+                                await viewModel.addLocation(location)
+                            }
                         } label: {
-                            weatherRow(weather)
+                            Text("\(location.name), \(location.region)")
                         }
-                        .tint(.primary)
-                        .listRowSeparator(.hidden)
                     }
-                    .onDelete(perform: delete)
+                } else {
+                    List {
+                        ForEach(viewModel.weatherData, id: \.self) { weather in
+                            Button {
+                                viewModel.weatherDetailItem = weather.backingData
+                            } label: {
+                                weatherRow(weather)
+                            }
+                            .tint(.primary)
+                            .listRowSeparator(.hidden)
+                        }
+                        .onDelete(perform: delete)
+                    }
+                    .listStyle(.plain)
                 }
-                .listStyle(.plain)
             }
             
             if viewModel.isLoading {
