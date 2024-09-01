@@ -95,7 +95,7 @@ struct WeatherDetailView: View {
             viewModel: WeatherDetailView.ViewModel(
                 currentWeather: PreviewData.CurrentWeather.minneapolis,
                 forecast: PreviewData.Forecast.minneapolis,
-                weatherRepository: FakeWeatherRepository(),
+                weatherRepository: PreviewWeatherRepository(),
                 temperatureFormatter: PreviewData.Formatter.temperature
             )
         )

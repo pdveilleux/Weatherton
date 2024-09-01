@@ -1,5 +1,5 @@
 //
-//  FakeWeatherRepository.swift
+//  PreviewWeatherRepository.swift
 //  Weatherton
 //
 //  Created by Patrick Veilleux on 8/25/24.
@@ -9,7 +9,7 @@
 import Foundation
 
 @MainActor
-final class FakeWeatherRepository: WeatherRepository {
+final class PreviewWeatherRepository: WeatherRepository {
     func getCurrentWeather(location: Location) async throws -> CurrentWeather {
         PreviewData.CurrentWeather.london
     }

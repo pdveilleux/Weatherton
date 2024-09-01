@@ -98,7 +98,7 @@ struct RootWeatherView: View {
     NavigationStack {
         RootWeatherView(
             viewModel: RootWeatherView.ViewModel(
-                weatherRepository: FakeWeatherRepository(),
+                weatherRepository: PreviewWeatherRepository(),
                 preferenceManager: DefaultPreferenceManager(),
                 temperatureFormatter: PreviewData.Formatter.temperature
             )
