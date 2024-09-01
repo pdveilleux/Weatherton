@@ -92,6 +92,7 @@
 		BB1680132C83E8BD00DE796E /* FakePreferenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakePreferenceManager.swift; sourceTree = "<group>"; };
 		BB1680152C84006600DE796E /* TemperatureBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureBar.swift; sourceTree = "<group>"; };
 		BB1680172C84018700DE796E /* TemperatureBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureBarTests.swift; sourceTree = "<group>"; };
+		BB1680192C840C3C00DE796E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BB2A6CFA2C7ACD2C003698B6 /* PreferenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceManager.swift; sourceTree = "<group>"; };
 		BB2A6CFC2C7B9ABC003698B6 /* DependencyJar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyJar.swift; sourceTree = "<group>"; };
 		BB2A6CFE2C7B9BD2003698B6 /* RootWeatherView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootWeatherView+ViewModel.swift"; sourceTree = "<group>"; };
@@ -251,6 +252,7 @@
 		BBFA267A2C76626000211EC2 /* Weatherton */ = {
 			isa = PBXGroup;
 			children = (
+				BB1680192C840C3C00DE796E /* Info.plist */,
 				BBFA267B2C76626000211EC2 /* WeathertonApp.swift */,
 				BBFA26BD2C77B89C00211EC2 /* Configuration */,
 				BB2A6D1C2C802BF9003698B6 /* Dependencies */,
@@ -729,6 +731,7 @@
 				DEVELOPMENT_TEAM = C7Y36F432B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Weatherton/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -758,6 +761,7 @@
 				DEVELOPMENT_TEAM = C7Y36F432B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Weatherton/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
