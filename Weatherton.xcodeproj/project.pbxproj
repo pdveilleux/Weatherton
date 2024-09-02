@@ -47,6 +47,7 @@
 		BB3DD0A02C826E010086A1E6 /* DefaultPreferenceManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3DD09F2C826E010086A1E6 /* DefaultPreferenceManagerTests.swift */; };
 		BB6253122C8569A000CDC113 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BB6253112C8569A000CDC113 /* Localizable.xcstrings */; };
 		BB6253142C856A8E00CDC113 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6253132C856A8E00CDC113 /* Strings.swift */; };
+		BB6253172C85718400CDC113 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6253162C85718400CDC113 /* Design.swift */; };
 		BBFA267C2C76626000211EC2 /* WeathertonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA267B2C76626000211EC2 /* WeathertonApp.swift */; };
 		BBFA26822C76626200211EC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBFA26812C76626200211EC2 /* Assets.xcassets */; };
 		BBFA26852C76626200211EC2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBFA26842C76626200211EC2 /* Preview Assets.xcassets */; };
@@ -121,6 +122,7 @@
 		BB3DD09F2C826E010086A1E6 /* DefaultPreferenceManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPreferenceManagerTests.swift; sourceTree = "<group>"; };
 		BB6253112C8569A000CDC113 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		BB6253132C856A8E00CDC113 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		BB6253162C85718400CDC113 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		BBFA26782C76626000211EC2 /* Weatherton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weatherton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBFA267B2C76626000211EC2 /* WeathertonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathertonApp.swift; sourceTree = "<group>"; };
 		BBFA26812C76626200211EC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -242,6 +244,23 @@
 			path = Localizations;
 			sourceTree = "<group>";
 		};
+		BB6253182C85783C00CDC113 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				BB6253162C85718400CDC113 /* Design.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		BB6253192C85786200CDC113 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BB2A6CFE2C7B9BD2003698B6 /* RootWeatherView+ViewModel.swift */,
+				BB2A6D192C80168B003698B6 /* WeatherDetailView+ViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		BBFA266F2C76626000211EC2 = {
 			isa = PBXGroup;
 			children = (
@@ -269,11 +288,13 @@
 				BBFA267B2C76626000211EC2 /* WeathertonApp.swift */,
 				BBFA26BD2C77B89C00211EC2 /* Configuration */,
 				BB2A6D1C2C802BF9003698B6 /* Dependencies */,
+				BB6253182C85783C00CDC113 /* Design */,
 				BB6253152C856A9400CDC113 /* Localizations */,
 				BBFA26A82C76630400211EC2 /* Models */,
 				BB2A6CF92C7ACD19003698B6 /* Preferences */,
 				BBFA26B02C76655000211EC2 /* Repositories */,
 				BBFA26AB2C76648B00211EC2 /* Services */,
+				BB6253192C85786200CDC113 /* ViewModels */,
 				BBFA26A72C7662FA00211EC2 /* Views */,
 				BBFA26812C76626200211EC2 /* Assets.xcassets */,
 				BBFA26832C76626200211EC2 /* Preview Content */,
@@ -313,13 +334,11 @@
 			children = (
 				BB3DD09B2C8234030086A1E6 /* CardHeader.swift */,
 				BB2A6D232C81693E003698B6 /* DailyForecastCard.swift */,
-				BB1680152C84006600DE796E /* TemperatureBar.swift */,
 				BB3DD0992C82330B0086A1E6 /* HourlyForecastCard.swift */,
 				BB16801A2C84EED100DE796E /* MessageView.swift */,
 				BBFA26B82C7679DC00211EC2 /* RootWeatherView.swift */,
-				BB2A6CFE2C7B9BD2003698B6 /* RootWeatherView+ViewModel.swift */,
+				BB1680152C84006600DE796E /* TemperatureBar.swift */,
 				BB2A6D072C7D03F7003698B6 /* WeatherDetailView.swift */,
-				BB2A6D192C80168B003698B6 /* WeatherDetailView+ViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -540,6 +559,7 @@
 				BBFA26B22C76657700211EC2 /* WeatherRepository.swift in Sources */,
 				BBFA26B72C7678E900211EC2 /* CurrentWeatherResponseModel.swift in Sources */,
 				BBFA26AA2C76648200211EC2 /* WeatherService.swift in Sources */,
+				BB6253172C85718400CDC113 /* Design.swift in Sources */,
 				BB3DD0982C822A0A0086A1E6 /* ErrorResponseModel.swift in Sources */,
 				BB2A6CFF2C7B9BD2003698B6 /* RootWeatherView+ViewModel.swift in Sources */,
 				BB2A6D1E2C802C15003698B6 /* DependencyBuilder.swift in Sources */,

@@ -64,16 +64,16 @@ struct WeatherDetailView: View {
 
     @ViewBuilder @MainActor
     private var currentConditionHeader: some View {
-        VStack(spacing: 16) {
+        VStack(spacing: Design.Spacing.reduced) {
             VStack {
-                HStack(alignment: .center, spacing: 20) {
+                HStack(alignment: .center, spacing: Design.Spacing.standard) {
                     if let image = viewModel.currentWeather.systemImage {
                         Image(systemName: image)
-                            .font(.system(size: 48))
+                            .font(Design.Font.veryLarge)
                     }
                     
                     Text(viewModel.currentWeather.apparentTemperature)
-                        .font(.system(size: 64))
+                        .font(Design.Font.ultraLarge)
                         .fontWeight(.medium)
                 }
                 Text(viewModel.currentWeather.description)
@@ -84,7 +84,7 @@ struct WeatherDetailView: View {
             .accessibilityElement(children: .ignore)
             .accessibilityLabel("\(viewModel.currentWeather.apparentTemperature), \(viewModel.currentWeather.description)")
             
-            HStack(spacing: 40) {
+            HStack(spacing: Design.Spacing.veryLarge) {
                 secondaryConditionLabel(value: viewModel.currentWeather.humidity, label: Strings.humidity)
                 secondaryConditionLabel(value: viewModel.currentWeather.visibility, label: Strings.visibility)
                 secondaryConditionLabel(
@@ -95,7 +95,7 @@ struct WeatherDetailView: View {
             }
         }
         .padding()
-        .shadow(color: colorScheme == .dark ? .black.opacity(0.2) : .clear, radius: 12)
+        .shadow(color: Design.Color.transparentBlack, radius: Design.Radius.standard)
         .accessibilityIdentifier("ConditionHeader")
     }
 

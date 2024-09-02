@@ -17,8 +17,12 @@ enum Strings {
     static let wind = String(localized: "Wind")
     static let notConnectedToInternet = String(localized: "Offline")
 
-    static func dayRowAccessibilityLabel(date: String, description: String, low: String, high: String) -> String {
-        String(localized: "\(date), \(description), Low \(low), High \(high)", comment: "The accessibility label for a single day in the week forecast.")
+    static func hourForecastAccessibilityLabel(time: String, temperature: String, description: String) -> String {
+        String(localized: "\(time), \(temperature), \(description)", comment: "The accessibility label for a single hour forecast in the next 24 hours.")
+    }
+
+    static func dayForecastAccessibilityLabel(date: String, description: String, low: String, high: String) -> String {
+        String(localized: "\(date), \(description), Low \(low), High \(high)", comment: "The accessibility label for a single day forecast in the week forecast.")
     }
 
     static func locationAccessibilityLabel(location: String, temperature: String, description: String) -> String {

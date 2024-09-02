@@ -15,14 +15,14 @@ struct TemperatureBar: View {
         HStack(alignment: .center) {
             Text(day.minTemperature)
                 .fontWeight(.semibold)
-                .frame(minWidth: 32, alignment: .leading)
+                .frame(minWidth: Design.Sizing.reducedMinimum, alignment: .leading)
             GeometryReader { geometry in
                 if let offset = getOffset(forecast: forecast, day: day, width: geometry.size.width),
                    let width = getWidth(forecast: forecast, day: day, width: geometry.size.width) {
                     ZStack {
                         Capsule()
-                            .frame(maxWidth: .infinity, maxHeight: 6)
-                            .foregroundStyle(Color.gray.opacity(0.2))
+                            .frame(maxWidth: .infinity, maxHeight: Design.Sizing.temperatureBarHeight)
+                            .foregroundStyle(Design.Color.transparentGray)
                         Capsule()
                             .foregroundStyle(LinearGradient(
                                 colors: [.blue, .green, .yellow, .orange, .red],
@@ -30,7 +30,7 @@ struct TemperatureBar: View {
                             ))
                             .mask {
                                 Capsule()
-                                    .frame(width: width, height: 6)
+                                    .frame(width: width, height: Design.Sizing.temperatureBarHeight)
                                     .offset(x: offset)
                                     .foregroundStyle(Color.blue)
                             }
@@ -41,7 +41,7 @@ struct TemperatureBar: View {
             
             Text(day.maxTemperature)
                 .fontWeight(.semibold)
-                .frame(minWidth: 32, alignment: .trailing)
+                .frame(minWidth: Design.Sizing.reducedMinimum, alignment: .trailing)
         }
         .frame(maxWidth: .infinity)
     }

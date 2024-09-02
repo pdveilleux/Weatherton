@@ -14,15 +14,11 @@ struct MessageView: View {
         Label(message.description, systemImage: message.systemImage)
             .fontWeight(.semibold)
             .foregroundStyle(message.foregroundStyle)
-            .padding(.horizontal, 40)
-            .padding(.vertical, 12)
+            .padding(.horizontal, Design.Spacing.veryLarge)
+            .padding(.vertical, Design.Spacing.small)
             .background(.thickMaterial)
-            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .clipShape(Design.ClipShape.standardRoundedRectangle)
     }
-}
-
-#Preview {
-    MessageView(message: .notConnectedToInternet)
 }
 
 enum Message {
@@ -45,4 +41,8 @@ enum Message {
         case .notConnectedToInternet: Color.red
         }
     }
+}
+
+#Preview {
+    MessageView(message: .notConnectedToInternet)
 }

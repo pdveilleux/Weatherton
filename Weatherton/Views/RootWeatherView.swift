@@ -99,9 +99,9 @@ struct RootWeatherView: View {
                 .fontDesign(.rounded)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(12)
+        .padding(Design.Spacing.small)
         .background(LinearGradient(gradient: weather.temperatureGradient, startPoint: .leading, endPoint: .trailing))
-        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .clipShape(Design.ClipShape.standardRoundedRectangle)
     }
 
     @MainActor func delete(at offsets: IndexSet) {

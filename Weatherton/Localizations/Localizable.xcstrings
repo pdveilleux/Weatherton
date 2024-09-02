@@ -13,7 +13,7 @@
       }
     },
     "%@, %@, %@" : {
-      "comment" : "The accessibility label for the current weather of a location.",
+      "comment" : "The accessibility label for a single hour forecast in the next 24 hours.",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -24,7 +24,7 @@
       }
     },
     "%@, %@, Low %@, High %@" : {
-      "comment" : "The accessibility label for a single day in the week forecast.",
+      "comment" : "The accessibility label for a single day forecast in the week forecast.",
       "localizations" : {
         "en" : {
           "stringUnit" : {

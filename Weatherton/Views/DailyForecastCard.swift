@@ -11,7 +11,7 @@ struct DailyForecastCard: View {
     let forecast: FormattedForecast
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .leading, spacing: Design.Spacing.small) {
             CardHeader(Strings.dailyForecast, systemImage: "calendar")
             
             VStack {
@@ -23,18 +23,18 @@ struct DailyForecastCard: View {
         .padding()
         .background(.ultraThinMaterial)
         .frame(maxWidth: .infinity)
-        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .clipShape(Design.ClipShape.standardRoundedRectangle)
     }
 
     @ViewBuilder
     private func dayRow(day: FormattedForecastDay) -> some View {
-        HStack(spacing: 20) {
+        HStack(spacing: Design.Spacing.standard) {
             Group {
                 Text(day.date)
-                    .frame(minWidth: 44, alignment: .leading)
+                    .frame(minWidth: Design.Sizing.standardMinimum, alignment: .leading)
                 if let icon = day.systemImage {
                     Image(systemName: icon)
-                        .frame(minWidth: 44, alignment: .leading)
+                        .frame(minWidth: Design.Sizing.standardMinimum, alignment: .leading)
                         .font(.title3)
                         .symbolRenderingMode(.multicolor)
                 }
@@ -42,7 +42,7 @@ struct DailyForecastCard: View {
             }
         }
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(Strings.dayRowAccessibilityLabel(
+        .accessibilityLabel(Strings.dayForecastAccessibilityLabel(
             date: day.dateAccessibilityLabel,
             description: day.description,
             low: day.minTemperature,
