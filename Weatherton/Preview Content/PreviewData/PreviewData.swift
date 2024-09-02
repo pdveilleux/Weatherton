@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import OSLog
 
 #if DEBUG
 enum PreviewData {}
@@ -245,6 +246,10 @@ extension PreviewData {
             formatter.unitStyle = .short
             return formatter
         }
+    }
+
+    enum Logging {
+        static var logger = Logger()
     }
 }
 #endif

@@ -284,6 +284,7 @@
 		BBFA267A2C76626000211EC2 /* Weatherton */ = {
 			isa = PBXGroup;
 			children = (
+				BBFA26812C76626200211EC2 /* Assets.xcassets */,
 				BB1680192C840C3C00DE796E /* Info.plist */,
 				BBFA267B2C76626000211EC2 /* WeathertonApp.swift */,
 				BBFA26BD2C77B89C00211EC2 /* Configuration */,
@@ -296,7 +297,6 @@
 				BBFA26AB2C76648B00211EC2 /* Services */,
 				BB6253192C85786200CDC113 /* ViewModels */,
 				BBFA26A72C7662FA00211EC2 /* Views */,
-				BBFA26812C76626200211EC2 /* Assets.xcassets */,
 				BBFA26832C76626200211EC2 /* Preview Content */,
 			);
 			path = Weatherton;

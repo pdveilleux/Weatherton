@@ -8,6 +8,7 @@
 import Combine
 import Foundation
 import Observation
+import OSLog
 
 extension RootWeatherView {
     @Observable @MainActor
@@ -30,16 +31,23 @@ extension RootWeatherView {
         private let weatherRepository: WeatherRepository
         private let preferenceManager: PreferenceManager
         private let temperatureFormatter: MeasurementFormatter
+        private let logger: Logger
         private var cancellables: Set<AnyCancellable> = []
 
         enum Constants {
             static let debounceThreshold = 0.5
         }
 
-        init(weatherRepository: WeatherRepository, preferenceManager: PreferenceManager, temperatureFormatter: MeasurementFormatter) {
+        init(
+            weatherRepository: WeatherRepository,
+            preferenceManager: PreferenceManager,
+            temperatureFormatter: MeasurementFormatter,
+            logger: Logger
+        ) {
             self.weatherRepository = weatherRepository
             self.preferenceManager = preferenceManager
             self.temperatureFormatter = temperatureFormatter
+            self.logger = logger
             
             searchText
                 .debounce(for: .seconds(Constants.debounceThreshold), scheduler: RunLoop.main)
@@ -103,7 +111,7 @@ extension RootWeatherView {
             } catch WeatherServiceError.notConnectedToInternet {
                 errorMessage = .notConnectedToInternet
             } catch {
-                print("Error fetching data: \(error)")
+                logger.log(level: .error, "Error fetching data: \(error)")
             }
         }
     }

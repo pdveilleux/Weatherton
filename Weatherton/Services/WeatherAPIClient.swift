@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import OSLog
 
 final class WeatherAPIClient: WeatherService {
     private let session: URLSession
     private let uuidFactory: UUIDFactory
+    private let logger: Logger
 
     private var baseURL: URL {
         guard let url = URL(string: "https://api.weatherapi.com/v1") else {
@@ -24,9 +26,10 @@ final class WeatherAPIClient: WeatherService {
         return decoder
     }()
 
-    init(session: URLSession = .shared, uuidFactory: UUIDFactory) {
+    init(session: URLSession = .shared, uuidFactory: UUIDFactory, logger: Logger) {
         self.session = session
         self.uuidFactory = uuidFactory
+        self.logger = logger
     }
 
     func getCurrentWeather(location: Location) async throws -> CurrentWeather {
@@ -123,7 +126,7 @@ extension WeatherAPIClient {
         }
         
         guard let response = response as? HTTPURLResponse else {
-            print("Error reading response")
+            logger.log(level: .error, "WeatherAPIClient could not cast response to HTTPURLResponse")
             throw WeatherServiceError.generic
         }
         
@@ -134,7 +137,7 @@ extension WeatherAPIClient {
             _ = try decoder.decode(ErrorResponseModel.self, from: data)
             throw WeatherServiceError.generic
         default:
-            print("Non 2xx or 4xx error")
+            logger.log(level: .error, "WeatherAPIClient received unhandled statusCode: \(response.statusCode)")
             throw WeatherServiceError.generic
         }
     }

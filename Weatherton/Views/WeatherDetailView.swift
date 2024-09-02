@@ -119,7 +119,8 @@ struct WeatherDetailView: View {
                 currentWeather: PreviewData.CurrentWeather.minneapolis,
                 forecast: PreviewData.Forecast.minneapolis,
                 weatherRepository: PreviewWeatherRepository(),
-                temperatureFormatter: PreviewData.Formatter.temperature
+                temperatureFormatter: PreviewData.Formatter.temperature,
+                logger: PreviewData.Logging.logger
             )
         )
     }

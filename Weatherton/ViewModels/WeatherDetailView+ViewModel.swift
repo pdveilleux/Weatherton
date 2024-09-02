@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import OSLog
 
 extension WeatherDetailView {
     @Observable @MainActor
@@ -20,16 +21,20 @@ extension WeatherDetailView {
 
         private let weatherRepository: WeatherRepository
         private let temperatureFormatter: MeasurementFormatter
+        private let logger: Logger
 
         init(
             currentWeather: CurrentWeather,
             forecast: Forecast? = nil,
             weatherRepository: WeatherRepository,
-            temperatureFormatter: MeasurementFormatter
+            temperatureFormatter: MeasurementFormatter,
+            logger: Logger
         ) {
             self.currentWeather = FormattedCurrentWeather(currentWeather: currentWeather, formatter: temperatureFormatter)
             self.weatherRepository = weatherRepository
             self.temperatureFormatter = temperatureFormatter
+            self.logger = logger
+
             if let forecast {
                 self.forecast = FormattedForecast(forecast: forecast, formatter: temperatureFormatter)
             }
@@ -48,7 +53,7 @@ extension WeatherDetailView {
             } catch WeatherServiceError.notConnectedToInternet {
                 errorMessage = .notConnectedToInternet
             } catch {
-                print("Error fetching forecast: \(error)")
+                logger.log(level: .error, "Error fetching forecast: \(error)")
             }
         }
     }

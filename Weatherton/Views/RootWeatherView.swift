@@ -115,7 +115,8 @@ struct RootWeatherView: View {
             viewModel: RootWeatherView.ViewModel(
                 weatherRepository: PreviewWeatherRepository(),
                 preferenceManager: DefaultPreferenceManager(),
-                temperatureFormatter: PreviewData.Formatter.temperature
+                temperatureFormatter: PreviewData.Formatter.temperature, 
+                logger: PreviewData.Logging.logger
             )
         )
     }

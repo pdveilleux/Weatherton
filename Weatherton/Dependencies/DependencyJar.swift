@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import SwiftData
+import OSLog
 
 class DependencyJar: ObservableObject {
     let viewModelFactory: ViewModelFactory
@@ -15,6 +15,7 @@ class DependencyJar: ObservableObject {
     let preferenceManager: PreferenceManager
     let temperatureFormatter: MeasurementFormatter
     let uuidFactory: UUIDFactory
+    let logger: Logger
     
     init(
         viewModelFactory: ViewModelFactory,
@@ -22,7 +23,8 @@ class DependencyJar: ObservableObject {
         weatherService: WeatherService,
         preferenceManager: PreferenceManager,
         temperatureFormatter: MeasurementFormatter,
-        uuidFactory: UUIDFactory
+        uuidFactory: UUIDFactory,
+        logger: Logger
     ) {
         self.viewModelFactory = viewModelFactory
         self.weatherRepository = weatherRepository
@@ -30,5 +32,6 @@ class DependencyJar: ObservableObject {
         self.preferenceManager = preferenceManager
         self.temperatureFormatter = temperatureFormatter
         self.uuidFactory = uuidFactory
+        self.logger = logger
     }
 }

@@ -6,13 +6,14 @@
 //
 
 import Foundation
-import SwiftData
+import OSLog
 
 @MainActor
 class DependencyBuilder {
     func build() -> DependencyJar {
+        let logger = Logger()
         let uuidFactory = UUIDFactory { UUID() }
-        let weatherService = WeatherAPIClient(uuidFactory: uuidFactory)
+        let weatherService = WeatherAPIClient(uuidFactory: uuidFactory, logger: logger)
         let preferenceManager = DefaultPreferenceManager()
         let weatherRepository = DefaultWeatherRepository(
             weatherService: weatherService,
@@ -29,7 +30,8 @@ class DependencyBuilder {
         let viewModelFactory = ViewModelFactory(
             weatherRepository: weatherRepository,
             preferenceManager: preferenceManager,
-            temperatureFormatter: temperatureFormatter
+            temperatureFormatter: temperatureFormatter,
+            logger: logger
         )
         
         return DependencyJar(
@@ -38,7 +40,8 @@ class DependencyBuilder {
             weatherService: weatherService,
             preferenceManager: preferenceManager,
             temperatureFormatter: temperatureFormatter,
-            uuidFactory: uuidFactory
+            uuidFactory: uuidFactory,
+            logger: logger
         )
     }
 }
