@@ -9,13 +9,17 @@ import SwiftUI
 
 struct HourlyForecastCard: View {
     let forecast: FormattedForecast
+
+    private enum Constants {
+        static var title = "24 Hour Forecast"
+    }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            CardHeader("24 Hour Forecast", systemImage: "clock")
+            CardHeader(Constants.title, systemImage: "clock")
                 .padding(.horizontal)
                 .padding(.top)
-            
+                
             ScrollView(.horizontal) {
                 HStack(spacing: 16) {
                     ForEach(forecast.hourlyForecast, id: \.backingData.time) { hour in
@@ -24,7 +28,7 @@ struct HourlyForecastCard: View {
                                 .font(.caption)
                             if let icon = hour.systemImage {
                                 Image(systemName: icon)
-                                    .frame(minHeight: 32)
+                                    .frame(minHeight: 40)
                                     .font(.title3)
                                     .fontWeight(.semibold)
                                     .symbolRenderingMode(.multicolor)
@@ -32,6 +36,8 @@ struct HourlyForecastCard: View {
                             Text(hour.apparentTemperature)
                                 .fontWeight(.semibold)
                         }
+                        .accessibilityElement(children: .ignore)
+                        .accessibilityLabel("\(hour.time), \(hour.apparentTemperature), \(hour.description)")
                     }
                 }
                 .padding(.horizontal)
@@ -42,6 +48,7 @@ struct HourlyForecastCard: View {
         .background(.ultraThinMaterial)
         .frame(maxWidth: .infinity)
         .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .accessibilityElement(children: .contain)
     }
 }
 

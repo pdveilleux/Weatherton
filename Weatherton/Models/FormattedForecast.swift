@@ -57,6 +57,9 @@ struct FormattedForecastDay: Hashable {
     var date: String {
         backingData.date.formatted(.dateTime.weekday(.abbreviated))
     }
+    var dateAccessibilityLabel: String {
+        backingData.date.formatted(.dateTime.weekday(.wide))
+    }
     var maxTemperature: String {
         formatter.string(from: backingData.maxTemperature)
     }

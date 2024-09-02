@@ -40,6 +40,8 @@ struct RootWeatherView: View {
                             }
                             .tint(.primary)
                             .listRowSeparator(.hidden)
+                            .accessibilityLabel("\(weather.location.name), \(weather.apparentTemperature), \(weather.description)")
+                            .accessibilityElement(children: .combine)
                             .accessibilityIdentifier("Location: \(weather.location.name)")
                         }
                         .onDelete(perform: delete)

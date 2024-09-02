@@ -64,26 +64,34 @@ struct WeatherDetailView: View {
 
     @ViewBuilder @MainActor
     private var currentConditionHeader: some View {
-        VStack {
-            HStack(alignment: .center, spacing: 20) {
-                if let image = viewModel.currentWeather.systemImage {
-                    Image(systemName: image)
-                        .font(.system(size: 48))
+        VStack(spacing: 16) {
+            VStack {
+                HStack(alignment: .center, spacing: 20) {
+                    if let image = viewModel.currentWeather.systemImage {
+                        Image(systemName: image)
+                            .font(.system(size: 48))
+                    }
+                    
+                    Text(viewModel.currentWeather.apparentTemperature)
+                        .font(.system(size: 64))
+                        .fontWeight(.medium)
                 }
-                
-                Text(viewModel.currentWeather.apparentTemperature)
-                    .font(.system(size: 64))
-                    .fontWeight(.medium)
+                Text(viewModel.currentWeather.description)
+                    .textCase(.uppercase)
+                    .font(.caption)
+                    .fontWeight(.bold)
             }
-            Text(viewModel.currentWeather.description)
-                .textCase(.uppercase)
-                .font(.caption)
-                .fontWeight(.bold)
-                .padding(.bottom, 16)
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel("\(viewModel.currentWeather.apparentTemperature), \(viewModel.currentWeather.description)")
+            
             HStack(spacing: 40) {
                 secondaryConditionLabel(value: viewModel.currentWeather.humidity, label: "Humidity")
                 secondaryConditionLabel(value: viewModel.currentWeather.visibility, label: "Visibility")
-                secondaryConditionLabel(value: viewModel.currentWeather.windSpeedAndDirection, label: "Wind")
+                secondaryConditionLabel(
+                    value: viewModel.currentWeather.windSpeedAndDirection,
+                    label: "Wind", 
+                    accessibilityLabel: viewModel.currentWeather.windSpeedAndDirectionAccessibilityLabel
+                )
             }
         }
         .padding()
@@ -92,13 +100,15 @@ struct WeatherDetailView: View {
     }
 
     @ViewBuilder
-    private func secondaryConditionLabel(value: String, label: LocalizedStringKey) -> some View {
+    private func secondaryConditionLabel(value: String, label: String, accessibilityLabel: String? = nil) -> some View {
         VStack(spacing: 4) {
             Text(value)
                 .fontWeight(.semibold)
             Text(label)
                 .font(.caption2)
         }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("\(label), \(accessibilityLabel ?? value)")
     }
 }
 

@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct CardHeader: View {
-    let title: LocalizedStringKey
+    let title: String
     let systemImage: String
 
-    init(_ title: LocalizedStringKey, systemImage: String) {
+    init(_ title: String, systemImage: String) {
         self.title = title
         self.systemImage = systemImage
     }
@@ -25,6 +25,7 @@ struct CardHeader: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
             Divider()
         }
+        .accessibilityAddTraits(.isHeader)
     }
 }
 

@@ -41,6 +41,8 @@ struct DailyForecastCard: View {
                 TemperatureBar(forecast: forecast, day: day)
             }
         }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("\(day.dateAccessibilityLabel), \(day.description), Low \(day.minTemperature), High \(day.maxTemperature)")
     }
 }
 

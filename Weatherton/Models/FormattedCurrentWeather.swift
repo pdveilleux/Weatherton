@@ -33,6 +33,9 @@ struct FormattedCurrentWeather: Hashable {
     var windSpeedAndDirection: String {
         windSpeed + " " + windDirection
     }
+    var windSpeedAndDirectionAccessibilityLabel: String {
+        windSpeed + " " + windDirectionDescription
+    }
     var description: String {
         backingData.description
     }
@@ -68,6 +71,28 @@ extension FormattedCurrentWeather {
             Gradient(colors: [.blue, .init(white: 0.7)])
         default:
             Gradient(colors: [.blue, .teal])
+        }
+    }
+
+    var windDirectionDescription: String {
+        switch windDirection {
+        case "N": "North"
+        case "NNE": "North North East"
+        case "NE": "North East"
+        case "ENE": "East North East"
+        case "E": "East"
+        case "ESE": "East South East"
+        case "SE": "South East"
+        case "SSE": "South South East"
+        case "S": "South"
+        case "SSW": "South South West"
+        case "SW": "South West"
+        case "WSW": "West South West"
+        case "W": "West"
+        case "WNW": "West North West"
+        case "NW": "North West"
+        case "NNW": "North North West"
+        default: ""
         }
     }
 }
