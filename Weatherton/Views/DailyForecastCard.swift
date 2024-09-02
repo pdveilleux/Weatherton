@@ -12,7 +12,7 @@ struct DailyForecastCard: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            CardHeader("Daily Forecast", systemImage: "calendar")
+            CardHeader(Strings.dailyForecast, systemImage: "calendar")
             
             VStack {
                 ForEach(forecast.days, id: \.date) { day in
@@ -42,7 +42,12 @@ struct DailyForecastCard: View {
             }
         }
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel("\(day.dateAccessibilityLabel), \(day.description), Low \(day.minTemperature), High \(day.maxTemperature)")
+        .accessibilityLabel(Strings.dayRowAccessibilityLabel(
+            date: day.dateAccessibilityLabel,
+            description: day.description,
+            low: day.minTemperature,
+            high: day.maxTemperature
+        ))
     }
 }
 

@@ -30,7 +30,7 @@ enum Message {
 
     var description: String {
         switch self {
-        case .notConnectedToInternet: "Offline"
+        case .notConnectedToInternet: Strings.notConnectedToInternet
         }
     }
 

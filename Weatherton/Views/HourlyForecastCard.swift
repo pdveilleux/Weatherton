@@ -9,14 +9,10 @@ import SwiftUI
 
 struct HourlyForecastCard: View {
     let forecast: FormattedForecast
-
-    private enum Constants {
-        static var title = "24 Hour Forecast"
-    }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            CardHeader(Constants.title, systemImage: "clock")
+            CardHeader(Strings.hourlyForecast, systemImage: "clock")
                 .padding(.horizontal)
                 .padding(.top)
                 

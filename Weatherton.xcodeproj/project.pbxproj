@@ -45,6 +45,8 @@
 		BB3DD09C2C8234030086A1E6 /* CardHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3DD09B2C8234030086A1E6 /* CardHeader.swift */; };
 		BB3DD09E2C826CBD0086A1E6 /* FakeUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3DD09D2C826CBD0086A1E6 /* FakeUserDefaults.swift */; };
 		BB3DD0A02C826E010086A1E6 /* DefaultPreferenceManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3DD09F2C826E010086A1E6 /* DefaultPreferenceManagerTests.swift */; };
+		BB6253122C8569A000CDC113 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BB6253112C8569A000CDC113 /* Localizable.xcstrings */; };
+		BB6253142C856A8E00CDC113 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6253132C856A8E00CDC113 /* Strings.swift */; };
 		BBFA267C2C76626000211EC2 /* WeathertonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA267B2C76626000211EC2 /* WeathertonApp.swift */; };
 		BBFA26822C76626200211EC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBFA26812C76626200211EC2 /* Assets.xcassets */; };
 		BBFA26852C76626200211EC2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBFA26842C76626200211EC2 /* Preview Assets.xcassets */; };
@@ -117,6 +119,8 @@
 		BB3DD09B2C8234030086A1E6 /* CardHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHeader.swift; sourceTree = "<group>"; };
 		BB3DD09D2C826CBD0086A1E6 /* FakeUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeUserDefaults.swift; sourceTree = "<group>"; };
 		BB3DD09F2C826E010086A1E6 /* DefaultPreferenceManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPreferenceManagerTests.swift; sourceTree = "<group>"; };
+		BB6253112C8569A000CDC113 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		BB6253132C856A8E00CDC113 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		BBFA26782C76626000211EC2 /* Weatherton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weatherton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBFA267B2C76626000211EC2 /* WeathertonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathertonApp.swift; sourceTree = "<group>"; };
 		BBFA26812C76626200211EC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -229,6 +233,15 @@
 			path = Dependencies;
 			sourceTree = "<group>";
 		};
+		BB6253152C856A9400CDC113 /* Localizations */ = {
+			isa = PBXGroup;
+			children = (
+				BB6253112C8569A000CDC113 /* Localizable.xcstrings */,
+				BB6253132C856A8E00CDC113 /* Strings.swift */,
+			);
+			path = Localizations;
+			sourceTree = "<group>";
+		};
 		BBFA266F2C76626000211EC2 = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +269,7 @@
 				BBFA267B2C76626000211EC2 /* WeathertonApp.swift */,
 				BBFA26BD2C77B89C00211EC2 /* Configuration */,
 				BB2A6D1C2C802BF9003698B6 /* Dependencies */,
+				BB6253152C856A9400CDC113 /* Localizations */,
 				BBFA26A82C76630400211EC2 /* Models */,
 				BB2A6CF92C7ACD19003698B6 /* Preferences */,
 				BBFA26B02C76655000211EC2 /* Repositories */,
@@ -474,6 +488,7 @@
 			files = (
 				BBFA26852C76626200211EC2 /* Preview Assets.xcassets in Resources */,
 				BBFA26822C76626200211EC2 /* Assets.xcassets in Resources */,
+				BB6253122C8569A000CDC113 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,6 +547,7 @@
 				BB2A6CFD2C7B9ABC003698B6 /* DependencyJar.swift in Sources */,
 				BB2A6D0C2C7D1EFE003698B6 /* FormattedCurrentWeather.swift in Sources */,
 				BBFA267C2C76626000211EC2 /* WeathertonApp.swift in Sources */,
+				BB6253142C856A8E00CDC113 /* Strings.swift in Sources */,
 				BBFA26AF2C76653D00211EC2 /* CurrentWeather.swift in Sources */,
 				BBFA26B92C7679DC00211EC2 /* RootWeatherView.swift in Sources */,
 				BB2A6D142C7FFD80003698B6 /* ForecastDayResponseModel.swift in Sources */,

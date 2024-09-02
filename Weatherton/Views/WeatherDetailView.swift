@@ -46,7 +46,7 @@ struct WeatherDetailView: View {
                 Button {
                     dismiss()
                 } label: {
-                    Label("Locations", systemImage: "globe.americas.fill")
+                    Label(Strings.locations, systemImage: "globe.americas.fill")
                 }
                 .tint(.primary)
                 .accessibilityIdentifier("Dismiss")
@@ -85,11 +85,11 @@ struct WeatherDetailView: View {
             .accessibilityLabel("\(viewModel.currentWeather.apparentTemperature), \(viewModel.currentWeather.description)")
             
             HStack(spacing: 40) {
-                secondaryConditionLabel(value: viewModel.currentWeather.humidity, label: "Humidity")
-                secondaryConditionLabel(value: viewModel.currentWeather.visibility, label: "Visibility")
+                secondaryConditionLabel(value: viewModel.currentWeather.humidity, label: Strings.humidity)
+                secondaryConditionLabel(value: viewModel.currentWeather.visibility, label: Strings.visibility)
                 secondaryConditionLabel(
                     value: viewModel.currentWeather.windSpeedAndDirection,
-                    label: "Wind", 
+                    label: Strings.wind,
                     accessibilityLabel: viewModel.currentWeather.windSpeedAndDirectionAccessibilityLabel
                 )
             }

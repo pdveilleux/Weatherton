@@ -30,5 +30,5 @@ struct CardHeader: View {
 }
 
 #Preview {
-    CardHeader("Hourly Forecast", systemImage: "clocl")
+    CardHeader("Hourly Forecast", systemImage: "clock")
 }

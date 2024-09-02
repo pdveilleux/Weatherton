@@ -27,7 +27,7 @@ struct RootWeatherView: View {
                                 await viewModel.addLocation(location)
                             }
                         } label: {
-                            Text("\(location.name), \(location.region)")
+                            Text(Strings.locationName(name: location.name, region: location.region))
                         }
                     }
                 } else {
@@ -40,7 +40,11 @@ struct RootWeatherView: View {
                             }
                             .tint(.primary)
                             .listRowSeparator(.hidden)
-                            .accessibilityLabel("\(weather.location.name), \(weather.apparentTemperature), \(weather.description)")
+                            .accessibilityLabel(Strings.locationAccessibilityLabel(
+                                location: weather.location.name,
+                                temperature: weather.apparentTemperature,
+                                description: weather.description
+                            ))
                             .accessibilityElement(children: .combine)
                             .accessibilityIdentifier("Location: \(weather.location.name)")
                         }
@@ -55,7 +59,7 @@ struct RootWeatherView: View {
             }
         }
         .accessibilityIdentifier("RootWeatherView")
-        .navigationTitle("Current Weather")
+        .navigationTitle(Strings.currentWeatherHeader)
         .searchable(
             text: Binding(
                 get: { viewModel.searchText.value },
