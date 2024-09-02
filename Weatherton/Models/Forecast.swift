@@ -28,7 +28,7 @@ struct ForecastDay: Hashable {
     let dailyChanceOfSnow: Int
     let description: String
     let systemImage: String?
-    let uv: Double
+    let uvIndex: Double
     let hours: [Hour]
 }
 

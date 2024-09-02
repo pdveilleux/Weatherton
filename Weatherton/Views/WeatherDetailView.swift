@@ -17,7 +17,7 @@ struct WeatherDetailView: View {
             Rectangle()
                 .foregroundStyle(viewModel.currentWeather.temperatureGradient)
                 .ignoresSafeArea()
-            
+
             ScrollView {
                 LazyVStack {
                     if let message = viewModel.errorMessage {
@@ -25,10 +25,10 @@ struct WeatherDetailView: View {
                     }
 
                     currentConditionHeader
-                    
+
                     if let forecast = viewModel.forecast {
                         HourlyForecastCard(forecast: forecast)
-                        
+
                         DailyForecastCard(forecast: forecast)
                     }
                 }
@@ -71,7 +71,7 @@ struct WeatherDetailView: View {
                         Image(systemName: image)
                             .font(Design.Font.veryLarge)
                     }
-                    
+
                     Text(viewModel.currentWeather.apparentTemperature)
                         .font(Design.Font.ultraLarge)
                         .fontWeight(.medium)
@@ -82,8 +82,10 @@ struct WeatherDetailView: View {
                     .fontWeight(.bold)
             }
             .accessibilityElement(children: .ignore)
-            .accessibilityLabel("\(viewModel.currentWeather.apparentTemperature), \(viewModel.currentWeather.description)")
-            
+            .accessibilityLabel(
+                "\(viewModel.currentWeather.apparentTemperature), \(viewModel.currentWeather.description)"
+            )
+
             HStack(spacing: Design.Spacing.veryLarge) {
                 secondaryConditionLabel(value: viewModel.currentWeather.humidity, label: Strings.humidity)
                 secondaryConditionLabel(value: viewModel.currentWeather.visibility, label: Strings.visibility)

@@ -33,7 +33,7 @@ class DependencyBuilder {
             temperatureFormatter: temperatureFormatter,
             logger: logger
         )
-        
+
         return DependencyJar(
             viewModelFactory: viewModelFactory,
             weatherRepository: weatherRepository,

@@ -38,7 +38,7 @@ struct TemperatureBar: View {
                     .position(x: geometry.frame(in: .local).midX, y: geometry.frame(in: .local).midY)
                 }
             }
-            
+
             Text(day.maxTemperature)
                 .fontWeight(.semibold)
                 .frame(minWidth: Design.Sizing.reducedMinimum, alignment: .trailing)
@@ -57,9 +57,12 @@ struct TemperatureBar: View {
         let minTempDelta = day.backingData.minTemperature.value - minimimMinTemp
         // The difference between the week's temperature range and the day's.
         let rangeDelta = forecastRange - day.temperatureRange
-        // Because the mask layer starts horizontally centered which leaves a gap on each side and we want to compensate for that by aligning it to the left we divide the rangeDelta by 2 and get the resulting negative value.
+        // The mask layer starts horizontally centered which leaves a gap on each side 
+        // and we want to compensate for that by aligning it to the left.
+        // Therefore we divide the rangeDelta by 2 and get the resulting negative value.
         let rangeOffset = -(rangeDelta / 2)
-        // Add the minTempDelta to compensate for the day's minimum temp being greater than the week's and multiply by the coefficient.
+        // Add the minTempDelta to compensate for the day's minimum temp being greater 
+        // than the week's and multiply by the coefficient.
         return (rangeOffset + minTempDelta) * coefficient
     }
 
@@ -68,7 +71,8 @@ struct TemperatureBar: View {
         guard let forecastRange = forecast.temperatureRange else {
             return nil
         }
-        // Get a proportion of the day's temperature range to the week's and multiple that by the width of the available space.
+        // Get a proportion of the day's temperature range to the week's and 
+        // multiple that by the width of the available space.
         return (day.temperatureRange / forecastRange) * width
     }
 }

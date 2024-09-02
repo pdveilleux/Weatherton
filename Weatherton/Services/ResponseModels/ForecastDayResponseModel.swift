@@ -30,6 +30,7 @@ extension ForecastDayResponseModel {
         let dailyChanceOfSnow: Int
         let condition: ConditionResponseModel
         let uv: Double
+        // swiftlint:disable:previous identifier_name
     }
 
     struct HourResponseModel: Codable {
@@ -73,6 +74,7 @@ extension ForecastDayResponseModel {
         let visKm: Double
         /// UV index
         let uv: Double
+        // swiftlint:disable:previous identifier_name
         /// Wind gust in kilometers per hour
         let gustKph: Double
     }
@@ -96,7 +98,7 @@ extension ForecastDayResponseModel {
             dailyChanceOfSnow: day.dailyChanceOfSnow,
             description: day.condition.text,
             systemImage: day.condition.getSystemImageNameForConditionCode(isDay: true),
-            uv: day.uv,
+            uvIndex: day.uv,
             hours: hour.map { $0.convertToHour() }
         )
     }

@@ -64,22 +64,23 @@ struct CurrentResponseModel: Codable {
     let visMiles: Double
     /// UV index
     let uv: Double
+    // swiftlint:disable:previous identifier_name
     /// Wind gust in miles per hour
     let gustMph: Double
     /// Wind gust in kilometers per hour
     let gustKph: Double
-    /// Air quality data
-//        let airQuality: AirQuality
 }
 
 extension CurrentResponseModel {
     struct AirQuality: Codable {
         /// Carbon Monoxide (μg/m3)
         let co: Double
+        // swiftlint:disable:previous identifier_name
         /// Nitrogen dioxide (μg/m3)
         let no2: Double
         /// Ozone (μg/m3)
         let o3: Double
+        // swiftlint:disable:previous identifier_name
         /// Sulphur dioxide (μg/m3)
         let so2: Double
         /// PM2.5 (μg/m3)

@@ -27,16 +27,12 @@ extension RootWeatherView {
             }
         }
         var weatherDetailItem: CurrentWeather?
-        
+
         private let weatherRepository: WeatherRepository
         private let preferenceManager: PreferenceManager
         private let temperatureFormatter: MeasurementFormatter
         private let logger: Logger
         private var cancellables: Set<AnyCancellable> = []
-
-        enum Constants {
-            static let debounceThreshold = 0.5
-        }
 
         init(
             weatherRepository: WeatherRepository,
@@ -48,7 +44,7 @@ extension RootWeatherView {
             self.preferenceManager = preferenceManager
             self.temperatureFormatter = temperatureFormatter
             self.logger = logger
-            
+
             searchText
                 .debounce(for: .seconds(Constants.debounceThreshold), scheduler: RunLoop.main)
                 .removeDuplicates()
@@ -70,7 +66,9 @@ extension RootWeatherView {
             }
 
             await catchHandledErrors {
-                weatherData = try await weatherRepository.getCurrentWeatherForSavedLocations().map { FormattedCurrentWeather(currentWeather: $0, formatter: temperatureFormatter) }
+                weatherData = try await weatherRepository.getCurrentWeatherForSavedLocations().map {
+                    FormattedCurrentWeather(currentWeather: $0, formatter: temperatureFormatter)
+                }
             }
         }
 
@@ -81,7 +79,10 @@ extension RootWeatherView {
 
             await catchHandledErrors {
                 let currentWeather = try await weatherRepository.getCurrentWeather(location: location)
-                weatherData.append(FormattedCurrentWeather(currentWeather: currentWeather, formatter: temperatureFormatter))
+                weatherData.append(FormattedCurrentWeather(
+                    currentWeather: currentWeather,
+                    formatter: temperatureFormatter
+                ))
                 await preferenceManager.saveLocation(location)
             }
         }
@@ -114,5 +115,11 @@ extension RootWeatherView {
                 logger.log(level: .error, "Error fetching data: \(error)")
             }
         }
+    }
+}
+
+extension RootWeatherView.ViewModel {
+    enum Constants {
+        static let debounceThreshold = 0.5
     }
 }

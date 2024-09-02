@@ -17,6 +17,7 @@ struct ConditionResponseModel: Codable {
 }
 
 extension ConditionResponseModel {
+    // swiftlint:disable:next cyclomatic_complexity function_body_length
     func getSystemImageNameForConditionCode(isDay: Bool) -> String {
         switch (code, isDay) {
         case (1000, true): "sun.max.fill"
@@ -39,10 +40,10 @@ extension ConditionResponseModel {
         case (1072, false): "cloud.sleet.fill"
         case (1087, true): "cloud.sun.bolt.fill"
         case (1087, false): "cloud.moon.bolt.fill"
-        case (1087, true): "wind.snow"
-        case (1087, false): "wind.snow"
         case (1114, true): "wind.snow"
         case (1114, false): "wind.snow"
+        case (1117, true): "wind.snow"
+        case (1117, false): "wind.snow"
         case (1135, true): "cloud.fog.fill"
         case (1135, false): "cloud.fog.fill"
         case (1147, true): "cloud.fog.fill"

@@ -15,7 +15,7 @@ final class DefaultWeatherRepository: WeatherRepository {
         self.weatherService = weatherService
         self.preferenceManager = preferenceManager
     }
-    
+
     func getCurrentWeather(location: Location) async throws -> CurrentWeather {
         try await weatherService.getCurrentWeather(location: location)
     }
@@ -28,15 +28,15 @@ final class DefaultWeatherRepository: WeatherRepository {
                     try await self.getCurrentWeather(location: location)
                 }
             }
-            
+
             var weather = [CurrentWeather]()
             for try await result in taskGroup {
                 weather.append(result)
             }
 
-            weather.sort { (a, b) -> Bool in
-                guard let first = locations.firstIndex(of: a.location) else { return false }
-                guard let second = locations.firstIndex(of: b.location) else { return true }
+            weather.sort { (lhs, rhs) -> Bool in
+                guard let first = locations.firstIndex(of: lhs.location) else { return false }
+                guard let second = locations.firstIndex(of: rhs.location) else { return true }
                 return first < second
             }
             return weather

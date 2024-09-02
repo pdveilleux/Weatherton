@@ -19,7 +19,7 @@ extension CurrentWeatherResponseModel {
             apparentTemperature: Measurement(value: current.feelslikeC, unit: .celsius),
             dewPoint: Measurement(value: current.dewpointC, unit: .celsius),
             humidity: current.humidity,
-            temperature: Measurement(value: current.tempC, unit: .celsius), 
+            temperature: Measurement(value: current.tempC, unit: .celsius),
             visibility: Measurement(value: current.visKm, unit: .kilometers),
             windSpeed: Measurement(value: current.windKph, unit: .kilometersPerHour),
             windDirection: current.windDir,

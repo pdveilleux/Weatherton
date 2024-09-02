@@ -9,13 +9,13 @@ import SwiftUI
 
 struct HourlyForecastCard: View {
     let forecast: FormattedForecast
-    
+
     var body: some View {
         VStack(alignment: .leading, spacing: Design.Spacing.small) {
             CardHeader(Strings.hourlyForecast, systemImage: "clock")
                 .padding(.horizontal)
                 .padding(.top)
-                
+
             ScrollView(.horizontal) {
                 HStack(spacing: Design.Spacing.reduced) {
                     ForEach(forecast.hourlyForecast, id: \.backingData.time) { hour in
@@ -60,5 +60,3 @@ struct HourlyForecastCard: View {
         )
     )
 }
-
-

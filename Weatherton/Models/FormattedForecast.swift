@@ -105,8 +105,8 @@ struct FormattedForecastDay: Hashable {
     var systemImage: String? {
         backingData.systemImage
     }
-    var uv: String {
-        String(backingData.uv)
+    var uvIndex: String {
+        String(backingData.uvIndex)
     }
     var hours: [Hour] {
         backingData.hours.map { Hour(hour: $0, formatter: formatter) }

@@ -9,11 +9,11 @@ import SwiftUI
 
 struct DailyForecastCard: View {
     let forecast: FormattedForecast
-    
+
     var body: some View {
         VStack(alignment: .leading, spacing: Design.Spacing.small) {
             CardHeader(Strings.dailyForecast, systemImage: "calendar")
-            
+
             VStack {
                 ForEach(forecast.days, id: \.date) { day in
                     dayRow(day: day)

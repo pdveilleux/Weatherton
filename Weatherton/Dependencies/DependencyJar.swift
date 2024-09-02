@@ -16,7 +16,7 @@ class DependencyJar: ObservableObject {
     let temperatureFormatter: MeasurementFormatter
     let uuidFactory: UUIDFactory
     let logger: Logger
-    
+
     init(
         viewModelFactory: ViewModelFactory,
         weatherRepository: WeatherRepository,

@@ -31,7 +31,7 @@ final class ViewModelFactory {
         RootWeatherView.ViewModel(
             weatherRepository: weatherRepository,
             preferenceManager: preferenceManager,
-            temperatureFormatter: temperatureFormatter, 
+            temperatureFormatter: temperatureFormatter,
             logger: logger
         )
     }
@@ -40,7 +40,7 @@ final class ViewModelFactory {
         WeatherDetailView.ViewModel(
             currentWeather: currentWeather,
             weatherRepository: weatherRepository,
-            temperatureFormatter: temperatureFormatter, 
+            temperatureFormatter: temperatureFormatter,
             logger: logger
         )
     }

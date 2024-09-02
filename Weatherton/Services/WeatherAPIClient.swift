@@ -19,7 +19,7 @@ final class WeatherAPIClient: WeatherService {
         }
         return url
     }
-    
+
     private let decoder: JSONDecoder = {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -71,7 +71,7 @@ extension WeatherAPIClient {
         case currentWeather
         case forecast
         case search
-        
+
         var path: String {
             return switch self {
             case .currentWeather: "/current.json"
@@ -111,11 +111,17 @@ extension WeatherAPIClient {
         return url.appending(queryItems: queryParameters.map(\.queryItem))
     }
 
-    private func sendRequest<Response>(url: URL, expecting type: Response.Type) async throws -> Response where Response: Decodable {
+    private func sendRequest<Response: Decodable>(
+        url: URL,
+        expecting type: Response.Type
+    ) async throws -> Response where Response: Decodable {
         try await sendRequest(URLRequest(url: url), expecting: type)
     }
 
-    private func sendRequest<Response>(_ request: URLRequest, expecting type: Response.Type) async throws -> Response where Response: Decodable {
+    private func sendRequest<Response>(
+        _ request: URLRequest,
+        expecting type: Response.Type
+    ) async throws -> Response where Response: Decodable {
         let (data, response): (Data, URLResponse)
         do {
             (data, response) = try await session.data(for: request)
@@ -124,12 +130,12 @@ extension WeatherAPIClient {
         } catch {
             throw WeatherServiceError.generic
         }
-        
+
         guard let response = response as? HTTPURLResponse else {
             logger.log(level: .error, "WeatherAPIClient could not cast response to HTTPURLResponse")
             throw WeatherServiceError.generic
         }
-        
+
         switch response.statusCode {
         case 200...299:
             return try decoder.decode(type, from: data)

@@ -30,7 +30,10 @@ extension WeatherDetailView {
             temperatureFormatter: MeasurementFormatter,
             logger: Logger
         ) {
-            self.currentWeather = FormattedCurrentWeather(currentWeather: currentWeather, formatter: temperatureFormatter)
+            self.currentWeather = FormattedCurrentWeather(
+                currentWeather: currentWeather,
+                formatter: temperatureFormatter
+            )
             self.weatherRepository = weatherRepository
             self.temperatureFormatter = temperatureFormatter
             self.logger = logger

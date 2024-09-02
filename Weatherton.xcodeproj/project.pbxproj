@@ -413,6 +413,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				BB62531C2C857EA600CDC113 /* PBXTargetDependency */,
 			);
 			name = Weatherton;
 			productName = Weatherton;
@@ -488,6 +489,7 @@
 			);
 			mainGroup = BBFA266F2C76626000211EC2;
 			packageReferences = (
+				BB62531A2C857E6200CDC113 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
 			);
 			productRefGroup = BBFA26792C76626000211EC2 /* Products */;
 			projectDirPath = "";
@@ -624,6 +626,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		BB62531C2C857EA600CDC113 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = BB62531B2C857EA600CDC113 /* SwiftLintBuildToolPlugin */;
+		};
 		BBFA268C2C76626300211EC2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = BBFA26772C76626000211EC2 /* Weatherton */;
@@ -932,6 +938,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BB62531A2C857E6200CDC113 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.56.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BB62531B2C857EA600CDC113 /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB62531A2C857E6200CDC113 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BBFA26702C76626000211EC2 /* Project object */;
 }
