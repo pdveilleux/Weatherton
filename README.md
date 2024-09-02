@@ -59,7 +59,9 @@ These are some of the things I would focus on if I continued developing this app
 #### Testing
 
 - Add test coverage for model conversion.
-- Add testing of views.
+- Add testing of views leveraging [ViewInspector](https://github.com/nalexn/ViewInspector).
+- Add testing of view models.
+- Investigate using fakes in the UI tests to prevent unnecessary API calls and improve reliability.
 
 #### WeatherAPI
 
@@ -67,12 +69,14 @@ These are some of the things I would focus on if I continued developing this app
 
 #### App refinement
 
+- Fix local time of hourly forecasts for locations not in the user's current time zone.
 - Add view placeholders when data is loading and not yet present rather than a simple loading indicator.
 - Refine overall design including the contrast and legibility between the color gradients and the content and weather symbols.
 
 #### Xcode Project
 
 - Use a project build tool like [XcodeGen](https://github.com/yonaskolb/XcodeGen) or [Tuist](https://github.com/tuist/tuist) so the `.xcodeproj` file can be removed from git as the changes are difficult to review. This will also assist with getting the generated `Secrets.swift` file included in the project file so it doesn't appear as missing even though it exists in the file structure.
+- Move inline strings for SF Symbol names into some single type or use a package like [SFSafeSymbols](https://github.com/SFSafeSymbols/SFSafeSymbols).
 
 #### New features
 
