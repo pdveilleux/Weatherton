@@ -5,6 +5,7 @@
 //  Created by Patrick Veilleux on 8/30/24.
 //
 
+import OSLog
 import XCTest
 @testable import Weatherton
 
@@ -18,7 +19,8 @@ final class WeatherAPIClientTests: XCTestCase {
         let session = URLSession(configuration: configuration)
         let uuid = try XCTUnwrap(uuid)
         let uuidFactory = UUIDFactory { uuid }
-        client = WeatherAPIClient(session: session, uuidFactory: uuidFactory)
+        let logger = Logger()
+        client = WeatherAPIClient(session: session, uuidFactory: uuidFactory, logger: logger)
         StubExpectation.uuidFactory = uuidFactory
     }
 

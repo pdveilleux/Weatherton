@@ -31,7 +31,7 @@ final class TemperatureBarTests: XCTestCase {
             dailyChanceOfSnow: 0,
             description: "",
             systemImage: "",
-            uv: 0,
+            uvIndex: 0,
             hours: []
         )
         let day2 = ForecastDay(
@@ -50,7 +50,7 @@ final class TemperatureBarTests: XCTestCase {
             dailyChanceOfSnow: 0,
             description: "",
             systemImage: "",
-            uv: 0,
+            uvIndex: 0,
             hours: []
         )
         let formattedForecast = FormattedForecast(
@@ -105,7 +105,7 @@ final class TemperatureBarTests: XCTestCase {
             dailyChanceOfSnow: 0,
             description: "",
             systemImage: "",
-            uv: 0,
+            uvIndex: 0,
             hours: []
         )
         let day2 = ForecastDay(
@@ -124,7 +124,7 @@ final class TemperatureBarTests: XCTestCase {
             dailyChanceOfSnow: 0,
             description: "",
             systemImage: "",
-            uv: 0,
+            uvIndex: 0,
             hours: []
         )
         let formattedForecast = FormattedForecast(

@@ -20,37 +20,9 @@ struct RootWeatherView: View {
                 }
 
                 if viewModel.isSearching {
-                    List(viewModel.locationResults, id: \.self) { location in
-                        Button {
-                            viewModel.isSearching = false
-                            Task {
-                                await viewModel.addLocation(location)
-                            }
-                        } label: {
-                            Text(Strings.locationName(name: location.name, region: location.region))
-                        }
-                    }
+                    locationsList()
                 } else {
-                    List {
-                        ForEach(viewModel.weatherData, id: \.self) { weather in
-                            Button {
-                                viewModel.weatherDetailItem = weather.backingData
-                            } label: {
-                                weatherRow(weather)
-                            }
-                            .tint(.primary)
-                            .listRowSeparator(.hidden)
-                            .accessibilityLabel(Strings.locationAccessibilityLabel(
-                                location: weather.location.name,
-                                temperature: weather.apparentTemperature,
-                                description: weather.description
-                            ))
-                            .accessibilityElement(children: .combine)
-                            .accessibilityIdentifier("Location: \(weather.location.name)")
-                        }
-                        .onDelete(perform: delete)
-                    }
-                    .listStyle(.plain)
+                    weatherList()
                 }
             }
 
@@ -81,6 +53,52 @@ struct RootWeatherView: View {
         .task {
             await viewModel.getWeatherData()
         }
+    }
+
+    @ViewBuilder
+    private func locationsList() -> some View {
+        List(viewModel.locationResults, id: \.self) { location in
+            Button {
+                viewModel.isSearching = false
+                Task {
+                    await viewModel.addLocation(location)
+                }
+            } label: {
+                VStack(alignment: .leading) {
+                    Text(Strings.locationName(name: location.name, region: location.region))
+                        .fontWeight(.semibold)
+                    Text(location.country)
+                        .font(.caption)
+                        .foregroundStyle(Color.secondary)
+                }
+            }
+            .tint(.primary)
+            .accessibilityLabel("\(location.name), \(location.region)")
+        }
+    }
+
+    @ViewBuilder
+    private func weatherList() -> some View {
+        List {
+            ForEach(viewModel.weatherData, id: \.self) { weather in
+                Button {
+                    viewModel.weatherDetailItem = weather.backingData
+                } label: {
+                    weatherRow(weather)
+                }
+                .tint(.primary)
+                .listRowSeparator(.hidden)
+                .accessibilityLabel(Strings.locationAccessibilityLabel(
+                    location: weather.location.name,
+                    temperature: weather.apparentTemperature,
+                    description: weather.description
+                ))
+                .accessibilityElement(children: .combine)
+                .accessibilityIdentifier("Location: \(weather.location.name)")
+            }
+            .onDelete(perform: delete)
+        }
+        .listStyle(.plain)
     }
 
     @ViewBuilder

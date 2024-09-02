@@ -23,7 +23,7 @@ final class PreviewWeatherRepository: WeatherRepository {
     }
 
     func searchLocations(query: String) async throws -> [Location] {
-        []
+        [PreviewData.Location.cupertino]
     }
 }
 #endif

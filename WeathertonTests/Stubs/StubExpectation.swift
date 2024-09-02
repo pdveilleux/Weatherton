@@ -55,7 +55,7 @@ extension StubExpectation {
                     dailyChanceOfSnow: 0,
                     description: "Sunny",
                     systemImage: "sun.max.fill",
-                    uv: 6,
+                    uvIndex: 6,
                     hours: [
                         ForecastDay.Hour(
                             time: Date(timeIntervalSince1970: 1724994000),
