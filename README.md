@@ -70,6 +70,10 @@ These are some of the things I would focus on if I continued developing this app
 - Add view placeholders when data is loading and not yet present rather than a simple loading indicator.
 - Refine overall design including the contrast and legibility between the color gradients and the content and weather symbols.
 
+#### Xcode Project
+
+- Use a project build tool like [XcodeGen](https://github.com/yonaskolb/XcodeGen) or [Tuist](https://github.com/tuist/tuist) so the `.xcodeproj` file can be removed from git as the changes are difficult to review. This will also assist with getting the generated `Secrets.swift` file included in the project file so it doesn't appear as missing even though it exists in the file structure.
+
 #### New features
 
 - More comprehensive weather data on detail page
