@@ -70,6 +70,7 @@ These are some of the things I would focus on if I continued developing this app
 #### App refinement
 
 - Fix local time of hourly forecasts for locations not in the user's current time zone.
+- Improve error handling of `DefaultWeatherRepository.getCurrentWeatherForSavedLocations()` so an error for a single request does not result in throwing from the method and instead return what valid data does exist.
 - Add view placeholders when data is loading and not yet present rather than a simple loading indicator.
 - Refine overall design including the contrast and legibility between the color gradients and the content and weather symbols.
 
