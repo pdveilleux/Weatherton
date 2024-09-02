@@ -11,12 +11,12 @@ Weatherton is a client to [WeatherAPI](https://www.weatherapi.com).
 ### Requirements
 
 - Xcode 15.4
-- iOS 17 if running on a physical device
+- iOS 17
 
 ### Build steps
 
 1. Clone the repo.
-2. Run `./setup-secrets.sh` from the local repository's root directory and enter the WeatherAPI key when prompted.
+2. Run `./Scripts/setup-secrets.sh` from the local repository's root directory and enter the WeatherAPI key when prompted.
 3. Open `Weatherton.xcodeproj`.
 4. Run the app.
 
