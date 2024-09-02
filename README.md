@@ -73,6 +73,7 @@ These are some of the things I would focus on if I continued developing this app
 - Improve error handling of `DefaultWeatherRepository.getCurrentWeatherForSavedLocations()` so an error for a single request does not result in throwing from the method and instead return what valid data does exist.
 - Add view placeholders when data is loading and not yet present rather than a simple loading indicator.
 - Refine overall design including the contrast and legibility between the color gradients and the content and weather symbols.
+- Improved add location UX flow so the user is navigated to the details view when a new location is added from a search action.
 
 #### Xcode Project
 
@@ -87,7 +88,6 @@ These are some of the things I would focus on if I continued developing this app
 - Home screen widget
 - Network listener to handle connectivity status
 - Reorder locations support
-- Improved add location UX flow
 - 3D weather visualization
 
 ---
