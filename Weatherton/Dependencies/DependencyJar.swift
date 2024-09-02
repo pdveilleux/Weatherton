@@ -8,6 +8,7 @@
 import Foundation
 import OSLog
 
+/// A container for the app's dependencies.
 class DependencyJar: ObservableObject {
     let viewModelFactory: ViewModelFactory
     let weatherRepository: WeatherRepository

@@ -48,6 +48,7 @@
 		BB6253122C8569A000CDC113 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BB6253112C8569A000CDC113 /* Localizable.xcstrings */; };
 		BB6253142C856A8E00CDC113 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6253132C856A8E00CDC113 /* Strings.swift */; };
 		BB6253172C85718400CDC113 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6253162C85718400CDC113 /* Design.swift */; };
+		BBA0C7012C8622B300B9D534 /* DefaultPreferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA0C7002C8622B300B9D534 /* DefaultPreferenceManager.swift */; };
 		BBFA267C2C76626000211EC2 /* WeathertonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA267B2C76626000211EC2 /* WeathertonApp.swift */; };
 		BBFA26822C76626200211EC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBFA26812C76626200211EC2 /* Assets.xcassets */; };
 		BBFA26852C76626200211EC2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBFA26842C76626200211EC2 /* Preview Assets.xcassets */; };
@@ -123,6 +124,7 @@
 		BB6253112C8569A000CDC113 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		BB6253132C856A8E00CDC113 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		BB6253162C85718400CDC113 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
+		BBA0C7002C8622B300B9D534 /* DefaultPreferenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPreferenceManager.swift; sourceTree = "<group>"; };
 		BBFA26782C76626000211EC2 /* Weatherton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weatherton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBFA267B2C76626000211EC2 /* WeathertonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathertonApp.swift; sourceTree = "<group>"; };
 		BBFA26812C76626200211EC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 		BB2A6CF92C7ACD19003698B6 /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
+				BBA0C7002C8622B300B9D534 /* DefaultPreferenceManager.swift */,
 				BB2A6CFA2C7ACD2C003698B6 /* PreferenceManager.swift */,
 			);
 			path = Preferences;
@@ -368,9 +371,9 @@
 		BBFA26B02C76655000211EC2 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				BBFA26B12C76657700211EC2 /* WeatherRepository.swift */,
 				BB16800F2C83E41400DE796E /* DefaultWeatherRepository.swift */,
 				BB2A6D002C7B9D0D003698B6 /* PreviewWeatherRepository.swift */,
+				BBFA26B12C76657700211EC2 /* WeatherRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -564,6 +567,7 @@
 				BB6253172C85718400CDC113 /* Design.swift in Sources */,
 				BB3DD0982C822A0A0086A1E6 /* ErrorResponseModel.swift in Sources */,
 				BB2A6CFF2C7B9BD2003698B6 /* RootWeatherView+ViewModel.swift in Sources */,
+				BBA0C7012C8622B300B9D534 /* DefaultPreferenceManager.swift in Sources */,
 				BB2A6D1E2C802C15003698B6 /* DependencyBuilder.swift in Sources */,
 				BB1680102C83E41400DE796E /* DefaultWeatherRepository.swift in Sources */,
 				BB2A6CFD2C7B9ABC003698B6 /* DependencyJar.swift in Sources */,

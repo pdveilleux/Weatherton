@@ -22,5 +22,5 @@ final class FakePreferenceManager: PreferenceManager {
     
     func removeSavedLocations(_ locations: [Location]) async {}
 
-    func setupFirstTimeLaunchIfNeeded() async {}
+    func setupDefaultLocationsIfNeeded() async {}
 }

@@ -18,7 +18,7 @@ struct WeathertonApp: App {
                     .environmentObject(dependencyJar)
             }
             .task {
-                await dependencyJar.preferenceManager.setupFirstTimeLaunchIfNeeded()
+                await dependencyJar.preferenceManager.setupDefaultLocationsIfNeeded()
             }
         }
     }

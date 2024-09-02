@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// A formatted representation of `Forecast` ready for the UI.
 struct FormattedForecast: Hashable {
     var location: Location {
         backingData.location
@@ -53,6 +54,7 @@ struct FormattedForecast: Hashable {
     }
 }
 
+/// A formatted representation of `ForecastDay` ready for the UI.
 struct FormattedForecastDay: Hashable {
     var date: String {
         backingData.date.formatted(.dateTime.weekday(.abbreviated))
@@ -122,6 +124,7 @@ struct FormattedForecastDay: Hashable {
 }
 
 extension FormattedForecastDay {
+    /// A formatted representation of `ForecastDay.Hour` ready for the UI.
     struct Hour: Hashable {
         var time: String {
             backingData.time.formatted(.dateTime.hour())

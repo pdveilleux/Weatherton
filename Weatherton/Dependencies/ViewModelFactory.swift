@@ -27,6 +27,7 @@ final class ViewModelFactory {
         self.logger = logger
     }
 
+    /// Builds a view model for the `RootWeatherView` with all dependencies.
     func buildRootWeatherViewModel() -> RootWeatherView.ViewModel {
         RootWeatherView.ViewModel(
             weatherRepository: weatherRepository,
@@ -36,6 +37,7 @@ final class ViewModelFactory {
         )
     }
 
+    /// Builds a view model for the `WeatherDetailView` with all dependencies.
     func buildWeatherDetailViewModel(currentWeather: CurrentWeather) -> WeatherDetailView.ViewModel {
         WeatherDetailView.ViewModel(
             currentWeather: currentWeather,

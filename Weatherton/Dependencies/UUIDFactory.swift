@@ -8,12 +8,13 @@
 import Foundation
 
 final class UUIDFactory {
-    let closure: () -> UUID
+    private let closure: () -> UUID
 
     init(_ closure: @escaping () -> UUID) {
         self.closure = closure
     }
 
+    /// Generates a `UUID`.
     func uuid() -> UUID {
         closure()
     }
